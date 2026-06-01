@@ -1,0 +1,486 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum TokenType {
+  REFRESH
+  RESET_PASSWORD
+  VERIFY_EMAIL
+}
+
+enum RecordStatusFilter {
+  ACTIVE
+  INACTIVE
+  ALL
+}
+
+enum ImageOwnerType {
+  USER
+  PRODUCT
+  GENERIC
+}
+
+enum TicketStatus {
+  PENDENTE
+  PROCESSANDO
+  RESOLVIDO
+  FECHADO
+}
+
+enum DeviceType {
+  ROUTER
+  SWITCH
+  SERVER
+  FIREWALL
+  ACCESS_POINT
+  CAMERA
+  PRINTER
+  WORKSTATION
+  NAS
+  OTHER
+}
+
+enum MonitoringStatus {
+  ONLINE
+  OFFLINE
+  WARNING
+}
+
+enum AlertLevel {
+  INFO
+  WARNING
+  CRITICAL
+}
+
+enum ServiceType {
+  HTTP
+  HTTPS
+  SSH
+  DNS
+  MYSQL
+  POSTGRESQL
+  SMTP
+  SMIME
+  FTP
+  TCP
+}
+
+model User {
+  id                         String         @id @default(uuid()) @db.Uuid
+  fullName                   String
+  email                      String         @unique
+  password                   String
+  phone                      String?
+  statusId                   String?        @db.Uuid
+  status                     Status?        @relation(fields: [statusId], references: [id])
+
+  emailVerified              Boolean        @default(false)
+  emailVerificationToken     String?        @unique
+  emailVerificationExpiresAt DateTime?
+
+  passwordResetToken         String?        @unique
+  passwordResetExpiresAt     DateTime?
+
+  deleted                    Boolean        @default(false)
+  createdAt                  DateTime       @default(now())
+  updatedAt                  DateTime       @updatedAt
+  deletedAt                  DateTime?
+
+  roles                      UserRole[]
+  refreshTokens              RefreshToken[]
+  authTokens                 AuthToken[]
+  audits                     AuditLog[]
+  tickets                    Ticket[]
+
+  @@index([statusId])
+  @@map("users")
+}
+
+model Role {
+  id          String     @id @default(uuid()) @db.Uuid
+  name        String     @unique
+  description String?
+
+  deleted     Boolean    @default(false)
+
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  userRoles   UserRole[]
+
+  @@map("roles")
+}
+
+model UserRole {
+  userId    String   @db.Uuid
+  roleId    String   @db.Uuid
+  createdAt DateTime @default(now())
+
+  user User @relation(
+    fields: [userId],
+    references: [id],
+    onDelete: Cascade
+  )
+
+  role Role @relation(
+    fields: [roleId],
+    references: [id],
+    onDelete: Cascade
+  )
+
+  @@id([userId, roleId])
+
+  @@map("user_roles")
+}
+
+model RefreshToken {
+  id        String   @id @default(uuid()) @db.Uuid
+  userId    String   @db.Uuid
+  token     String   @unique
+  expiresAt DateTime
+
+  revoked   Boolean  @default(false)
+  deleted   Boolean  @default(false)
+
+  createdAt DateTime @default(now())
+
+  user User @relation(
+    fields: [userId],
+    references: [id],
+    onDelete: Cascade
+  )
+
+  @@index([userId, revoked, deleted])
+
+  @@map("refresh_tokens")
+}
+
+model AuthToken {
+  id        String    @id @default(uuid()) @db.Uuid
+  userId    String    @db.Uuid
+  token     String    @unique
+
+  type      TokenType
+
+  expiresAt DateTime
+  revokedAt DateTime?
+
+  createdAt DateTime  @default(now())
+
+  user User @relation(
+    fields: [userId],
+    references: [id],
+    onDelete: Cascade
+  )
+
+  @@index([userId, type])
+
+  @@map("auth_tokens")
+}
+
+model Status {
+  id          String   @id @default(uuid()) @db.Uuid
+
+  code        String   @unique
+  name        String
+  description String?
+
+  deleted     Boolean  @default(false)
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  users       User[]
+
+  @@map("statuses")
+}
+
+model Ticket {
+  id          String       @id @default(uuid()) @db.Uuid
+
+  subject     String
+  description String
+
+  status      TicketStatus @default(PENDENTE)
+
+  requesterId String       @db.Uuid
+
+  requester   User @relation(
+    fields: [requesterId],
+    references: [id],
+    onDelete: Cascade
+  )
+
+  deleted     Boolean      @default(false)
+
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  @@index([requesterId, status, deleted])
+
+  @@map("tickets")
+}
+
+model ImageAsset {
+  id           String         @id @default(uuid()) @db.Uuid
+
+  ownerType    ImageOwnerType
+  ownerId      String         @db.Uuid
+
+  url          String
+  fileName     String
+  contentType  String
+
+  sizeBytes    BigInt
+
+  primaryImage Boolean        @default(false)
+  sortOrder    Int            @default(0)
+
+  deleted      Boolean        @default(false)
+
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+
+  @@index([ownerType, ownerId, deleted])
+
+  @@map("image_assets")
+}
+
+model AuditLog {
+  id         String   @id @default(uuid()) @db.Uuid
+
+  userId     String?  @db.Uuid
+
+  action     String
+  resource   String
+  resourceId String?
+
+  metadata   Json?
+
+  ipAddress  String?
+
+  createdAt  DateTime @default(now())
+
+  user User? @relation(
+    fields: [userId],
+    references: [id],
+    onDelete: SetNull
+  )
+
+  @@map("audit_logs")
+}
+
+model Site {
+  id          String   @id @default(uuid()) @db.Uuid
+
+  name        String
+  address     String?
+  city        String?
+  country     String?
+  description String?
+
+  deleted     Boolean  @default(false)
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  devices     Device[]
+
+  @@map("sites")
+}
+
+model Device {
+  id            String             @id @default(uuid()) @db.Uuid
+
+  name          String
+  hostname      String?
+
+  ipAddress     String             @unique
+  macAddress    String?
+
+  type          DeviceType
+
+  description   String?
+
+  currentStatus MonitoringStatus   @default(OFFLINE)
+
+  siteId        String?            @db.Uuid
+
+  active        Boolean            @default(true)
+  deleted       Boolean            @default(false)
+
+  createdAt     DateTime           @default(now())
+  updatedAt     DateTime           @updatedAt
+
+  site Site? @relation(
+    fields: [siteId],
+    references: [id]
+  )
+
+  logs      MonitoringLog[]
+  alerts    Alert[]
+  services  ServiceMonitor[]
+  metrics DeviceMetric[]
+  groups DeviceGroupItem[]
+  groups DeviceGroupItem[]
+
+
+  @@index([siteId])
+  @@index([currentStatus])
+
+  @@map("devices")
+}
+
+model DeviceGroup {
+  id          String   @id @default(uuid()) @db.Uuid
+
+  name        String
+  description String?
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  devices     DeviceGroupItem[]
+
+  @@map("device_groups")
+}
+
+model DeviceGroupItem {
+  deviceId String @db.Uuid
+  groupId  String @db.Uuid
+
+  device Device @relation(
+    fields: [deviceId],
+    references: [id],
+    onDelete: Cascade
+  )
+
+  group DeviceGroup @relation(
+    fields: [groupId],
+    references: [id],
+    onDelete: Cascade
+  )
+
+  @@id([deviceId, groupId])
+
+  @@map("device_group_items")
+}
+
+model DeviceMetric {
+  id          String   @id @default(uuid()) @db.Uuid
+
+  deviceId    String   @db.Uuid
+
+  cpuUsage    Float?
+  memoryUsage Float?
+  diskUsage   Float?
+
+  networkIn   Float?
+  networkOut  Float?
+
+  collectedAt DateTime @default(now())
+
+  device Device @relation(
+    fields: [deviceId],
+    references: [id],
+    onDelete: Cascade
+  )
+
+  @@index([deviceId])
+  @@index([collectedAt])
+
+  @@map("device_metrics")
+}
+
+model MonitoringLog {
+  id           String             @id @default(uuid()) @db.Uuid
+
+  deviceId     String             @db.Uuid
+
+  status       MonitoringStatus
+
+  responseTime Int?
+
+  packetLoss   Float?
+
+  message      String?
+
+  checkedAt    DateTime           @default(now())
+
+  device Device @relation(
+    fields: [deviceId],
+    references: [id],
+    onDelete: Cascade
+  )
+
+  @@index([deviceId])
+  @@index([checkedAt])
+
+  @@map("monitoring_logs")
+}
+
+model Alert {
+  id            String      @id @default(uuid()) @db.Uuid
+
+  deviceId      String      @db.Uuid
+
+  title         String
+  message       String
+
+  level         AlertLevel
+
+  acknowledged  Boolean     @default(false)
+  resolved      Boolean     @default(false)
+  acknowledgedById String? @db.Uuid
+  acknowledgedAt   DateTime?
+
+  createdAt     DateTime    @default(now())
+
+  resolvedAt    DateTime?
+
+  device Device @relation(
+    fields: [deviceId],
+    references: [id],
+    onDelete: Cascade
+  )
+
+  @@index([deviceId])
+  @@index([level])
+  @@index([acknowledged])
+  @@index([resolved])
+
+  @@map("alerts")
+}
+
+model ServiceMonitor {
+  id              String      @id @default(uuid()) @db.Uuid
+
+  deviceId        String      @db.Uuid
+
+  name            String
+
+  type            ServiceType
+
+  port            Int
+
+  enabled         Boolean     @default(true)
+
+  timeoutSeconds  Int         @default(5)
+
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  device Device @relation(
+    fields: [deviceId],
+    references: [id],
+    onDelete: Cascade
+  )
+
+  @@index([deviceId])
+
+  @@map("service_monitors")
+}

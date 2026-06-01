@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS monitoring_db;
+
+CREATE TABLE IF NOT EXISTS device(
+	uuid UUID(20) 	NOT NULL PRIMARY KEY,
+	ip_adress TEXT(15) NOT NULL,
+	mac_adress TEXT(20) NOT NULL,
+	device_ssi TEXT(255) NOT NULL,
+	is_router BOOL(1) NOT NULL,
+	router_ip TEXT(15) NOT NULL,
+	disponibilidade UUID(20) NOT NULL,
+	tempo_resposta instant/long,
+	created_at LocalDate,
+	created_by UUID,
+	updated_at LocalDate,
+	updated_by UUID
+);
+
+CREATE TABLE IF NOT EXISTS historico/logs (
+	device_id UUID,
+	created_at,
+	action UUID,
+	FOREIGN KEY logs(action) REFERENCES action(uuid)
+);
