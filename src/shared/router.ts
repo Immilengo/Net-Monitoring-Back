@@ -6,6 +6,7 @@ import { statusRoutes } from '@modules/statuses/routes/status.routes';
 import { ticketRoutes } from '@modules/tickets/routes/ticket.routes';
 import { imageRoutes } from '@modules/images/routes/image.routes';
 import { siteRoutes } from '@modules/sites/routes/site.routes';
+import { deviceRoutes } from '@modules/devices/routes/device.routes';
 
 export const router = Router();
 
@@ -16,3 +17,4 @@ router.use('/api/statuses', statusRoutes);
 router.use('/api/tickets', ticketRoutes);
 router.use('/api/images', imageRoutes);
 router.use('/api/sites', siteRoutes);
+router.use('/api/devices', deviceRoutes);
