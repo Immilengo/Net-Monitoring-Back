@@ -1228,3 +1228,53 @@
 {"error":"Connection timeout","level":"error","message":"Redis client error","timestamp":"2026-05-12T15:32:21.788Z"}
 {"error":"Connection timeout","level":"error","message":"Redis client error","timestamp":"2026-05-12T15:32:28.816Z"}
 {"error":"Connection timeout","level":"error","message":"Redis client error","timestamp":"2026-05-12T15:32:35.968Z"}
+{"error":"Can't reach database server at `localhost`:`15432`\n\nPlease make sure your database server is running at `localhost`:`15432`.","level":"error","message":"Startup failed while connecting dependencies","timestamp":"2026-06-01T22:36:11.054Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:10.882Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:10.974Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:11.091Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:11.163Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:11.199Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:11.291Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:11.495Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:11.580Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:11.988Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:12.094Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:12.816Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:12.917Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:14.573Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:14.662Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:33.369Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:33.494Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:33.782Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:34.053Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:34.573Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:35.531Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:37.248Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:39.423Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:41.451Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:43.627Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:45.776Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:47.954Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:50.011Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:52.067Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:54.250Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:56.400Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:58.576Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:00.713Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:02.911Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:05.018Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:07.201Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:09.223Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:11.267Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:13.280Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:15.350Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:17.508Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:19.578Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:23.651Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:41.657Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:46:18.987Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:51:11.488Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:53:32.097Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-02T08:26:28.559Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-02T09:31:58.774Z"}
+{"level":"error","message":"\nInvalid `prisma.user.findFirst()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/auth/repository/auth.repository.ts:5:24\n\n  2 \n  3 export class AuthRepository {\n  4   async findUserByEmail(email: string) {\n→ 5     return prisma.user.findFirst(\nCan't reach database server at `localhost`:`5432`\n\nPlease make sure your database server is running at `localhost`:`5432`.","requestId":"8f3f3566-56f3-485a-ad3e-732554183d6e","stack":"PrismaClientInitializationError: \nInvalid `prisma.user.findFirst()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/auth/repository/auth.repository.ts:5:24\n\n  2 \n  3 export class AuthRepository {\n  4   async findUserByEmail(email: string) {\n→ 5     return prisma.user.findFirst(\nCan't reach database server at `localhost`:`5432`\n\nPlease make sure your database server is running at `localhost`:`5432`.\n    at Rn.handleRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:7601)\n    at Rn.handleAndLogRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6754)\n    at /home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:177:3010\n    at async /home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:177:3225\n    at async t._executeRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:177:11403)\n    at async AuthService.login (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/auth/service/auth.service.ts:91:18)\n    at async AuthController.login (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/auth/controller/auth.controller.ts:14:18)","timestamp":"2026-06-07T22:05:49.985Z"}

@@ -5,7 +5,8 @@ import { logger } from '@utils/logger';
 export const redisClient = createClient({
   socket: {
     host: env.REDIS_HOST,
-    port: env.REDIS_PORT
+    port: env.REDIS_PORT,
+    reconnectStrategy: false
   }
 });
 

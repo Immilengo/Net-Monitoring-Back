@@ -913,13 +913,10 @@ var EmailService = class {
 
 // src/infra/database/prisma.ts
 import { PrismaClient } from "@prisma/client";
-import { PrismaPg } from "@prisma/adapter-pg";
 if (!process.env.DATABASE_URL) {
   process.env.DATABASE_URL = databaseUrl;
 }
-var adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL });
 var prisma = new PrismaClient({
-  adapter,
   log: ["warn", "error"]
 });
 
@@ -2283,18 +2280,6 @@ app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use(router);
 app.use(errorMiddleware);
 
-// src/infra/cache/redis.ts
-import { createClient } from "redis";
-var redisClient = createClient({
-  socket: {
-    host: env.REDIS_HOST,
-    port: env.REDIS_PORT
-  }
-});
-redisClient.on("error", (error) => {
-  logger.error({ message: "Redis client error", error: error.message });
-});
-
 // src/modules/auth/service/bootstrap-admin.service.ts
 import bcrypt3 from "bcrypt";
 var bootstrapAdmin = async () => {
@@ -2345,38 +2330,27 @@ var bootstrapAdmin = async () => {
 };
 
 // src/server.ts
-var server = app.listen(env.APP_PORT, async () => {
+var connectDatabaseIfAvailable = async () => {
   try {
-    logger.info({ message: `Startup: ${env.APP_NAME} on port ${env.APP_PORT}` });
     await prisma.$connect();
-    await redisClient.connect();
     await bootstrapAdmin();
-    logger.info({ message: "Dependencies connected successfully" });
+    logger.info({ message: "Database connected and bootstrap completed" });
   } catch (error) {
-    logger.error({
-      message: "Startup failed while connecting dependencies",
+    logger.warn({
+      message: "Database unavailable; API started without persistence-dependent bootstrap",
       error: error instanceof Error ? error.message : String(error)
     });
-    server.close(async () => {
-      try {
-        await prisma.$disconnect();
-      } catch {
-      }
-      if (redisClient.isOpen) {
-        try {
-          await redisClient.disconnect();
-        } catch {
-        }
-      }
-      process.exit(1);
-    });
   }
+};
+var server = app.listen(env.APP_PORT, async () => {
+  logger.info({ message: `Startup: ${env.APP_NAME} on port ${env.APP_PORT}` });
+  await connectDatabaseIfAvailable();
+  logger.info({ message: "HTTP server ready" });
 });
 var shutdown = async (signal) => {
   logger.info({ message: `Graceful shutdown started`, signal });
   server.close(async () => {
     await prisma.$disconnect();
-    if (redisClient.isOpen) await redisClient.disconnect();
     logger.info({ message: "Server closed successfully" });
     process.exit(0);
   });

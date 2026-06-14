@@ -1231,3 +1231,178 @@
 {"error":"Connection timeout","level":"error","message":"Redis client error","timestamp":"2026-05-12T15:32:21.788Z"}
 {"error":"Connection timeout","level":"error","message":"Redis client error","timestamp":"2026-05-12T15:32:28.816Z"}
 {"error":"Connection timeout","level":"error","message":"Redis client error","timestamp":"2026-05-12T15:32:35.968Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 13000","timestamp":"2026-06-01T22:36:10.735Z"}
+{"error":"Can't reach database server at `localhost`:`15432`\n\nPlease make sure your database server is running at `localhost`:`15432`.","level":"error","message":"Startup failed while connecting dependencies","timestamp":"2026-06-01T22:36:11.054Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 13000","timestamp":"2026-06-01T22:37:10.677Z"}
+{"error":"Can't reach database server at `localhost`:`15432`\n\nPlease make sure your database server is running at `localhost`:`15432`.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-01T22:37:10.861Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:10.882Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 13000","timestamp":"2026-06-01T22:37:10.938Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:10.974Z"}
+{"error":"Can't reach database server at `localhost`:`15432`\n\nPlease make sure your database server is running at `localhost`:`15432`.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-01T22:37:11.070Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:11.091Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:11.163Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:11.199Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:11.291Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:11.495Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:11.580Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:11.988Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:12.094Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:12.816Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:12.917Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:14.573Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:14.662Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGTERM","timestamp":"2026-06-01T22:37:16.237Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGTERM","timestamp":"2026-06-01T22:37:16.239Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 13000","timestamp":"2026-06-01T22:37:33.157Z"}
+{"error":"Can't reach database server at `localhost`:`15432`\n\nPlease make sure your database server is running at `localhost`:`15432`.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-01T22:37:33.349Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:33.369Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:33.494Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:33.782Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:34.053Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:34.573Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:35.531Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:37.248Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:39.423Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:41.451Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:43.627Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:45.776Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:47.954Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:50.011Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:52.067Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:54.250Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:56.400Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:37:58.576Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:00.713Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:02.911Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:05.018Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:07.201Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:09.223Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:11.267Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:13.280Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:15.350Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:17.508Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:19.578Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGTERM","timestamp":"2026-06-01T22:38:20.370Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 13000","timestamp":"2026-06-01T22:38:23.493Z"}
+{"error":"Can't reach database server at `localhost`:`15432`\n\nPlease make sure your database server is running at `localhost`:`15432`.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-01T22:38:23.637Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:23.651Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"warn","message":"Redis unavailable; continuing without cache","timestamp":"2026-06-01T22:38:23.653Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-01T22:38:23.654Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGTERM","timestamp":"2026-06-01T22:38:27.588Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 13000","timestamp":"2026-06-01T22:38:41.514Z"}
+{"error":"Can't reach database server at `localhost`:`15432`\n\nPlease make sure your database server is running at `localhost`:`15432`.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-01T22:38:41.644Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:38:41.657Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"warn","message":"Redis unavailable; continuing without cache","timestamp":"2026-06-01T22:38:41.659Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-01T22:38:41.660Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 13000","timestamp":"2026-06-01T22:46:18.734Z"}
+{"error":"Can't reach database server at `localhost`:`15432`\n\nPlease make sure your database server is running at `localhost`:`15432`.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-01T22:46:18.972Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:46:18.987Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"warn","message":"Redis unavailable; continuing without cache","timestamp":"2026-06-01T22:46:18.989Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-01T22:46:18.989Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 13000","timestamp":"2026-06-01T22:51:11.244Z"}
+{"error":"Can't reach database server at `localhost`:`15432`\n\nPlease make sure your database server is running at `localhost`:`15432`.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-01T22:51:11.466Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:51:11.488Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"warn","message":"Redis unavailable; continuing without cache","timestamp":"2026-06-01T22:51:11.490Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-01T22:51:11.491Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 13000","timestamp":"2026-06-01T22:53:31.899Z"}
+{"error":"Database `monitoring_db` does not exist on the database server at `localhost:15432`.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-01T22:53:32.076Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-01T22:53:32.097Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"warn","message":"Redis unavailable; continuing without cache","timestamp":"2026-06-01T22:53:32.099Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-01T22:53:32.099Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 13000","timestamp":"2026-06-02T08:26:28.129Z"}
+{"error":"\nInvalid `prisma.role.upsert()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/auth/service/bootstrap-admin.service.ts:9:23\n\n  6 export const bootstrapAdmin = async () => {\n  7   const roles = ['ADMIN', 'USER', 'MANAGER'];\n  8   for (const role of roles) {\n→ 9     await prisma.role.upsert(\nThe table `public.roles` does not exist in the current database.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-02T08:26:28.533Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-02T08:26:28.559Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"warn","message":"Redis unavailable; continuing without cache","timestamp":"2026-06-02T08:26:28.561Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-02T08:26:28.562Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-02T09:31:58.447Z"}
+{"error":"\nInvalid `prisma.role.upsert()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/auth/service/bootstrap-admin.service.ts:9:23\n\n  6 export const bootstrapAdmin = async () => {\n  7   const roles = ['ADMIN', 'USER', 'MANAGER'];\n  8   for (const role of roles) {\n→ 9     await prisma.role.upsert(\nThe table `public.roles` does not exist in the current database.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-02T09:31:58.752Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"error","message":"Redis client error","timestamp":"2026-06-02T09:31:58.774Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:16379","level":"warn","message":"Redis unavailable; continuing without cache","timestamp":"2026-06-02T09:31:58.776Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-02T09:31:58.777Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGTERM","timestamp":"2026-06-02T09:33:49.292Z"}
+{"level":"info","message":"Server closed successfully","timestamp":"2026-06-02T09:33:49.303Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-02T09:33:57.397Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-02T09:33:57.587Z"}
+{"error":"\nInvalid `prisma.role.upsert()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/auth/service/bootstrap-admin.service.ts:9:23\n\n  6 export const bootstrapAdmin = async () => {\n  7   const roles = ['ADMIN', 'USER', 'MANAGER'];\n  8   for (const role of roles) {\n→ 9     await prisma.role.upsert(\nThe table `public.roles` does not exist in the current database.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-02T09:33:57.784Z"}
+{"error":"\nInvalid `prisma.role.upsert()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/auth/service/bootstrap-admin.service.ts:9:23\n\n  6 export const bootstrapAdmin = async () => {\n  7   const roles = ['ADMIN', 'USER', 'MANAGER'];\n  8   for (const role of roles) {\n→ 9     await prisma.role.upsert(\nThe table `public.roles` does not exist in the current database.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-02T09:33:58.085Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-02T09:34:03.955Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-02T09:34:04.213Z"}
+{"error":"\nInvalid `prisma.role.upsert()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/auth/service/bootstrap-admin.service.ts:9:23\n\n  6 export const bootstrapAdmin = async () => {\n  7   const roles = ['ADMIN', 'USER', 'MANAGER'];\n  8   for (const role of roles) {\n→ 9     await prisma.role.upsert(\nThe table `public.roles` does not exist in the current database.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-02T09:34:04.386Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-02T09:34:04.387Z"}
+{"error":"\nInvalid `prisma.role.upsert()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/auth/service/bootstrap-admin.service.ts:9:23\n\n  6 export const bootstrapAdmin = async () => {\n  7   const roles = ['ADMIN', 'USER', 'MANAGER'];\n  8   for (const role of roles) {\n→ 9     await prisma.role.upsert(\nThe table `public.roles` does not exist in the current database.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-02T09:34:04.555Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-02T09:34:04.556Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGTERM","timestamp":"2026-06-02T09:34:30.316Z"}
+{"level":"info","message":"Server closed successfully","timestamp":"2026-06-02T09:34:30.330Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-02T09:34:33.175Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-02T09:34:33.200Z"}
+{"error":"\nInvalid `prisma.role.upsert()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/auth/service/bootstrap-admin.service.ts:9:23\n\n  6 export const bootstrapAdmin = async () => {\n  7   const roles = ['ADMIN', 'USER', 'MANAGER'];\n  8   for (const role of roles) {\n→ 9     await prisma.role.upsert(\nThe table `public.roles` does not exist in the current database.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-02T09:34:33.525Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-02T09:34:33.526Z"}
+{"error":"\nInvalid `prisma.role.upsert()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/auth/service/bootstrap-admin.service.ts:9:23\n\n  6 export const bootstrapAdmin = async () => {\n  7   const roles = ['ADMIN', 'USER', 'MANAGER'];\n  8   for (const role of roles) {\n→ 9     await prisma.role.upsert(\nThe table `public.roles` does not exist in the current database.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-02T09:34:33.559Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-02T09:34:33.560Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-02T09:35:03.547Z"}
+{"error":"\nInvalid `prisma.role.upsert()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/auth/service/bootstrap-admin.service.ts:9:23\n\n  6 export const bootstrapAdmin = async () => {\n  7   const roles = ['ADMIN', 'USER', 'MANAGER'];\n  8   for (const role of roles) {\n→ 9     await prisma.role.upsert(\nThe table `public.roles` does not exist in the current database.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-02T09:35:03.948Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-02T09:35:03.948Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-07T21:46:59.613Z"}
+{"error":"Can't reach database server at `localhost`:`15432`\n\nPlease make sure your database server is running at `localhost`:`15432`.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-07T21:47:02.589Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-07T21:47:02.590Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGINT","timestamp":"2026-06-07T21:54:04.458Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-07T21:54:09.636Z"}
+{"error":"Can't reach database server at `localhost`:`15432`\n\nPlease make sure your database server is running at `localhost`:`15432`.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-07T21:54:12.228Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-07T21:54:12.229Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGINT","timestamp":"2026-06-07T21:56:44.138Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-07T21:56:50.393Z"}
+{"error":"Can't reach database server at `localhost`:`15432`\n\nPlease make sure your database server is running at `localhost`:`15432`.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-07T21:56:50.524Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-07T21:56:50.525Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGINT","timestamp":"2026-06-07T21:57:47.051Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-07T21:58:56.175Z"}
+{"error":"Can't reach database server at `localhost`:`5432`\n\nPlease make sure your database server is running at `localhost`:`5432`.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-07T21:58:56.765Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-07T21:58:56.766Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"ed804350-219d-40ca-a388-4a54777224ee","statusCode":301,"url":"/docs"},"timestamp":"2026-06-07T22:00:01.311Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"44bd69c8-6827-4684-8689-cb03c0e7575b","statusCode":200,"url":"/docs/"},"timestamp":"2026-06-07T22:00:01.326Z"}
+{"level":"info","message":{"durationMs":2,"method":"GET","requestId":"b981beec-45a2-42ca-814a-3e44c3950afe","statusCode":200,"url":"/docs/swagger-ui-init.js"},"timestamp":"2026-06-07T22:00:01.470Z"}
+{"level":"info","message":{"durationMs":169,"method":"GET","requestId":"88ae0ae9-5121-4f65-889b-1d2d31398173","statusCode":200,"url":"/docs/swagger-ui.css"},"timestamp":"2026-06-07T22:00:01.626Z"}
+{"level":"info","message":{"durationMs":449,"method":"GET","requestId":"5579ed7d-d389-486a-9ea0-ec25360eace5","statusCode":200,"url":"/docs/swagger-ui-standalone-preset.js"},"timestamp":"2026-06-07T22:00:01.915Z"}
+{"level":"info","message":{"durationMs":1438,"method":"GET","requestId":"e67e5a46-b3cf-42ee-b561-b2b0e2789379","statusCode":200,"url":"/docs/swagger-ui-bundle.js"},"timestamp":"2026-06-07T22:00:02.902Z"}
+{"level":"info","message":{"durationMs":200,"method":"GET","requestId":"60ecaff6-9db7-420a-b925-4dfa6479dc0b","statusCode":200,"url":"/docs/favicon-32x32.png"},"timestamp":"2026-06-07T22:00:04.249Z"}
+{"level":"info","message":{"durationMs":3,"method":"GET","requestId":"508d0f9e-51bf-483f-bef3-5e61fc4af06c","statusCode":200,"url":"/health"},"timestamp":"2026-06-07T22:04:08.120Z"}
+{"errors":[],"level":"warn","message":"Missing authorization header","requestId":"e39a7bc8-c441-4783-badb-ae301600a50c","timestamp":"2026-06-07T22:04:28.209Z"}
+{"level":"info","message":{"durationMs":4,"method":"GET","requestId":"e39a7bc8-c441-4783-badb-ae301600a50c","statusCode":401,"url":"/api/users?page=0&size=10&sortBy=createdAt&direction=desc&recordStatus=ACTIVE"},"timestamp":"2026-06-07T22:04:28.211Z"}
+{"errors":[],"level":"warn","message":"Missing authorization header","requestId":"f35c4cff-d711-4d60-a24a-e390b4886ad6","timestamp":"2026-06-07T22:04:46.882Z"}
+{"level":"info","message":{"durationMs":3,"method":"GET","requestId":"f35c4cff-d711-4d60-a24a-e390b4886ad6","statusCode":401,"url":"/api/tickets?page=0&size=10&sortBy=createdAt&direction=desc&recordStatus=ACTIVE"},"timestamp":"2026-06-07T22:04:46.884Z"}
+{"level":"error","message":"\nInvalid `prisma.user.findFirst()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/auth/repository/auth.repository.ts:5:24\n\n  2 \n  3 export class AuthRepository {\n  4   async findUserByEmail(email: string) {\n→ 5     return prisma.user.findFirst(\nCan't reach database server at `localhost`:`5432`\n\nPlease make sure your database server is running at `localhost`:`5432`.","requestId":"8f3f3566-56f3-485a-ad3e-732554183d6e","stack":"PrismaClientInitializationError: \nInvalid `prisma.user.findFirst()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/auth/repository/auth.repository.ts:5:24\n\n  2 \n  3 export class AuthRepository {\n  4   async findUserByEmail(email: string) {\n→ 5     return prisma.user.findFirst(\nCan't reach database server at `localhost`:`5432`\n\nPlease make sure your database server is running at `localhost`:`5432`.\n    at Rn.handleRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:7601)\n    at Rn.handleAndLogRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6754)\n    at /home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:177:3010\n    at async /home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:177:3225\n    at async t._executeRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:177:11403)\n    at async AuthService.login (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/auth/service/auth.service.ts:91:18)\n    at async AuthController.login (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/auth/controller/auth.controller.ts:14:18)","timestamp":"2026-06-07T22:05:49.985Z"}
+{"level":"info","message":{"durationMs":139,"method":"POST","requestId":"8f3f3566-56f3-485a-ad3e-732554183d6e","statusCode":500,"url":"/public/auth/login"},"timestamp":"2026-06-07T22:05:49.987Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGINT","timestamp":"2026-06-07T22:08:06.633Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-07T22:08:11.283Z"}
+{"error":"Can't reach database server at `monitoring_db`:`5432`\n\nPlease make sure your database server is running at `monitoring_db`:`5432`.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-07T22:08:11.463Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-07T22:08:11.464Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-07T23:11:40.435Z"}
+{"error":"Can't reach database server at `localhost`:`5432`\n\nPlease make sure your database server is running at `localhost`:`5432`.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-07T23:11:40.573Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-07T23:11:40.574Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-08T01:16:56.702Z"}
+{"error":"Database `monitoring_db` does not exist on the database server at `localhost:5432`.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-08T01:16:58.503Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-08T01:16:58.504Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-08T01:18:46.141Z"}
+{"error":"\nInvalid `prisma.role.upsert()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/auth/service/bootstrap-admin.service.ts:9:23\n\n  6 export const bootstrapAdmin = async () => {\n  7   const roles = ['ADMIN', 'USER', 'MANAGER'];\n  8   for (const role of roles) {\n→ 9     await prisma.role.upsert(\nThe table `public.roles` does not exist in the current database.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-08T01:18:46.738Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-08T01:18:46.739Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-08T01:34:53.729Z"}
+{"error":"\nInvalid `prisma.role.upsert()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/auth/service/bootstrap-admin.service.ts:9:23\n\n  6 export const bootstrapAdmin = async () => {\n  7   const roles = ['ADMIN', 'USER', 'MANAGER'];\n  8   for (const role of roles) {\n→ 9     await prisma.role.upsert(\nThe table `public.roles` does not exist in the current database.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-08T01:34:54.212Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-08T01:34:54.212Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGTERM","timestamp":"2026-06-08T01:35:05.835Z"}
+{"level":"info","message":"Server closed successfully","timestamp":"2026-06-08T01:35:05.844Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-08T01:35:07.394Z"}
+{"error":"\nInvalid `prisma.role.upsert()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/auth/service/bootstrap-admin.service.ts:9:23\n\n  6 export const bootstrapAdmin = async () => {\n  7   const roles = ['ADMIN', 'USER', 'MANAGER'];\n  8   for (const role of roles) {\n→ 9     await prisma.role.upsert(\nThe table `public.roles` does not exist in the current database.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-08T01:35:07.671Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-08T01:35:07.671Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-08T01:50:03.059Z"}
+{"level":"info","message":"Default admin checked/created successfully","timestamp":"2026-06-08T01:50:03.947Z"}
+{"level":"info","message":"Database connected and bootstrap completed","timestamp":"2026-06-08T01:50:03.948Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-08T01:50:03.949Z"}
+{"level":"info","message":{"durationMs":16,"method":"GET","requestId":"8f073045-bb40-476f-9473-8edcae5a65d6","statusCode":304,"url":"/docs/"},"timestamp":"2026-06-08T01:50:17.685Z"}
+{"level":"info","message":{"durationMs":4,"method":"GET","requestId":"bfa65cf1-8af6-4a87-bed6-05421775c5c1","statusCode":304,"url":"/docs/swagger-ui-standalone-preset.js"},"timestamp":"2026-06-08T01:50:26.607Z"}
+{"level":"info","message":{"durationMs":15,"method":"GET","requestId":"8812816a-c1be-404a-b254-3e686403588d","statusCode":304,"url":"/docs/swagger-ui-bundle.js"},"timestamp":"2026-06-08T01:50:26.690Z"}
+{"level":"info","message":{"durationMs":2,"method":"GET","requestId":"4890bd7e-ad69-4124-a821-d0b0846a69b3","statusCode":304,"url":"/docs/swagger-ui.css"},"timestamp":"2026-06-08T01:50:26.713Z"}
+{"level":"info","message":{"durationMs":3,"method":"GET","requestId":"aa7f37aa-9012-410a-b0fa-772e35cb4f03","statusCode":304,"url":"/docs/swagger-ui-init.js"},"timestamp":"2026-06-08T01:50:26.942Z"}
+{"level":"info","message":{"durationMs":115,"method":"GET","requestId":"a420d1b4-ee03-43d2-96fa-bf41f468af85","statusCode":304,"url":"/docs/favicon-32x32.png"},"timestamp":"2026-06-08T01:50:39.477Z"}
+{"level":"info","message":{"durationMs":494,"method":"POST","requestId":"0c0dc0b8-3177-4d55-b070-fbf6547a77f9","statusCode":200,"url":"/public/auth/login"},"timestamp":"2026-06-08T01:51:19.550Z"}
+{"level":"info","message":{"durationMs":136,"method":"GET","requestId":"9dab19aa-b8ee-46d0-9d93-633f264ae531","statusCode":200,"url":"/api/users?page=0&size=10&sortBy=createdAt&direction=desc&recordStatus=ACTIVE"},"timestamp":"2026-06-08T01:51:56.367Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"7d72f18d-0349-4275-baa8-3db2f450d52d","statusCode":200,"url":"/api/users/me"},"timestamp":"2026-06-08T01:52:12.217Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"ab114643-8e20-42ef-8a70-877eb272000b","statusCode":200,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-08T01:52:35.663Z"}

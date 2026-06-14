@@ -4,6 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 enum TokenType {
@@ -120,17 +121,9 @@ model UserRole {
   roleId    String   @db.Uuid
   createdAt DateTime @default(now())
 
-  user User @relation(
-    fields: [userId],
-    references: [id],
-    onDelete: Cascade
-  )
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  role Role @relation(
-    fields: [roleId],
-    references: [id],
-    onDelete: Cascade
-  )
+  role Role @relation(fields: [roleId], references: [id], onDelete: Cascade)
 
   @@id([userId, roleId])
 
@@ -148,11 +141,7 @@ model RefreshToken {
 
   createdAt DateTime @default(now())
 
-  user User @relation(
-    fields: [userId],
-    references: [id],
-    onDelete: Cascade
-  )
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId, revoked, deleted])
 
@@ -171,11 +160,7 @@ model AuthToken {
 
   createdAt DateTime  @default(now())
 
-  user User @relation(
-    fields: [userId],
-    references: [id],
-    onDelete: Cascade
-  )
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId, type])
 
@@ -209,11 +194,7 @@ model Ticket {
 
   requesterId String       @db.Uuid
 
-  requester   User @relation(
-    fields: [requesterId],
-    references: [id],
-    onDelete: Cascade
-  )
+  requester   User @relation(fields: [requesterId], references: [id], onDelete: Cascade)
 
   deleted     Boolean      @default(false)
 
@@ -265,11 +246,7 @@ model AuditLog {
 
   createdAt  DateTime @default(now())
 
-  user User? @relation(
-    fields: [userId],
-    references: [id],
-    onDelete: SetNull
-  )
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
 
   @@map("audit_logs")
 }
@@ -316,16 +293,12 @@ model Device {
   createdAt     DateTime           @default(now())
   updatedAt     DateTime           @updatedAt
 
-  site Site? @relation(
-    fields: [siteId],
-    references: [id]
-  )
+  site Site? @relation(fields: [siteId], references: [id])
 
   logs      MonitoringLog[]
   alerts    Alert[]
   services  ServiceMonitor[]
   metrics DeviceMetric[]
-  groups DeviceGroupItem[]
   groups DeviceGroupItem[]
 
 
@@ -353,17 +326,9 @@ model DeviceGroupItem {
   deviceId String @db.Uuid
   groupId  String @db.Uuid
 
-  device Device @relation(
-    fields: [deviceId],
-    references: [id],
-    onDelete: Cascade
-  )
+  device Device @relation(fields: [deviceId], references: [id], onDelete: Cascade)
 
-  group DeviceGroup @relation(
-    fields: [groupId],
-    references: [id],
-    onDelete: Cascade
-  )
+  group DeviceGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
 
   @@id([deviceId, groupId])
 
@@ -384,11 +349,7 @@ model DeviceMetric {
 
   collectedAt DateTime @default(now())
 
-  device Device @relation(
-    fields: [deviceId],
-    references: [id],
-    onDelete: Cascade
-  )
+  device Device @relation(fields: [deviceId], references: [id], onDelete: Cascade)
 
   @@index([deviceId])
   @@index([collectedAt])
@@ -411,11 +372,7 @@ model MonitoringLog {
 
   checkedAt    DateTime           @default(now())
 
-  device Device @relation(
-    fields: [deviceId],
-    references: [id],
-    onDelete: Cascade
-  )
+  device Device @relation(fields: [deviceId], references: [id], onDelete: Cascade)
 
   @@index([deviceId])
   @@index([checkedAt])
@@ -442,11 +399,7 @@ model Alert {
 
   resolvedAt    DateTime?
 
-  device Device @relation(
-    fields: [deviceId],
-    references: [id],
-    onDelete: Cascade
-  )
+  device Device @relation(fields: [deviceId], references: [id], onDelete: Cascade)
 
   @@index([deviceId])
   @@index([level])
@@ -474,11 +427,7 @@ model ServiceMonitor {
   createdAt       DateTime    @default(now())
   updatedAt       DateTime    @updatedAt
 
-  device Device @relation(
-    fields: [deviceId],
-    references: [id],
-    onDelete: Cascade
-  )
+  device Device @relation(fields: [deviceId], references: [id], onDelete: Cascade)
 
   @@index([deviceId])
 

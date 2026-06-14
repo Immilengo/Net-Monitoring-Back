@@ -5,41 +5,43 @@ import { redisClient } from '@infra/cache/redis';
 import { logger } from '@utils/logger';
 import { bootstrapAdmin } from '@modules/auth/service/bootstrap-admin.service';
 
-const server = app.listen(env.APP_PORT, async () => {
+const connectDatabaseIfAvailable = async () => {
   try {
-    logger.info({ message: `Startup: ${env.APP_NAME} on port ${env.APP_PORT}` });
     await prisma.$connect();
-    await redisClient.connect();
     await bootstrapAdmin();
-    logger.info({ message: 'Dependencies connected successfully' });
+    logger.info({ message: 'Database connected and bootstrap completed' });
   } catch (error) {
-    logger.error({
-      message: 'Startup failed while connecting dependencies',
+    logger.warn({
+      message: 'Database unavailable; API started without persistence-dependent bootstrap',
       error: error instanceof Error ? error.message : String(error)
     });
-    server.close(async () => {
-      try {
-        await prisma.$disconnect();
-      } catch {
-        // ignore shutdown errors
-      }
-      if (redisClient.isOpen) {
-        try {
-          await redisClient.disconnect();
-        } catch {
-          // ignore shutdown errors
-        }
-      }
-      process.exit(1);
+  }
+};
+/*
+const connectRedisIfAvailable = async () => {
+  try {
+    await redisClient.connect();
+    logger.info({ message: 'Redis connected successfully' });
+  } catch (error) {
+    logger.warn({
+      message: 'Redis unavailable; continuing without cache',
+      error: error instanceof Error ? error.message : String(error)
     });
   }
+};
+*/
+const server = app.listen(env.APP_PORT, async () => {
+  logger.info({ message: `Startup: ${env.APP_NAME} on port ${env.APP_PORT}` });
+  await connectDatabaseIfAvailable();
+ // await connectRedisIfAvailable();
+  logger.info({ message: 'HTTP server ready' });
 });
 
 const shutdown = async (signal: string) => {
   logger.info({ message: `Graceful shutdown started`, signal });
   server.close(async () => {
     await prisma.$disconnect();
-    if (redisClient.isOpen) await redisClient.disconnect();
+   // if (redisClient.isOpen) await redisClient.disconnect();
     logger.info({ message: 'Server closed successfully' });
     process.exit(0);
   });
