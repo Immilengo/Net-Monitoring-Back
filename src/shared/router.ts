@@ -10,6 +10,7 @@ import { deviceRoutes } from '@modules/devices/routes/device.routes';
 import { serviceMonitorRoutes } from '@modules/service-monitors/routes/service-monitor.routes';
 import { alertRoutes } from '@modules/alerts/routes/alert.routes';
 import { dashboardRoutes } from '@modules/dashboard/routes/dashboard.routes';
+import { monitoringLogRoutes } from '@modules/monitoring-logs/routes/monitoring-log.routes';
 
 export const router = Router();
 
@@ -24,3 +25,4 @@ router.use('/api/devices', deviceRoutes);
 router.use('/api/service-monitors', serviceMonitorRoutes);
 router.use('/api/alerts', alertRoutes);
 router.use('/api/dashboard', dashboardRoutes);
+router.use('/api/monitoring-logs', monitoringLogRoutes);

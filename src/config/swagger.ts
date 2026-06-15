@@ -2,6 +2,11 @@ import swaggerJsdoc from 'swagger-jsdoc';
 
 const bearerSecurity = [{ bearerAuth: [] }];
 
+apis: [
+  './src/docs/*.ts',        // <- adicionar esta linha se ainda não existe
+  './src/modules/**/routes/*.ts'
+]
+
 const json = (schema: Record<string, unknown>) => ({
   content: {
     'application/json': {
