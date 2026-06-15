@@ -4,11 +4,25 @@ import { prisma } from '@infra/database/prisma';
 import { redisClient } from '@infra/cache/redis';
 import { logger } from '@utils/logger';
 import { bootstrapAdmin } from '@modules/auth/service/bootstrap-admin.service';
+import { startMonitoringScheduler, stopMonitoringScheduler } from '@modules/monitoring/scheduler/monitoring.scheduler';
 
 const connectDatabaseIfAvailable = async () => {
   try {
     await prisma.$connect();
     await bootstrapAdmin();
+    const connectDatabaseIfAvailable = async () => {
+    try {
+      await prisma.$connect();
+      await bootstrapAdmin();
+      startMonitoringScheduler(); // <- adicionar aqui
+      logger.info({ message: 'Database connected and bootstrap completed' });
+    } catch (error) {
+      logger.warn({
+        message: 'Database unavailable; API started without persistence-dependent bootstrap',
+        error: error instanceof Error ? error.message : String(error)
+      });
+    }
+  };
     logger.info({ message: 'Database connected and bootstrap completed' });
   } catch (error) {
     logger.warn({
@@ -40,10 +54,10 @@ const server = app.listen(env.APP_PORT, async () => {
 const shutdown = async (signal: string) => {
   logger.info({ message: `Graceful shutdown started`, signal });
   server.close(async () => {
-    await prisma.$disconnect();
-   // if (redisClient.isOpen) await redisClient.disconnect();
-    logger.info({ message: 'Server closed successfully' });
-    process.exit(0);
+  stopMonitoringScheduler(); // <- adicionar aqui
+  await prisma.$disconnect();
+  logger.info({ message: 'Server closed successfully' });
+  process.exit(0);
   });
 };
 

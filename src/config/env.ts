@@ -28,7 +28,12 @@ const envSchema = z.object({
   MAIL_FROM: z.string().default('noreply@company.com'),
   CORS_ALLOWED_ORIGINS: z.string().default('*'),
   DEFAULT_ADMIN_EMAIL: z.string().email().default('admin@company.com'),
-  DEFAULT_ADMIN_PASSWORD: z.string().min(8).default('Admin123@')
+  DEFAULT_ADMIN_PASSWORD: z.string().min(8).default('Admin123@'),
+  MONITOR_CRON_EXPRESSION: z.string().default('*/2 * * * *'),
+  MONITOR_ENABLED: z
+    .string()
+    .transform((v) => v === 'true')
+    .default(true)
 });
 
 const normalizedEnv = {
