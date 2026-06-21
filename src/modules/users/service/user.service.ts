@@ -32,12 +32,13 @@ export class UserService {
     const existing = await this.repository.findByEmail(input.email);
     if (existing && !existing.deleted) throw new AppError('Email already registered', 409);
 
-    const userRole = await this.roleRepository.findByName('USER');
-    if (!userRole) throw new AppError('Default role not configured', 500);
+    const requestedRole = input.roleName?.trim() || 'USER';
+    const userRole = await this.roleRepository.findByName(requestedRole);
+    if (!userRole) throw new AppError(`Role not found: ${requestedRole}`, 400);
 
     const status = input.statusId
-  ? await this.statusService.get(input.statusId)
-  : await this.statusService.getByCode('ACTIVE');
+      ? await this.statusService.get(input.statusId)
+      : await this.statusService.getByCode('ACTIVE');
     const hashed = await bcrypt.hash(input.password, 12);
 
     const user = await this.repository.create({

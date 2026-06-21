@@ -4,4 +4,5 @@ export interface CreateUserDto {
   password: string;
   phone?: string;
   statusId?: string;
+  roleName?: string;
 }
