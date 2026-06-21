@@ -2070,3 +2070,7 @@
 {"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T16:16:00.033Z"}
 {"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T16:16:05.234Z"}
 {"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T16:16:05.234Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T16:18:00.045Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T16:18:00.051Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T16:18:04.621Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T16:18:04.622Z"}
