@@ -1,51 +1,14 @@
+import {
+  env,
+  prisma
+} from "./chunk-SVULG3ZS.mjs";
+
 // src/infra/http/app.ts
 import cors from "cors";
 import express from "express";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import swaggerUi from "swagger-ui-express";
-
-// src/config/env.ts
-import dotenv from "dotenv";
-import { z } from "zod";
-dotenv.config();
-var envSchema = z.object({
-  NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
-  APP_NAME: z.string().default("Mayongi Enterprise Backend"),
-  APP_PORT: z.coerce.number().int().positive().default(3e3),
-  APP_VERSION: z.string().default("1.0.0"),
-  APP_PUBLIC_BASE_URL: z.string().url().default("http://localhost:3000"),
-  JWT_SECRET: z.string().min(16),
-  JWT_EXPIRATION: z.string().default("3600000"),
-  JWT_REFRESH_EXPIRATION: z.string().default("86400000"),
-  JWT_EMAIL_VERIFICATION_EXPIRATION: z.string().default("1d"),
-  JWT_RESET_PASSWORD_EXPIRATION: z.string().default("1h"),
-  DB_HOST: z.string(),
-  DB_PORT: z.coerce.number().int().positive(),
-  DB_NAME: z.string(),
-  DB_USER: z.string(),
-  DB_PASSWORD: z.string(),
-  REDIS_HOST: z.string(),
-  REDIS_PORT: z.coerce.number().int().positive(),
-  MAIL_HOST: z.string(),
-  MAIL_PORT: z.coerce.number().int().positive(),
-  MAIL_USERNAME: z.string().default(""),
-  MAIL_PASSWORD: z.string().default(""),
-  MAIL_FROM: z.string().default("noreply@company.com"),
-  CORS_ALLOWED_ORIGINS: z.string().default("*"),
-  DEFAULT_ADMIN_EMAIL: z.string().email().default("admin@company.com"),
-  DEFAULT_ADMIN_PASSWORD: z.string().min(8).default("Admin123@")
-});
-var normalizedEnv = {
-  ...process.env,
-  MAIL_USERNAME: process.env.MAIL_USERNAME ?? process.env.MAIL_USER ?? ""
-};
-var parsed = envSchema.safeParse(normalizedEnv);
-if (!parsed.success) {
-  throw new Error(`Environment validation error: ${parsed.error.message}`);
-}
-var env = parsed.data;
-var databaseUrl = `postgresql://${env.DB_USER}:${env.DB_PASSWORD}@${env.DB_HOST}:${env.DB_PORT}/${env.DB_NAME}?schema=public`;
 
 // src/config/swagger.ts
 import swaggerJsdoc from "swagger-jsdoc";
@@ -772,7 +735,7 @@ var swaggerSpec = swaggerJsdoc({
       }
     }
   },
-  apis: []
+  apis: ["./src/docs/*.ts", "./src/modules/**/routes/*.ts"]
 });
 
 // src/errors/app-error.ts
@@ -879,7 +842,7 @@ var sanitizeMiddleware = (req, _res, next) => {
 };
 
 // src/shared/router.ts
-import { Router as Router7 } from "express";
+import { Router as Router13 } from "express";
 
 // src/modules/auth/routes/auth.routes.ts
 import { Router } from "express";
@@ -910,15 +873,6 @@ var EmailService = class {
     });
   }
 };
-
-// src/infra/database/prisma.ts
-import { PrismaClient } from "@prisma/client";
-if (!process.env.DATABASE_URL) {
-  process.env.DATABASE_URL = databaseUrl;
-}
-var prisma = new PrismaClient({
-  log: ["warn", "error"]
-});
 
 // src/modules/audit/repository/audit.repository.ts
 var AuditRepository = class {
@@ -1265,41 +1219,39 @@ var AuthController = class {
 };
 
 // src/middlewares/validation.middleware.ts
-var validationMiddleware = (schema) => {
-  return (req, _res, next) => {
-    const result = schema.safeParse(req.body);
-    if (!result.success) {
-      throw new AppError("Validation error", 422, result.error.issues);
-    }
-    req.body = result.data;
-    next();
-  };
+var validationMiddleware = (schema, source = "body") => (req, _res, next) => {
+  const result = schema.safeParse(source === "query" ? req.query : req.body);
+  if (!result.success) {
+    const messages = result.error.errors.map((e) => e.message).join(", ");
+    throw new AppError(messages, 400);
+  }
+  next();
 };
 
 // src/modules/auth/validator/auth.validator.ts
-import { z as z2 } from "zod";
-var registerSchema = z2.object({
-  fullName: z2.string().min(3),
-  email: z2.string().email(),
-  password: z2.string().min(8),
-  phone: z2.string().optional()
+import { z } from "zod";
+var registerSchema = z.object({
+  fullName: z.string().min(3),
+  email: z.string().email(),
+  password: z.string().min(8),
+  phone: z.string().optional()
 });
-var loginSchema = z2.object({
-  email: z2.string().email(),
-  password: z2.string().min(8)
+var loginSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(8)
 });
-var refreshSchema = z2.object({
-  refreshToken: z2.string().min(10)
+var refreshSchema = z.object({
+  refreshToken: z.string().min(10)
 });
-var forgotPasswordSchema = z2.object({
-  email: z2.string().email()
+var forgotPasswordSchema = z.object({
+  email: z.string().email()
 });
-var resetPasswordSchema = z2.object({
-  token: z2.string().min(10),
-  newPassword: z2.string().min(8)
+var resetPasswordSchema = z.object({
+  token: z.string().min(10),
+  newPassword: z.string().min(8)
 });
-var resendVerificationEmailSchema = z2.object({
-  email: z2.string().email()
+var resendVerificationEmailSchema = z.object({
+  email: z.string().email()
 });
 
 // src/utils/async-handler.ts
@@ -1794,30 +1746,30 @@ var rolesMiddleware = (roles) => {
 };
 
 // src/modules/users/validator/user.validator.ts
-import { z as z3 } from "zod";
-var createUserSchema = z3.object({
-  fullName: z3.string().min(3),
-  email: z3.string().email(),
-  password: z3.string().min(8),
-  phone: z3.string().optional(),
-  statusId: z3.string().uuid().optional()
+import { z as z2 } from "zod";
+var createUserSchema = z2.object({
+  fullName: z2.string().min(3),
+  email: z2.string().email(),
+  password: z2.string().min(8),
+  phone: z2.string().optional(),
+  statusId: z2.string().uuid().optional()
 });
-var updateUserSchema = z3.object({
-  fullName: z3.string().min(3).optional(),
-  email: z3.string().email().optional(),
-  phone: z3.string().optional(),
-  statusId: z3.string().uuid().optional(),
-  active: z3.boolean().optional()
+var updateUserSchema = z2.object({
+  fullName: z2.string().min(3).optional(),
+  email: z2.string().email().optional(),
+  phone: z2.string().optional(),
+  statusId: z2.string().uuid().optional(),
+  active: z2.boolean().optional()
 }).refine((obj) => Object.keys(obj).length > 0, { message: "At least one field must be sent" });
-var addUserRoleSchema = z3.object({
-  roleName: z3.string().min(1)
+var addUserRoleSchema = z2.object({
+  roleName: z2.string().min(1)
 });
-var profileImageSchema = z3.object({
-  url: z3.string().url(),
-  fileName: z3.string().optional(),
-  contentType: z3.string().optional(),
-  sizeBytes: z3.number().int().positive().optional(),
-  sortOrder: z3.number().int().optional()
+var profileImageSchema = z2.object({
+  url: z2.string().url(),
+  fileName: z2.string().optional(),
+  contentType: z2.string().optional(),
+  sizeBytes: z2.number().int().positive().optional(),
+  sortOrder: z2.number().int().optional()
 });
 
 // src/modules/users/routes/user.routes.ts
@@ -1909,15 +1861,15 @@ var RoleController = class {
 };
 
 // src/modules/roles/validator/role.validator.ts
-import { z as z4 } from "zod";
-var createRoleSchema = z4.object({
-  name: z4.string().min(1),
-  description: z4.string().optional()
+import { z as z3 } from "zod";
+var createRoleSchema = z3.object({
+  name: z3.string().min(1),
+  description: z3.string().optional()
 });
-var patchRoleSchema = z4.object({
-  name: z4.string().min(1).optional(),
-  description: z4.string().nullable().optional(),
-  active: z4.boolean().optional()
+var patchRoleSchema = z3.object({
+  name: z3.string().min(1).optional(),
+  description: z3.string().nullable().optional(),
+  active: z3.boolean().optional()
 }).refine((obj) => Object.keys(obj).length > 0, { message: "At least one field must be sent" });
 
 // src/modules/roles/routes/role.routes.ts
@@ -1965,17 +1917,17 @@ var StatusController = class {
 };
 
 // src/modules/statuses/validator/status.validator.ts
-import { z as z5 } from "zod";
-var createStatusSchema = z5.object({
-  code: z5.string().min(1),
-  name: z5.string().min(1),
-  description: z5.string().optional()
+import { z as z4 } from "zod";
+var createStatusSchema = z4.object({
+  code: z4.string().min(1),
+  name: z4.string().min(1),
+  description: z4.string().optional()
 });
-var patchStatusSchema = z5.object({
-  code: z5.string().min(1).optional(),
-  name: z5.string().min(1).optional(),
-  description: z5.string().nullable().optional(),
-  active: z5.boolean().optional()
+var patchStatusSchema = z4.object({
+  code: z4.string().min(1).optional(),
+  name: z4.string().min(1).optional(),
+  description: z4.string().nullable().optional(),
+  active: z4.boolean().optional()
 }).refine((obj) => Object.keys(obj).length > 0, { message: "At least one field must be sent" });
 
 // src/modules/statuses/routes/status.routes.ts
@@ -2157,17 +2109,17 @@ var TicketController = class {
 };
 
 // src/modules/tickets/validator/ticket.validator.ts
-import { z as z6 } from "zod";
-var createTicketSchema = z6.object({
-  subject: z6.string().min(1),
-  description: z6.string().min(1)
+import { z as z5 } from "zod";
+var createTicketSchema = z5.object({
+  subject: z5.string().min(1),
+  description: z5.string().min(1)
 });
-var patchTicketSchema = z6.object({
-  subject: z6.string().min(1).optional(),
-  description: z6.string().min(1).optional()
+var patchTicketSchema = z5.object({
+  subject: z5.string().min(1).optional(),
+  description: z5.string().min(1).optional()
 }).refine((obj) => Object.keys(obj).length > 0, { message: "At least one field must be sent" });
-var patchTicketStatusSchema = z6.object({
-  status: z6.enum(["PENDENTE", "PROCESSANDO", "RESOLVIDO", "FECHADO"])
+var patchTicketStatusSchema = z5.object({
+  status: z5.enum(["PENDENTE", "PROCESSANDO", "RESOLVIDO", "FECHADO"])
 });
 
 // src/modules/tickets/routes/ticket.routes.ts
@@ -2212,14 +2164,14 @@ var ImageController = class {
 };
 
 // src/modules/images/validator/image.validator.ts
-import { z as z7 } from "zod";
-var createImageSchema = z7.object({
-  url: z7.string().url(),
-  fileName: z7.string().min(1),
-  contentType: z7.string().min(1),
-  sizeBytes: z7.number().int().positive(),
-  primaryImage: z7.boolean().optional(),
-  sortOrder: z7.number().int().optional()
+import { z as z6 } from "zod";
+var createImageSchema = z6.object({
+  url: z6.string().url(),
+  fileName: z6.string().min(1),
+  contentType: z6.string().min(1),
+  sizeBytes: z6.number().int().positive(),
+  primaryImage: z6.boolean().optional(),
+  sortOrder: z6.number().int().optional()
 });
 
 // src/modules/images/routes/image.routes.ts
@@ -2232,14 +2184,1660 @@ imageRoutes.patch("/:ownerType/:ownerId/:imageId/primary", rolesMiddleware(["ADM
 imageRoutes.patch("/:imageId/status", rolesMiddleware(["ADMIN", "MANAGER"]), asyncHandler(controller6.patchStatus.bind(controller6)));
 imageRoutes.delete("/:imageId", rolesMiddleware(["ADMIN", "MANAGER"]), asyncHandler(controller6.remove.bind(controller6)));
 
+// src/modules/sites/routes/site.routes.ts
+import { Router as Router7 } from "express";
+
+// src/modules/sites/mapper/site.mapper.ts
+var toSiteOutput = (site) => ({
+  id: site.id,
+  name: site.name,
+  address: site.address,
+  city: site.city,
+  country: site.country,
+  description: site.description,
+  deleted: site.deleted,
+  createdAt: site.createdAt,
+  updatedAt: site.updatedAt
+});
+
+// src/modules/sites/repository/site.repository.ts
+var SiteRepository = class {
+  async create(data) {
+    return prisma.site.create({ data });
+  }
+  async findById(id) {
+    return prisma.site.findUnique({ where: { id } });
+  }
+  async findByName(name) {
+    return prisma.site.findFirst({ where: { name, deleted: false } });
+  }
+  async findMany(params) {
+    const where = {
+      ...params.recordStatus === "ALL" ? {} : { deleted: params.recordStatus === "INACTIVE" },
+      ...params.search ? {
+        OR: [
+          { name: { contains: params.search, mode: "insensitive" } },
+          { city: { contains: params.search, mode: "insensitive" } },
+          { country: { contains: params.search, mode: "insensitive" } }
+        ]
+      } : {}
+    };
+    const [items, total] = await Promise.all([
+      prisma.site.findMany({
+        where,
+        skip: params.skip,
+        take: params.take,
+        orderBy: { [params.sortBy]: params.direction }
+      }),
+      prisma.site.count({ where })
+    ]);
+    return { items, total };
+  }
+  async update(id, data) {
+    return prisma.site.update({ where: { id }, data });
+  }
+};
+
+// src/modules/sites/controller/site.controller.ts
+var SiteService = class {
+  constructor(repository2 = new SiteRepository(), audit = new AuditService()) {
+    this.repository = repository2;
+    this.audit = audit;
+  }
+  repository;
+  audit;
+  async create(input, actorId) {
+    const existing = await this.repository.findByName(input.name);
+    if (existing) throw new AppError("A site with this name already exists", 409);
+    const site = await this.repository.create({
+      name: input.name.trim(),
+      address: input.address ?? null,
+      city: input.city ?? null,
+      country: input.country ?? null,
+      description: input.description ?? null
+    });
+    await this.audit.log({ userId: actorId, action: "CREATE", resource: "SITE", resourceId: site.id });
+    return toSiteOutput(site);
+  }
+  async getById(id) {
+    const site = await this.repository.findById(id);
+    if (!site || site.deleted) throw new AppError("Site not found", 404);
+    return toSiteOutput(site);
+  }
+  async list(query) {
+    const { page, size, skip, take } = parsePageQuery(query);
+    const allowedSortFields = ["name", "city", "country", "createdAt", "updatedAt"];
+    const sortBy = allowedSortFields.includes(query.sortBy ?? "") ? query.sortBy : "createdAt";
+    const direction = query.direction === "asc" ? "asc" : "desc";
+    const recordStatus = query.recordStatus ?? "ACTIVE";
+    const { items, total } = await this.repository.findMany({
+      skip,
+      take,
+      sortBy,
+      direction,
+      recordStatus,
+      search: query.search
+    });
+    return toPageResponse(items.map(toSiteOutput), total, page, size);
+  }
+  async update(id, input, actorId) {
+    const existing = await this.repository.findById(id);
+    if (!existing || existing.deleted) throw new AppError("Site not found", 404);
+    if (input.name && input.name.trim() !== existing.name) {
+      const nameConflict = await this.repository.findByName(input.name.trim());
+      if (nameConflict) throw new AppError("A site with this name already exists", 409);
+    }
+    const site = await this.repository.update(id, {
+      ...input.name ? { name: input.name.trim() } : {},
+      ...input.address !== void 0 ? { address: input.address } : {},
+      ...input.city !== void 0 ? { city: input.city } : {},
+      ...input.country !== void 0 ? { country: input.country } : {},
+      ...input.description !== void 0 ? { description: input.description } : {}
+    });
+    await this.audit.log({ userId: actorId, action: "UPDATE", resource: "SITE", resourceId: id });
+    return toSiteOutput(site);
+  }
+  async softDelete(id, actorId) {
+    const existing = await this.repository.findById(id);
+    if (!existing || existing.deleted) throw new AppError("Site not found", 404);
+    await this.repository.update(id, { deleted: true });
+    await this.audit.log({ userId: actorId, action: "SOFT_DELETE", resource: "SITE", resourceId: id });
+  }
+  async restore(id, actorId) {
+    const existing = await this.repository.findById(id);
+    if (!existing) throw new AppError("Site not found", 404);
+    if (!existing.deleted) throw new AppError("Site is already active", 400);
+    const site = await this.repository.update(id, { deleted: false });
+    await this.audit.log({ userId: actorId, action: "RESTORE", resource: "SITE", resourceId: id });
+    return toSiteOutput(site);
+  }
+};
+
+// src/modules/sites/validator/site.validator.ts
+import { z as z7 } from "zod";
+var createSiteSchema = z7.object({
+  name: z7.string().min(2, "Name must have at least 2 characters"),
+  address: z7.string().optional(),
+  city: z7.string().optional(),
+  country: z7.string().optional(),
+  description: z7.string().optional()
+});
+var updateSiteSchema = z7.object({
+  name: z7.string().min(2).optional(),
+  address: z7.string().optional(),
+  city: z7.string().optional(),
+  country: z7.string().optional(),
+  description: z7.string().optional()
+}).refine((obj) => Object.keys(obj).length > 0, {
+  message: "At least one field must be sent"
+});
+
+// src/modules/sites/routes/site.routes.ts
+var service7 = new SiteService();
+var siteRoutes = Router7();
+siteRoutes.use(authMiddleware);
+siteRoutes.post(
+  "/",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  validationMiddleware(createSiteSchema),
+  asyncHandler(async (req, res) => {
+    const site = await service7.create(req.body, req.user?.id);
+    res.status(201).json({ success: true, message: "Site created successfully", data: site });
+  })
+);
+siteRoutes.get(
+  "/",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  asyncHandler(async (req, res) => {
+    const page = await service7.list(req.query);
+    res.status(200).json({ success: true, message: "Sites fetched successfully", data: page });
+  })
+);
+siteRoutes.get(
+  "/:id",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  asyncHandler(async (req, res) => {
+    const site = await service7.getById(req.params.id);
+    res.status(200).json({ success: true, message: "Site fetched successfully", data: site });
+  })
+);
+siteRoutes.patch(
+  "/:id",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  validationMiddleware(updateSiteSchema),
+  asyncHandler(async (req, res) => {
+    const site = await service7.update(req.params.id, req.body, req.user?.id);
+    res.status(200).json({ success: true, message: "Site updated successfully", data: site });
+  })
+);
+siteRoutes.delete(
+  "/:id",
+  rolesMiddleware(["ADMIN"]),
+  asyncHandler(async (req, res) => {
+    await service7.softDelete(req.params.id, req.user?.id);
+    res.status(200).json({ success: true, message: "Site deleted successfully", data: null });
+  })
+);
+siteRoutes.patch(
+  "/:id/restore",
+  rolesMiddleware(["ADMIN"]),
+  asyncHandler(async (req, res) => {
+    const site = await service7.restore(req.params.id, req.user?.id);
+    res.status(200).json({ success: true, message: "Site restored successfully", data: site });
+  })
+);
+
+// src/modules/devices/routes/device.routes.ts
+import { Router as Router8 } from "express";
+
+// src/modules/devices/service/device.service.ts
+import { MonitoringStatus } from "@prisma/client";
+
+// src/modules/devices/mapper/device.mapper.ts
+var toDeviceOutput = (device) => ({
+  id: device.id,
+  name: device.name,
+  hostname: device.hostname,
+  ipAddress: device.ipAddress,
+  macAddress: device.macAddress,
+  type: device.type,
+  description: device.description,
+  currentStatus: device.currentStatus,
+  active: device.active,
+  deleted: device.deleted,
+  site: device.site ? {
+    id: device.site.id,
+    name: device.site.name,
+    city: device.site.city,
+    country: device.site.country
+  } : null,
+  createdAt: device.createdAt,
+  updatedAt: device.updatedAt
+});
+
+// src/modules/devices/repository/device.repository.ts
+var siteSelect = {
+  id: true,
+  name: true,
+  city: true,
+  country: true
+};
+var DeviceRepository = class {
+  include = { site: { select: siteSelect } };
+  async create(data) {
+    return prisma.device.create({ data, include: this.include });
+  }
+  async findById(id) {
+    return prisma.device.findUnique({ where: { id }, include: this.include });
+  }
+  async findByIp(ipAddress) {
+    return prisma.device.findFirst({ where: { ipAddress, deleted: false } });
+  }
+  async findByIpExcluding(ipAddress, excludeId) {
+    return prisma.device.findFirst({
+      where: { ipAddress, deleted: false, id: { not: excludeId } }
+    });
+  }
+  async findMany(params) {
+    const where = {
+      ...params.recordStatus === "ALL" ? {} : { deleted: params.recordStatus === "INACTIVE" },
+      ...params.siteId ? { siteId: params.siteId } : {},
+      ...params.type ? { type: params.type } : {},
+      ...params.currentStatus ? { currentStatus: params.currentStatus } : {},
+      ...params.active !== void 0 ? { active: params.active } : {},
+      ...params.search ? {
+        OR: [
+          { name: { contains: params.search, mode: "insensitive" } },
+          { hostname: { contains: params.search, mode: "insensitive" } },
+          { ipAddress: { contains: params.search, mode: "insensitive" } },
+          { description: { contains: params.search, mode: "insensitive" } }
+        ]
+      } : {}
+    };
+    const [items, total] = await Promise.all([
+      prisma.device.findMany({
+        where,
+        skip: params.skip,
+        take: params.take,
+        orderBy: { [params.sortBy]: params.direction },
+        include: this.include
+      }),
+      prisma.device.count({ where })
+    ]);
+    return { items, total };
+  }
+  async update(id, data) {
+    return prisma.device.update({ where: { id }, data, include: this.include });
+  }
+  async countBySite(siteId) {
+    return prisma.device.count({ where: { siteId, deleted: false } });
+  }
+};
+
+// src/modules/devices/service/device.service.ts
+var VALID_SORT_FIELDS = ["name", "ipAddress", "type", "currentStatus", "createdAt", "updatedAt"];
+var DeviceService = class {
+  constructor(repository2 = new DeviceRepository(), audit = new AuditService()) {
+    this.repository = repository2;
+    this.audit = audit;
+  }
+  repository;
+  audit;
+  async assertSiteExists(siteId) {
+    const site = await prisma.site.findUnique({ where: { id: siteId } });
+    if (!site || site.deleted) throw new AppError("Site not found", 404);
+  }
+  async create(input, actorId) {
+    const existing = await this.repository.findByIp(input.ipAddress);
+    if (existing) throw new AppError("A device with this IP address already exists", 409);
+    if (input.siteId) await this.assertSiteExists(input.siteId);
+    const device = await this.repository.create({
+      name: input.name.trim(),
+      hostname: input.hostname ?? null,
+      ipAddress: input.ipAddress.trim(),
+      macAddress: input.macAddress ?? null,
+      type: input.type,
+      description: input.description ?? null,
+      currentStatus: MonitoringStatus.OFFLINE,
+      active: true,
+      ...input.siteId ? { site: { connect: { id: input.siteId } } } : {}
+    });
+    await this.audit.log({ userId: actorId, action: "CREATE", resource: "DEVICE", resourceId: device.id });
+    return toDeviceOutput(device);
+  }
+  async getById(id) {
+    const device = await this.repository.findById(id);
+    if (!device || device.deleted) throw new AppError("Device not found", 404);
+    return toDeviceOutput(device);
+  }
+  async list(query) {
+    const { page, size, skip, take } = parsePageQuery(query);
+    const sortBy = VALID_SORT_FIELDS.includes(query.sortBy) ? query.sortBy : "createdAt";
+    const direction = query.direction === "asc" ? "asc" : "desc";
+    const recordStatus = query.recordStatus ?? "ACTIVE";
+    const { items, total } = await this.repository.findMany({
+      skip,
+      take,
+      sortBy,
+      direction,
+      recordStatus,
+      search: query.search,
+      siteId: query.siteId,
+      type: query.type,
+      currentStatus: query.currentStatus,
+      active: query.active
+    });
+    return toPageResponse(items.map(toDeviceOutput), total, page, size);
+  }
+  async update(id, input, actorId) {
+    const existing = await this.repository.findById(id);
+    if (!existing || existing.deleted) throw new AppError("Device not found", 404);
+    if (input.ipAddress && input.ipAddress.trim() !== existing.ipAddress) {
+      const conflict = await this.repository.findByIpExcluding(input.ipAddress.trim(), id);
+      if (conflict) throw new AppError("A device with this IP address already exists", 409);
+    }
+    if (input.siteId) await this.assertSiteExists(input.siteId);
+    const device = await this.repository.update(id, {
+      ...input.name ? { name: input.name.trim() } : {},
+      ...input.hostname !== void 0 ? { hostname: input.hostname } : {},
+      ...input.ipAddress ? { ipAddress: input.ipAddress.trim() } : {},
+      ...input.macAddress !== void 0 ? { macAddress: input.macAddress } : {},
+      ...input.type ? { type: input.type } : {},
+      ...input.description !== void 0 ? { description: input.description } : {},
+      ...input.active !== void 0 ? { active: input.active } : {},
+      ...input.siteId !== void 0 ? input.siteId === null ? { site: { disconnect: true } } : { site: { connect: { id: input.siteId } } } : {}
+    });
+    await this.audit.log({ userId: actorId, action: "UPDATE", resource: "DEVICE", resourceId: id });
+    return toDeviceOutput(device);
+  }
+  async softDelete(id, actorId) {
+    const existing = await this.repository.findById(id);
+    if (!existing || existing.deleted) throw new AppError("Device not found", 404);
+    await this.repository.update(id, { deleted: true, active: false });
+    await this.audit.log({ userId: actorId, action: "SOFT_DELETE", resource: "DEVICE", resourceId: id });
+  }
+  async restore(id, actorId) {
+    const existing = await this.repository.findById(id);
+    if (!existing) throw new AppError("Device not found", 404);
+    if (!existing.deleted) throw new AppError("Device is already active", 400);
+    const device = await this.repository.update(id, { deleted: false, active: true });
+    await this.audit.log({ userId: actorId, action: "RESTORE", resource: "DEVICE", resourceId: id });
+    return toDeviceOutput(device);
+  }
+  // usado internamente pelo scheduler — não exposto via API directamente
+  async updateStatus(id, status) {
+    return this.repository.update(id, { currentStatus: status });
+  }
+};
+
+// src/modules/devices/controller/device.controller.ts
+var service8 = new DeviceService();
+var DeviceController = class {
+  async create(req, res) {
+    const data = await service8.create(req.body, req.user?.sub);
+    res.status(201).json(successResponse("Device created successfully", data));
+  }
+  async list(req, res) {
+    const data = await service8.list({
+      page: req.query.page ? Number(req.query.page) : void 0,
+      size: req.query.size ? Number(req.query.size) : void 0,
+      sortBy: req.query.sortBy,
+      direction: req.query.direction,
+      recordStatus: req.query.recordStatus,
+      search: req.query.search,
+      siteId: req.query.siteId,
+      type: req.query.type,
+      currentStatus: req.query.currentStatus,
+      active: req.query.active !== void 0 ? req.query.active === "true" : void 0
+    });
+    res.json(successResponse("Devices retrieved successfully", data));
+  }
+  async getById(req, res) {
+    const data = await service8.getById(req.params.id);
+    res.json(successResponse("Device retrieved successfully", data));
+  }
+  async update(req, res) {
+    const data = await service8.update(req.params.id, req.body, req.user?.sub);
+    res.json(successResponse("Device updated successfully", data));
+  }
+  async remove(req, res) {
+    await service8.softDelete(req.params.id, req.user?.sub);
+    res.json(successResponse("Device deleted successfully"));
+  }
+  async restore(req, res) {
+    const data = await service8.restore(req.params.id, req.user?.sub);
+    res.json(successResponse("Device restored successfully", data));
+  }
+};
+
+// src/modules/devices/validator/device.validator.ts
+import { z as z8 } from "zod";
+import { DeviceType as DeviceType2, MonitoringStatus as MonitoringStatus2 } from "@prisma/client";
+var deviceTypeValues = Object.values(DeviceType2);
+var monitoringStatusValues = Object.values(MonitoringStatus2);
+var ipv4Regex = /^(\d{1,3}\.){3}\d{1,3}$/;
+var createDeviceSchema = z8.object({
+  name: z8.string().min(2, "Name must have at least 2 characters"),
+  hostname: z8.string().optional(),
+  ipAddress: z8.string().regex(ipv4Regex, "Invalid IPv4 address"),
+  macAddress: z8.string().optional(),
+  type: z8.enum(deviceTypeValues, {
+    errorMap: () => ({ message: `Type must be one of: ${deviceTypeValues.join(", ")}` })
+  }),
+  description: z8.string().optional(),
+  siteId: z8.string().uuid("Invalid site ID").optional()
+});
+var updateDeviceSchema = z8.object({
+  name: z8.string().min(2).optional(),
+  hostname: z8.string().optional(),
+  ipAddress: z8.string().regex(ipv4Regex, "Invalid IPv4 address").optional(),
+  macAddress: z8.string().optional(),
+  type: z8.enum(deviceTypeValues).optional(),
+  description: z8.string().optional(),
+  siteId: z8.string().uuid().optional().nullable(),
+  active: z8.boolean().optional()
+}).refine((obj) => Object.keys(obj).length > 0, {
+  message: "At least one field must be sent"
+});
+var listDeviceSchema = z8.object({
+  page: z8.coerce.number().int().min(0).optional(),
+  size: z8.coerce.number().int().min(1).max(100).optional(),
+  sortBy: z8.enum(["name", "ipAddress", "type", "currentStatus", "createdAt", "updatedAt"]).optional(),
+  direction: z8.enum(["asc", "desc"]).optional(),
+  recordStatus: z8.enum(["ACTIVE", "INACTIVE", "ALL"]).optional(),
+  search: z8.string().optional(),
+  siteId: z8.string().uuid().optional(),
+  type: z8.enum(deviceTypeValues).optional(),
+  currentStatus: z8.enum(monitoringStatusValues).optional(),
+  active: z8.coerce.boolean().optional()
+});
+
+// src/modules/devices/routes/device.routes.ts
+var controller7 = new DeviceController();
+var deviceRoutes = Router8();
+deviceRoutes.use(authMiddleware);
+deviceRoutes.post(
+  "/",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  validationMiddleware(createDeviceSchema),
+  asyncHandler(controller7.create.bind(controller7))
+);
+deviceRoutes.get(
+  "/",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  validationMiddleware(listDeviceSchema, "query"),
+  asyncHandler(controller7.list.bind(controller7))
+);
+deviceRoutes.get(
+  "/:id",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  asyncHandler(controller7.getById.bind(controller7))
+);
+deviceRoutes.patch(
+  "/:id",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  validationMiddleware(updateDeviceSchema),
+  asyncHandler(controller7.update.bind(controller7))
+);
+deviceRoutes.delete(
+  "/:id",
+  rolesMiddleware(["ADMIN"]),
+  asyncHandler(controller7.remove.bind(controller7))
+);
+deviceRoutes.patch(
+  "/:id/restore",
+  rolesMiddleware(["ADMIN"]),
+  asyncHandler(controller7.restore.bind(controller7))
+);
+
+// src/modules/service-monitors/routes/service-monitor.routes.ts
+import { Router as Router9 } from "express";
+
+// src/modules/service-monitors/mapper/service-monitor.mapper.ts
+var toServiceMonitorOutput = (sm) => ({
+  id: sm.id,
+  name: sm.name,
+  type: sm.type,
+  port: sm.port,
+  enabled: sm.enabled,
+  timeoutSeconds: sm.timeoutSeconds,
+  device: {
+    id: sm.device.id,
+    name: sm.device.name,
+    ipAddress: sm.device.ipAddress
+  },
+  createdAt: sm.createdAt,
+  updatedAt: sm.updatedAt
+});
+
+// src/modules/service-monitors/repository/service-monitor.repository.ts
+var deviceSelect = {
+  id: true,
+  name: true,
+  ipAddress: true
+};
+var ServiceMonitorRepository = class {
+  include = { device: { select: deviceSelect } };
+  async create(data) {
+    return prisma.serviceMonitor.create({ data, include: this.include });
+  }
+  async findById(id) {
+    return prisma.serviceMonitor.findUnique({ where: { id }, include: this.include });
+  }
+  async findByDeviceAndTypeAndPort(deviceId, type, port) {
+    return prisma.serviceMonitor.findFirst({
+      where: { deviceId, type, port }
+    });
+  }
+  async findByDeviceAndTypeAndPortExcluding(deviceId, type, port, excludeId) {
+    return prisma.serviceMonitor.findFirst({
+      where: { deviceId, type, port, id: { not: excludeId } }
+    });
+  }
+  async findMany(params) {
+    const where = {
+      ...params.deviceId ? { deviceId: params.deviceId } : {},
+      ...params.type ? { type: params.type } : {},
+      ...params.enabled !== void 0 ? { enabled: params.enabled } : {},
+      ...params.search ? {
+        OR: [
+          { name: { contains: params.search, mode: "insensitive" } },
+          { device: { name: { contains: params.search, mode: "insensitive" } } },
+          { device: { ipAddress: { contains: params.search, mode: "insensitive" } } }
+        ]
+      } : {}
+    };
+    const [items, total] = await Promise.all([
+      prisma.serviceMonitor.findMany({
+        where,
+        skip: params.skip,
+        take: params.take,
+        orderBy: { [params.sortBy]: params.direction },
+        include: this.include
+      }),
+      prisma.serviceMonitor.count({ where })
+    ]);
+    return { items, total };
+  }
+  async findAllEnabledByDevice(deviceId) {
+    return prisma.serviceMonitor.findMany({
+      where: { deviceId, enabled: true },
+      include: this.include
+    });
+  }
+  async findAllEnabled() {
+    return prisma.serviceMonitor.findMany({
+      where: { enabled: true },
+      include: this.include
+    });
+  }
+  async update(id, data) {
+    return prisma.serviceMonitor.update({ where: { id }, data, include: this.include });
+  }
+  async delete(id) {
+    return prisma.serviceMonitor.delete({ where: { id } });
+  }
+};
+
+// src/modules/service-monitors/service/service-monitor.service.ts
+var VALID_SORT_FIELDS2 = ["name", "type", "port", "createdAt", "updatedAt"];
+var ServiceMonitorService = class {
+  constructor(repository2 = new ServiceMonitorRepository(), audit = new AuditService()) {
+    this.repository = repository2;
+    this.audit = audit;
+  }
+  repository;
+  audit;
+  async assertDeviceExists(deviceId) {
+    const device = await prisma.device.findUnique({ where: { id: deviceId } });
+    if (!device || device.deleted) throw new AppError("Device not found", 404);
+    return device;
+  }
+  async create(input, actorId) {
+    await this.assertDeviceExists(input.deviceId);
+    const conflict = await this.repository.findByDeviceAndTypeAndPort(
+      input.deviceId,
+      input.type,
+      input.port
+    );
+    if (conflict) {
+      throw new AppError(
+        `This device already has a ${input.type} service monitor on port ${input.port}`,
+        409
+      );
+    }
+    const sm = await this.repository.create({
+      name: input.name.trim(),
+      type: input.type,
+      port: input.port,
+      enabled: input.enabled ?? true,
+      timeoutSeconds: input.timeoutSeconds ?? 5,
+      device: { connect: { id: input.deviceId } }
+    });
+    await this.audit.log({
+      userId: actorId,
+      action: "CREATE",
+      resource: "SERVICE_MONITOR",
+      resourceId: sm.id
+    });
+    return toServiceMonitorOutput(sm);
+  }
+  async getById(id) {
+    const sm = await this.repository.findById(id);
+    if (!sm) throw new AppError("Service monitor not found", 404);
+    return toServiceMonitorOutput(sm);
+  }
+  async list(query) {
+    const { page, size, skip, take } = parsePageQuery(query);
+    const sortBy = VALID_SORT_FIELDS2.includes(query.sortBy) ? query.sortBy : "createdAt";
+    const direction = query.direction === "asc" ? "asc" : "desc";
+    const { items, total } = await this.repository.findMany({
+      skip,
+      take,
+      sortBy,
+      direction,
+      deviceId: query.deviceId,
+      type: query.type,
+      enabled: query.enabled,
+      search: query.search
+    });
+    return toPageResponse(items.map(toServiceMonitorOutput), total, page, size);
+  }
+  async listByDevice(deviceId) {
+    await this.assertDeviceExists(deviceId);
+    const items = await this.repository.findAllEnabledByDevice(deviceId);
+    return items.map(toServiceMonitorOutput);
+  }
+  async update(id, input, actorId) {
+    const existing = await this.repository.findById(id);
+    if (!existing) throw new AppError("Service monitor not found", 404);
+    const newType = input.type ?? existing.type;
+    const newPort = input.port ?? existing.port;
+    if (input.type || input.port) {
+      const conflict = await this.repository.findByDeviceAndTypeAndPortExcluding(
+        existing.deviceId,
+        newType,
+        newPort,
+        id
+      );
+      if (conflict) {
+        throw new AppError(
+          `This device already has a ${newType} service monitor on port ${newPort}`,
+          409
+        );
+      }
+    }
+    const sm = await this.repository.update(id, {
+      ...input.name ? { name: input.name.trim() } : {},
+      ...input.type ? { type: input.type } : {},
+      ...input.port !== void 0 ? { port: input.port } : {},
+      ...input.enabled !== void 0 ? { enabled: input.enabled } : {},
+      ...input.timeoutSeconds !== void 0 ? { timeoutSeconds: input.timeoutSeconds } : {}
+    });
+    await this.audit.log({
+      userId: actorId,
+      action: "UPDATE",
+      resource: "SERVICE_MONITOR",
+      resourceId: id
+    });
+    return toServiceMonitorOutput(sm);
+  }
+  async remove(id, actorId) {
+    const existing = await this.repository.findById(id);
+    if (!existing) throw new AppError("Service monitor not found", 404);
+    await this.repository.delete(id);
+    await this.audit.log({
+      userId: actorId,
+      action: "DELETE",
+      resource: "SERVICE_MONITOR",
+      resourceId: id
+    });
+  }
+  async toggleEnabled(id, actorId) {
+    const existing = await this.repository.findById(id);
+    if (!existing) throw new AppError("Service monitor not found", 404);
+    const sm = await this.repository.update(id, { enabled: !existing.enabled });
+    await this.audit.log({
+      userId: actorId,
+      action: existing.enabled ? "DISABLE" : "ENABLE",
+      resource: "SERVICE_MONITOR",
+      resourceId: id
+    });
+    return toServiceMonitorOutput(sm);
+  }
+};
+
+// src/modules/service-monitors/controller/service-monitor.controller.ts
+var service9 = new ServiceMonitorService();
+var ServiceMonitorController = class {
+  async create(req, res) {
+    const data = await service9.create(req.body, req.user?.sub);
+    res.status(201).json(successResponse("Service monitor created successfully", data));
+  }
+  async list(req, res) {
+    const data = await service9.list({
+      page: req.query.page ? Number(req.query.page) : void 0,
+      size: req.query.size ? Number(req.query.size) : void 0,
+      sortBy: req.query.sortBy,
+      direction: req.query.direction,
+      deviceId: req.query.deviceId,
+      type: req.query.type,
+      enabled: req.query.enabled !== void 0 ? req.query.enabled === "true" : void 0,
+      search: req.query.search
+    });
+    res.json(successResponse("Service monitors retrieved successfully", data));
+  }
+  async getById(req, res) {
+    const data = await service9.getById(req.params.id);
+    res.json(successResponse("Service monitor retrieved successfully", data));
+  }
+  async listByDevice(req, res) {
+    const data = await service9.listByDevice(req.params.deviceId);
+    res.json(successResponse("Device service monitors retrieved successfully", data));
+  }
+  async update(req, res) {
+    const data = await service9.update(req.params.id, req.body, req.user?.sub);
+    res.json(successResponse("Service monitor updated successfully", data));
+  }
+  async remove(req, res) {
+    await service9.remove(req.params.id, req.user?.sub);
+    res.json(successResponse("Service monitor deleted successfully"));
+  }
+  async toggleEnabled(req, res) {
+    const data = await service9.toggleEnabled(req.params.id, req.user?.sub);
+    res.json(successResponse("Service monitor toggled successfully", data));
+  }
+};
+
+// src/modules/service-monitors/validator/service-monitor.validator.ts
+import { z as z9 } from "zod";
+import { ServiceType } from "@prisma/client";
+var serviceTypeValues = Object.values(ServiceType);
+var createServiceMonitorSchema = z9.object({
+  deviceId: z9.string().uuid("Invalid device ID"),
+  name: z9.string().min(2, "Name must have at least 2 characters"),
+  type: z9.enum(serviceTypeValues, {
+    errorMap: () => ({ message: `Type must be one of: ${serviceTypeValues.join(", ")}` })
+  }),
+  port: z9.number({ invalid_type_error: "Port must be a number" }).int("Port must be an integer").min(1, "Port must be between 1 and 65535").max(65535, "Port must be between 1 and 65535"),
+  enabled: z9.boolean().optional().default(true),
+  timeoutSeconds: z9.number().int().min(1, "Timeout must be at least 1 second").max(60, "Timeout cannot exceed 60 seconds").optional().default(5)
+});
+var updateServiceMonitorSchema = z9.object({
+  name: z9.string().min(2).optional(),
+  type: z9.enum(serviceTypeValues).optional(),
+  port: z9.number().int().min(1).max(65535).optional(),
+  enabled: z9.boolean().optional(),
+  timeoutSeconds: z9.number().int().min(1).max(60).optional()
+}).refine((obj) => Object.keys(obj).length > 0, {
+  message: "At least one field must be sent"
+});
+var listServiceMonitorSchema = z9.object({
+  page: z9.coerce.number().int().min(0).optional(),
+  size: z9.coerce.number().int().min(1).max(100).optional(),
+  sortBy: z9.enum(["name", "type", "port", "createdAt", "updatedAt"]).optional(),
+  direction: z9.enum(["asc", "desc"]).optional(),
+  deviceId: z9.string().uuid().optional(),
+  type: z9.enum(serviceTypeValues).optional(),
+  enabled: z9.coerce.boolean().optional(),
+  search: z9.string().optional()
+});
+
+// src/modules/service-monitors/routes/service-monitor.routes.ts
+var controller8 = new ServiceMonitorController();
+var serviceMonitorRoutes = Router9();
+serviceMonitorRoutes.use(authMiddleware);
+serviceMonitorRoutes.post(
+  "/",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  validationMiddleware(createServiceMonitorSchema),
+  asyncHandler(controller8.create.bind(controller8))
+);
+serviceMonitorRoutes.get(
+  "/",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  validationMiddleware(listServiceMonitorSchema, "query"),
+  asyncHandler(controller8.list.bind(controller8))
+);
+serviceMonitorRoutes.get(
+  "/device/:deviceId",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  asyncHandler(controller8.listByDevice.bind(controller8))
+);
+serviceMonitorRoutes.get(
+  "/:id",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  asyncHandler(controller8.getById.bind(controller8))
+);
+serviceMonitorRoutes.patch(
+  "/:id",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  validationMiddleware(updateServiceMonitorSchema),
+  asyncHandler(controller8.update.bind(controller8))
+);
+serviceMonitorRoutes.patch(
+  "/:id/toggle",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  asyncHandler(controller8.toggleEnabled.bind(controller8))
+);
+serviceMonitorRoutes.delete(
+  "/:id",
+  rolesMiddleware(["ADMIN"]),
+  asyncHandler(controller8.remove.bind(controller8))
+);
+
+// src/modules/alerts/routes/alert.routes.ts
+import { Router as Router10 } from "express";
+
+// src/modules/alerts/service/alert.service.ts
+import { AlertLevel } from "@prisma/client";
+
+// src/modules/alerts/mapper/alert.mapper.ts
+var toAlertOutput = (alert) => ({
+  id: alert.id,
+  title: alert.title,
+  message: alert.message,
+  level: alert.level,
+  acknowledged: alert.acknowledged,
+  acknowledgedAt: alert.acknowledgedAt,
+  acknowledgedBy: alert.acknowledgedBy,
+  resolved: alert.resolved,
+  resolvedAt: alert.resolvedAt,
+  device: {
+    id: alert.device.id,
+    name: alert.device.name,
+    ipAddress: alert.device.ipAddress
+  },
+  createdAt: alert.createdAt,
+  updatedAt: alert.updatedAt
+});
+
+// src/modules/alerts/repository/alert.repository.ts
+var deviceSelect2 = {
+  id: true,
+  name: true,
+  ipAddress: true
+};
+var AlertRepository = class {
+  include = { device: { select: deviceSelect2 } };
+  async findById(id) {
+    return prisma.alert.findUnique({ where: { id }, include: this.include });
+  }
+  async findMany(params) {
+    const where = {
+      ...params.deviceId ? { deviceId: params.deviceId } : {},
+      ...params.level ? { level: params.level } : {},
+      ...params.acknowledged !== void 0 ? { acknowledged: params.acknowledged } : {},
+      ...params.resolved !== void 0 ? { resolved: params.resolved } : {},
+      ...params.search ? {
+        OR: [
+          { title: { contains: params.search, mode: "insensitive" } },
+          { message: { contains: params.search, mode: "insensitive" } },
+          { device: { name: { contains: params.search, mode: "insensitive" } } }
+        ]
+      } : {}
+    };
+    const [items, total] = await Promise.all([
+      prisma.alert.findMany({
+        where,
+        skip: params.skip,
+        take: params.take,
+        orderBy: { [params.sortBy]: params.direction },
+        include: this.include
+      }),
+      prisma.alert.count({ where })
+    ]);
+    return { items, total };
+  }
+  async update(id, data) {
+    return prisma.alert.update({ where: { id }, data, include: this.include });
+  }
+  async countUnresolved() {
+    return prisma.alert.count({ where: { resolved: false } });
+  }
+  async countByLevel(level) {
+    return prisma.alert.count({ where: { level, resolved: false } });
+  }
+};
+
+// src/modules/alerts/service/alert.service.ts
+var VALID_SORT_FIELDS3 = ["level", "createdAt", "updatedAt"];
+var AlertService = class {
+  constructor(repository2 = new AlertRepository(), audit = new AuditService()) {
+    this.repository = repository2;
+    this.audit = audit;
+  }
+  repository;
+  audit;
+  async getById(id) {
+    const alert = await this.repository.findById(id);
+    if (!alert) throw new AppError("Alert not found", 404);
+    return toAlertOutput(alert);
+  }
+  async list(query) {
+    const { page, size, skip, take } = parsePageQuery(query);
+    const sortBy = VALID_SORT_FIELDS3.includes(query.sortBy) ? query.sortBy : "createdAt";
+    const direction = query.direction === "asc" ? "asc" : "desc";
+    const { items, total } = await this.repository.findMany({
+      skip,
+      take,
+      sortBy,
+      direction,
+      deviceId: query.deviceId,
+      level: query.level,
+      acknowledged: query.acknowledged,
+      resolved: query.resolved,
+      search: query.search
+    });
+    return toPageResponse(items.map(toAlertOutput), total, page, size);
+  }
+  async acknowledge(id, actorId) {
+    const existing = await this.repository.findById(id);
+    if (!existing) throw new AppError("Alert not found", 404);
+    if (existing.acknowledged) throw new AppError("Alert is already acknowledged", 400);
+    const alert = await this.repository.update(id, {
+      acknowledged: true,
+      acknowledgedAt: /* @__PURE__ */ new Date(),
+      acknowledgedBy: actorId ?? null
+    });
+    await this.audit.log({
+      userId: actorId,
+      action: "ACKNOWLEDGE",
+      resource: "ALERT",
+      resourceId: id
+    });
+    return toAlertOutput(alert);
+  }
+  async resolve(id, actorId) {
+    const existing = await this.repository.findById(id);
+    if (!existing) throw new AppError("Alert not found", 404);
+    if (existing.resolved) throw new AppError("Alert is already resolved", 400);
+    const alert = await this.repository.update(id, {
+      resolved: true,
+      resolvedAt: /* @__PURE__ */ new Date(),
+      // se ainda não foi acknowledged, acknowledger automaticamente ao resolver
+      ...existing.acknowledged ? {} : { acknowledged: true, acknowledgedAt: /* @__PURE__ */ new Date(), acknowledgedBy: actorId ?? null }
+    });
+    await this.audit.log({
+      userId: actorId,
+      action: "RESOLVE",
+      resource: "ALERT",
+      resourceId: id
+    });
+    return toAlertOutput(alert);
+  }
+  async resolveAllByDevice(deviceId, actorId) {
+    const { prisma: prisma2 } = await import("./prisma-LC2YR5VD.mjs");
+    await prisma2.alert.updateMany({
+      where: { deviceId, resolved: false },
+      data: {
+        resolved: true,
+        resolvedAt: /* @__PURE__ */ new Date()
+      }
+    });
+    await this.audit.log({
+      userId: actorId,
+      action: "RESOLVE_ALL",
+      resource: "ALERT",
+      resourceId: deviceId
+    });
+  }
+  // Sumário para o dashboard
+  async getSummary() {
+    const [total, critical, warning, info] = await Promise.all([
+      this.repository.countUnresolved(),
+      this.repository.countByLevel(AlertLevel.CRITICAL),
+      this.repository.countByLevel(AlertLevel.WARNING),
+      this.repository.countByLevel(AlertLevel.INFO)
+    ]);
+    return { total, critical, warning, info };
+  }
+};
+
+// src/modules/alerts/controller/alert.controller.ts
+var service10 = new AlertService();
+var AlertController = class {
+  async list(req, res) {
+    const data = await service10.list({
+      page: req.query.page ? Number(req.query.page) : void 0,
+      size: req.query.size ? Number(req.query.size) : void 0,
+      sortBy: req.query.sortBy,
+      direction: req.query.direction,
+      deviceId: req.query.deviceId,
+      level: req.query.level,
+      acknowledged: req.query.acknowledged !== void 0 ? req.query.acknowledged === "true" : void 0,
+      resolved: req.query.resolved !== void 0 ? req.query.resolved === "true" : void 0,
+      search: req.query.search
+    });
+    res.json(successResponse("Alerts retrieved successfully", data));
+  }
+  async getById(req, res) {
+    const data = await service10.getById(req.params.id);
+    res.json(successResponse("Alert retrieved successfully", data));
+  }
+  async acknowledge(req, res) {
+    const data = await service10.acknowledge(req.params.id, req.user?.sub);
+    res.json(successResponse("Alert acknowledged successfully", data));
+  }
+  async resolve(req, res) {
+    const data = await service10.resolve(req.params.id, req.user?.sub);
+    res.json(successResponse("Alert resolved successfully", data));
+  }
+  async resolveAllByDevice(req, res) {
+    await service10.resolveAllByDevice(req.params.deviceId, req.user?.sub);
+    res.json(successResponse("All alerts for device resolved successfully"));
+  }
+  async getSummary(req, res) {
+    const data = await service10.getSummary();
+    res.json(successResponse("Alert summary retrieved successfully", data));
+  }
+};
+
+// src/modules/alerts/validator/alert.validator.ts
+import { z as z10 } from "zod";
+import { AlertLevel as AlertLevel2 } from "@prisma/client";
+var alertLevelValues = Object.values(AlertLevel2);
+var listAlertSchema = z10.object({
+  page: z10.coerce.number().int().min(0).optional(),
+  size: z10.coerce.number().int().min(1).max(100).optional(),
+  sortBy: z10.enum(["level", "createdAt", "updatedAt"]).optional(),
+  direction: z10.enum(["asc", "desc"]).optional(),
+  deviceId: z10.string().uuid().optional(),
+  level: z10.enum(alertLevelValues).optional(),
+  acknowledged: z10.coerce.boolean().optional(),
+  resolved: z10.coerce.boolean().optional(),
+  search: z10.string().optional()
+});
+var acknowledgeAlertSchema = z10.object({
+  note: z10.string().max(500).optional()
+});
+
+// src/modules/alerts/routes/alert.routes.ts
+var controller9 = new AlertController();
+var alertRoutes = Router10();
+alertRoutes.use(authMiddleware);
+alertRoutes.get(
+  "/summary",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  asyncHandler(controller9.getSummary.bind(controller9))
+);
+alertRoutes.get(
+  "/",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  validationMiddleware(listAlertSchema, "query"),
+  asyncHandler(controller9.list.bind(controller9))
+);
+alertRoutes.get(
+  "/:id",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  asyncHandler(controller9.getById.bind(controller9))
+);
+alertRoutes.patch(
+  "/:id/acknowledge",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  asyncHandler(controller9.acknowledge.bind(controller9))
+);
+alertRoutes.patch(
+  "/:id/resolve",
+  rolesMiddleware(["ADMIN"]),
+  asyncHandler(controller9.resolve.bind(controller9))
+);
+alertRoutes.patch(
+  "/device/:deviceId/resolve-all",
+  rolesMiddleware(["ADMIN"]),
+  asyncHandler(controller9.resolveAllByDevice.bind(controller9))
+);
+
+// src/modules/dashboard/routes/dashboard.routes.ts
+import { Router as Router11 } from "express";
+
+// src/modules/dashboard/repository/dashboard.repository.ts
+import { MonitoringStatus as MonitoringStatus3 } from "@prisma/client";
+var DashboardRepository = class {
+  // -------------------------------------------------------------------------
+  // Contagem de devices por status
+  // -------------------------------------------------------------------------
+  async getDeviceStatusCounts() {
+    const [total, online, offline, warning] = await Promise.all([
+      prisma.device.count({ where: { deleted: false } }),
+      prisma.device.count({ where: { deleted: false, currentStatus: MonitoringStatus3.ONLINE } }),
+      prisma.device.count({ where: { deleted: false, currentStatus: MonitoringStatus3.OFFLINE } }),
+      prisma.device.count({ where: { deleted: false, currentStatus: MonitoringStatus3.WARNING } })
+    ]);
+    return { total, online, offline, warning };
+  }
+  // -------------------------------------------------------------------------
+  // Contagem de alertas não resolvidos por nível
+  // -------------------------------------------------------------------------
+  async getAlertCounts() {
+    const results = await prisma.alert.groupBy({
+      by: ["level"],
+      where: { resolved: false },
+      _count: { id: true }
+    });
+    let critical = 0;
+    let warning = 0;
+    let info = 0;
+    for (const row of results) {
+      if (row.level === "CRITICAL") critical = row._count.id;
+      if (row.level === "WARNING") warning = row._count.id;
+      if (row.level === "INFO") info = row._count.id;
+    }
+    return { total: critical + warning + info, critical, warning, info };
+  }
+  // -------------------------------------------------------------------------
+  // Distribuição de devices por tipo
+  // -------------------------------------------------------------------------
+  async getDevicesByType() {
+    const results = await prisma.device.groupBy({
+      by: ["type"],
+      where: { deleted: false },
+      _count: { id: true },
+      orderBy: { _count: { id: "desc" } }
+    });
+    return results.map((row) => ({
+      type: row.type,
+      total: row._count.id
+    }));
+  }
+  // -------------------------------------------------------------------------
+  // Últimos N alertas não resolvidos (mais recentes primeiro)
+  // -------------------------------------------------------------------------
+  async getRecentAlerts(limit = 10) {
+    return prisma.alert.findMany({
+      where: { resolved: false },
+      orderBy: { createdAt: "desc" },
+      take: limit,
+      select: {
+        id: true,
+        title: true,
+        level: true,
+        acknowledged: true,
+        resolved: true,
+        createdAt: true,
+        device: {
+          select: { name: true, ipAddress: true }
+        }
+      }
+    });
+  }
+  // -------------------------------------------------------------------------
+  // Últimos N logs de monitoramento (verificações mais recentes)
+  // -------------------------------------------------------------------------
+  async getRecentLogs(limit = 20) {
+    return prisma.monitoringLog.findMany({
+      orderBy: { checkedAt: "desc" },
+      take: limit,
+      select: {
+        id: true,
+        deviceId: true,
+        status: true,
+        responseTime: true,
+        packetLoss: true,
+        message: true,
+        checkedAt: true,
+        device: {
+          select: { name: true, ipAddress: true }
+        }
+      }
+    });
+  }
+  // -------------------------------------------------------------------------
+  // Top N devices com mais falhas nas últimas 24h
+  // -------------------------------------------------------------------------
+  async getTopUnreachable(limit = 5) {
+    const since = new Date(Date.now() - 24 * 60 * 60 * 1e3);
+    const results = await prisma.monitoringLog.groupBy({
+      by: ["deviceId"],
+      where: {
+        status: MonitoringStatus3.OFFLINE,
+        checkedAt: { gte: since }
+      },
+      _count: { id: true },
+      orderBy: { _count: { id: "desc" } },
+      take: limit
+    });
+    if (results.length === 0) return [];
+    const deviceIds = results.map((r) => r.deviceId);
+    const devices = await prisma.device.findMany({
+      where: { id: { in: deviceIds } },
+      select: { id: true, name: true, ipAddress: true }
+    });
+    const deviceMap = new Map(devices.map((d) => [d.id, d]));
+    return results.map((row) => {
+      const device = deviceMap.get(row.deviceId);
+      if (!device) return null;
+      return {
+        deviceId: device.id,
+        deviceName: device.name,
+        deviceIp: device.ipAddress,
+        failureCount: row._count.id
+      };
+    }).filter((item) => item !== null);
+  }
+};
+
+// src/modules/dashboard/service/dashboard.service.ts
+var DashboardService = class {
+  constructor(repository2 = new DashboardRepository()) {
+    this.repository = repository2;
+  }
+  repository;
+  async getSummary() {
+    const [
+      deviceCounts,
+      alertCounts,
+      devicesByType,
+      recentAlerts,
+      recentLogs,
+      topUnreachable
+    ] = await Promise.all([
+      this.repository.getDeviceStatusCounts(),
+      this.repository.getAlertCounts(),
+      this.repository.getDevicesByType(),
+      this.repository.getRecentAlerts(10),
+      this.repository.getRecentLogs(20),
+      this.repository.getTopUnreachable(5)
+    ]);
+    return {
+      devices: {
+        total: deviceCounts.total,
+        online: deviceCounts.online,
+        offline: deviceCounts.offline,
+        warning: deviceCounts.warning
+      },
+      alerts: {
+        total: alertCounts.total,
+        critical: alertCounts.critical,
+        warning: alertCounts.warning,
+        info: alertCounts.info
+      },
+      devicesByType,
+      recentAlerts: recentAlerts.map((a) => ({
+        id: a.id,
+        title: a.title,
+        level: a.level,
+        acknowledged: a.acknowledged,
+        resolved: a.resolved,
+        deviceName: a.device.name,
+        deviceIp: a.device.ipAddress,
+        createdAt: a.createdAt
+      })),
+      recentLogs: recentLogs.map((l) => ({
+        id: l.id,
+        deviceId: l.deviceId,
+        deviceName: l.device.name,
+        deviceIp: l.device.ipAddress,
+        status: l.status,
+        responseTime: l.responseTime,
+        packetLoss: l.packetLoss,
+        message: l.message,
+        checkedAt: l.checkedAt
+      })),
+      topUnreachable,
+      generatedAt: /* @__PURE__ */ new Date()
+    };
+  }
+  // -------------------------------------------------------------------------
+  // Endpoint mais leve para polling frequente do frontend
+  // Devolve apenas os contadores — sem logs nem alertas detalhados
+  // -------------------------------------------------------------------------
+  async getCounters() {
+    const [deviceCounts, alertCounts] = await Promise.all([
+      this.repository.getDeviceStatusCounts(),
+      this.repository.getAlertCounts()
+    ]);
+    return {
+      devices: deviceCounts,
+      alerts: alertCounts,
+      generatedAt: /* @__PURE__ */ new Date()
+    };
+  }
+};
+
+// src/modules/dashboard/controller/dashboard.controller.ts
+var service11 = new DashboardService();
+var DashboardController = class {
+  async getSummary(req, res) {
+    const data = await service11.getSummary();
+    res.json(successResponse("Dashboard summary retrieved successfully", data));
+  }
+  async getCounters(req, res) {
+    const data = await service11.getCounters();
+    res.json(successResponse("Dashboard counters retrieved successfully", data));
+  }
+};
+
+// src/modules/dashboard/routes/dashboard.routes.ts
+var controller10 = new DashboardController();
+var dashboardRoutes = Router11();
+dashboardRoutes.use(authMiddleware);
+dashboardRoutes.get(
+  "/summary",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  asyncHandler(controller10.getSummary.bind(controller10))
+);
+dashboardRoutes.get(
+  "/counters",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  asyncHandler(controller10.getCounters.bind(controller10))
+);
+
+// src/modules/monitoring-logs/routes/monitoring-log.routes.ts
+import { Router as Router12 } from "express";
+
+// src/modules/monitoring-logs/mapper/monitoring-log.mapper.ts
+var toMonitoringLogOutput = (log) => ({
+  id: log.id,
+  status: log.status,
+  responseTime: log.responseTime,
+  packetLoss: log.packetLoss,
+  message: log.message,
+  checkedAt: log.checkedAt,
+  device: {
+    id: log.device.id,
+    name: log.device.name,
+    ipAddress: log.device.ipAddress,
+    siteId: log.device.siteId,
+    siteName: log.device.site?.name ?? null
+  }
+});
+
+// src/modules/monitoring-logs/repository/monitoring-log.repository.ts
+var deviceSelect3 = {
+  id: true,
+  name: true,
+  ipAddress: true,
+  siteId: true,
+  site: { select: { name: true } }
+};
+var MonitoringLogRepository = class {
+  include = { device: { select: deviceSelect3 } };
+  async findMany(params) {
+    const where = {
+      ...params.deviceId ? { deviceId: params.deviceId } : {},
+      ...params.status ? { status: params.status } : {},
+      ...params.siteId ? { device: { siteId: params.siteId } } : {},
+      ...params.from || params.to ? {
+        checkedAt: {
+          ...params.from ? { gte: params.from } : {},
+          ...params.to ? { lte: params.to } : {}
+        }
+      } : {},
+      ...params.search ? {
+        OR: [
+          { device: { name: { contains: params.search, mode: "insensitive" } } },
+          { device: { ipAddress: { contains: params.search, mode: "insensitive" } } },
+          { message: { contains: params.search, mode: "insensitive" } }
+        ]
+      } : {}
+    };
+    const [items, total] = await Promise.all([
+      prisma.monitoringLog.findMany({
+        where,
+        skip: params.skip,
+        take: params.take,
+        orderBy: { [params.sortBy]: params.direction },
+        include: this.include
+      }),
+      prisma.monitoringLog.count({ where })
+    ]);
+    return { items, total };
+  }
+  async findById(id) {
+    return prisma.monitoringLog.findUnique({
+      where: { id },
+      include: this.include
+    });
+  }
+  // -------------------------------------------------------------------------
+  // Estatísticas agregadas por device num período
+  // -------------------------------------------------------------------------
+  async getStatsByDevice(deviceId, from, to) {
+    const [counts, aggregates] = await Promise.all([
+      prisma.monitoringLog.groupBy({
+        by: ["status"],
+        where: {
+          deviceId,
+          checkedAt: { gte: from, lte: to }
+        },
+        _count: { id: true }
+      }),
+      prisma.monitoringLog.aggregate({
+        where: {
+          deviceId,
+          checkedAt: { gte: from, lte: to },
+          responseTime: { not: null }
+        },
+        _avg: {
+          responseTime: true,
+          packetLoss: true
+        }
+      })
+    ]);
+    const device = await prisma.device.findUnique({
+      where: { id: deviceId },
+      select: { name: true, ipAddress: true }
+    });
+    let onlineCount = 0;
+    let offlineCount = 0;
+    let warningCount = 0;
+    for (const row of counts) {
+      if (row.status === "ONLINE") onlineCount = row._count.id;
+      if (row.status === "OFFLINE") offlineCount = row._count.id;
+      if (row.status === "WARNING") warningCount = row._count.id;
+    }
+    const totalChecks = onlineCount + offlineCount + warningCount;
+    const uptimePercent = totalChecks > 0 ? Math.round(onlineCount / totalChecks * 1e4) / 100 : 0;
+    return {
+      deviceId,
+      deviceName: device?.name ?? "Unknown",
+      deviceIp: device?.ipAddress ?? "",
+      totalChecks,
+      onlineCount,
+      offlineCount,
+      warningCount,
+      uptimePercent,
+      avgResponseTime: aggregates._avg.responseTime ? Math.round(aggregates._avg.responseTime) : null,
+      avgPacketLoss: aggregates._avg.packetLoss ? Math.round(aggregates._avg.packetLoss * 100) / 100 : null,
+      period: { from, to }
+    };
+  }
+  // -------------------------------------------------------------------------
+  // Últimas N verificações de um device específico — para mini-histórico
+  // -------------------------------------------------------------------------
+  async findLatestByDevice(deviceId, limit = 50) {
+    return prisma.monitoringLog.findMany({
+      where: { deviceId },
+      orderBy: { checkedAt: "desc" },
+      take: limit,
+      include: this.include
+    });
+  }
+  // -------------------------------------------------------------------------
+  // Purge de logs antigos — útil para manutenção (chamado manualmente ou via cron)
+  // -------------------------------------------------------------------------
+  async deleteOlderThan(date) {
+    return prisma.monitoringLog.deleteMany({
+      where: { checkedAt: { lt: date } }
+    });
+  }
+};
+
+// src/modules/monitoring-logs/service/monitoring-log.service.ts
+var VALID_SORT_FIELDS4 = ["checkedAt", "status", "responseTime"];
+var defaultFrom = () => new Date(Date.now() - 24 * 60 * 60 * 1e3);
+var defaultTo = () => /* @__PURE__ */ new Date();
+var MonitoringLogService = class {
+  constructor(repository2 = new MonitoringLogRepository()) {
+    this.repository = repository2;
+  }
+  repository;
+  async list(query) {
+    const { page, size, skip, take } = parsePageQuery(query);
+    const sortBy = VALID_SORT_FIELDS4.includes(query.sortBy) ? query.sortBy : "checkedAt";
+    const direction = query.direction === "asc" ? "asc" : "desc";
+    if (query.from && query.to && query.from > query.to) {
+      throw new AppError('"from" must be earlier than "to"', 400);
+    }
+    const { items, total } = await this.repository.findMany({
+      skip,
+      take,
+      sortBy,
+      direction,
+      deviceId: query.deviceId,
+      siteId: query.siteId,
+      status: query.status,
+      from: query.from,
+      to: query.to,
+      search: query.search
+    });
+    return toPageResponse(items.map(toMonitoringLogOutput), total, page, size);
+  }
+  async getById(id) {
+    const log = await this.repository.findById(id);
+    if (!log) throw new AppError("Monitoring log not found", 404);
+    return toMonitoringLogOutput(log);
+  }
+  async getStatsByDevice(deviceId, from, to) {
+    const resolvedFrom = from ?? defaultFrom();
+    const resolvedTo = to ?? defaultTo();
+    if (resolvedFrom > resolvedTo) {
+      throw new AppError('"from" must be earlier than "to"', 400);
+    }
+    return this.repository.getStatsByDevice(deviceId, resolvedFrom, resolvedTo);
+  }
+  async getLatestByDevice(deviceId, limit = 50) {
+    const items = await this.repository.findLatestByDevice(deviceId, limit);
+    return items.map(toMonitoringLogOutput);
+  }
+  // -------------------------------------------------------------------------
+  // Purge manual — apenas ADMIN, máximo 90 dias de retenção por defeito
+  // -------------------------------------------------------------------------
+  async purgeOlderThan(days) {
+    if (days < 1 || days > 365) {
+      throw new AppError("Days must be between 1 and 365", 400);
+    }
+    const cutoff = new Date(Date.now() - days * 24 * 60 * 60 * 1e3);
+    const result = await this.repository.deleteOlderThan(cutoff);
+    return { deleted: result.count, cutoffDate: cutoff };
+  }
+};
+
+// src/modules/monitoring-logs/controller/monitoring-log.controller.ts
+var service12 = new MonitoringLogService();
+var MonitoringLogController = class {
+  async list(req, res) {
+    const data = await service12.list({
+      page: req.query.page ? Number(req.query.page) : void 0,
+      size: req.query.size ? Number(req.query.size) : void 0,
+      sortBy: req.query.sortBy,
+      direction: req.query.direction,
+      deviceId: req.query.deviceId,
+      siteId: req.query.siteId,
+      status: req.query.status,
+      from: req.query.from ? new Date(req.query.from) : void 0,
+      to: req.query.to ? new Date(req.query.to) : void 0,
+      search: req.query.search
+    });
+    res.json(successResponse("Monitoring logs retrieved successfully", data));
+  }
+  async getById(req, res) {
+    const data = await service12.getById(req.params.id);
+    res.json(successResponse("Monitoring log retrieved successfully", data));
+  }
+  async getStatsByDevice(req, res) {
+    const data = await service12.getStatsByDevice(
+      req.query.deviceId,
+      req.query.from ? new Date(req.query.from) : void 0,
+      req.query.to ? new Date(req.query.to) : void 0
+    );
+    res.json(successResponse("Device stats retrieved successfully", data));
+  }
+  async getLatestByDevice(req, res) {
+    const limit = req.query.limit ? Number(req.query.limit) : 50;
+    const data = await service12.getLatestByDevice(req.params.deviceId, limit);
+    res.json(successResponse("Latest logs retrieved successfully", data));
+  }
+  async purge(req, res) {
+    const days = req.body.days ? Number(req.body.days) : 90;
+    const data = await service12.purgeOlderThan(days);
+    res.json(successResponse(`Purged logs older than ${days} days`, data));
+  }
+};
+
+// src/modules/monitoring-logs/validator/monitoring-log.validator.ts
+import { z as z11 } from "zod";
+import { MonitoringStatus as MonitoringStatus4 } from "@prisma/client";
+var monitoringStatusValues2 = Object.values(MonitoringStatus4);
+var listMonitoringLogSchema = z11.object({
+  page: z11.coerce.number().int().min(0).optional(),
+  size: z11.coerce.number().int().min(1).max(200).optional(),
+  sortBy: z11.enum(["checkedAt", "status", "responseTime"]).optional(),
+  direction: z11.enum(["asc", "desc"]).optional(),
+  deviceId: z11.string().uuid().optional(),
+  siteId: z11.string().uuid().optional(),
+  status: z11.enum(monitoringStatusValues2).optional(),
+  from: z11.coerce.date().optional(),
+  to: z11.coerce.date().optional(),
+  search: z11.string().optional()
+});
+var statsQuerySchema = z11.object({
+  deviceId: z11.string().uuid("Invalid device ID"),
+  from: z11.coerce.date().optional(),
+  to: z11.coerce.date().optional()
+});
+var latestByDeviceSchema = z11.object({
+  limit: z11.coerce.number().int().min(1).max(200).optional()
+});
+
+// src/modules/monitoring-logs/routes/monitoring-log.routes.ts
+var controller11 = new MonitoringLogController();
+var monitoringLogRoutes = Router12();
+monitoringLogRoutes.use(authMiddleware);
+monitoringLogRoutes.get(
+  "/",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  validationMiddleware(listMonitoringLogSchema, "query"),
+  asyncHandler(controller11.list.bind(controller11))
+);
+monitoringLogRoutes.get(
+  "/stats",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  validationMiddleware(statsQuerySchema, "query"),
+  asyncHandler(controller11.getStatsByDevice.bind(controller11))
+);
+monitoringLogRoutes.get(
+  "/device/:deviceId/latest",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  validationMiddleware(latestByDeviceSchema, "query"),
+  asyncHandler(controller11.getLatestByDevice.bind(controller11))
+);
+monitoringLogRoutes.get(
+  "/:id",
+  rolesMiddleware(["ADMIN", "MANAGER"]),
+  asyncHandler(controller11.getById.bind(controller11))
+);
+monitoringLogRoutes.delete(
+  "/purge",
+  rolesMiddleware(["ADMIN"]),
+  asyncHandler(controller11.purge.bind(controller11))
+);
+
 // src/shared/router.ts
-var router = Router7();
+var router = Router13();
 router.use("/public/auth", authRoutes);
 router.use("/api/users", userRoutes);
 router.use("/api/roles", roleRoutes);
 router.use("/api/statuses", statusRoutes);
 router.use("/api/tickets", ticketRoutes);
 router.use("/api/images", imageRoutes);
+router.use("/api/sites", siteRoutes);
+router.use("/api/devices", deviceRoutes);
+router.use("/api/service-monitors", serviceMonitorRoutes);
+router.use("/api/alerts", alertRoutes);
+router.use("/api/dashboard", dashboardRoutes);
+router.use("/api/monitoring-logs", monitoringLogRoutes);
 
 // src/infra/http/app.ts
 var app = express();
@@ -2329,11 +3927,385 @@ var bootstrapAdmin = async () => {
   logger.info({ message: "Default admin checked/created successfully" });
 };
 
+// src/modules/monitoring/scheduler/monitoring.scheduler.ts
+import cron from "node-cron";
+
+// src/modules/monitoring/service/monitoring-check.service.ts
+import { MonitoringStatus as MonitoringStatus6 } from "@prisma/client";
+
+// src/modules/monitoring/utils/icmp-check.ts
+import { exec } from "child_process";
+import os from "os";
+var icmpCheck = (host, timeoutSeconds = 5) => {
+  return new Promise((resolve) => {
+    const isWindows = os.platform() === "win32";
+    const command = isWindows ? `ping -n 3 -w ${timeoutSeconds * 1e3} ${host}` : `ping -c 3 -W ${timeoutSeconds} ${host}`;
+    const start = Date.now();
+    exec(command, { timeout: (timeoutSeconds + 2) * 1e3 }, (error, stdout) => {
+      const responseTime = Date.now() - start;
+      if (error) {
+        resolve({
+          reachable: false,
+          responseTime: null,
+          packetLoss: 100,
+          message: `Host unreachable: ${error.message}`
+        });
+        return;
+      }
+      const packetLossMatch = stdout.match(/(\d+)%\s+packet loss/i);
+      const packetLoss = packetLossMatch ? parseInt(packetLossMatch[1], 10) : null;
+      const rttMatch = stdout.match(/(?:avg|mean)[^=]*=\s*[\d.]+\/([\d.]+)/i) || stdout.match(/Average\s*=\s*([\d.]+)/i);
+      const avgRtt = rttMatch ? Math.round(parseFloat(rttMatch[1])) : responseTime;
+      const reachable = packetLoss !== null ? packetLoss < 100 : !error;
+      resolve({
+        reachable,
+        responseTime: reachable ? avgRtt : null,
+        packetLoss: packetLoss ?? (reachable ? 0 : 100),
+        message: reachable ? null : `Packet loss: ${packetLoss}%`
+      });
+    });
+  });
+};
+
+// src/modules/monitoring/utils/tcp-check.ts
+import net from "net";
+var tcpCheck = (host, port, timeoutMs = 5e3) => {
+  return new Promise((resolve) => {
+    const start = Date.now();
+    const socket = new net.Socket();
+    const cleanup = () => {
+      socket.destroy();
+    };
+    socket.setTimeout(timeoutMs);
+    socket.on("connect", () => {
+      const responseTime = Date.now() - start;
+      cleanup();
+      resolve({ reachable: true, responseTime, message: null });
+    });
+    socket.on("timeout", () => {
+      cleanup();
+      resolve({
+        reachable: false,
+        responseTime: null,
+        message: `Connection timed out after ${timeoutMs}ms`
+      });
+    });
+    socket.on("error", (err) => {
+      cleanup();
+      resolve({
+        reachable: false,
+        responseTime: null,
+        message: err.message
+      });
+    });
+    socket.connect(port, host);
+  });
+};
+
+// src/modules/monitoring/repository/monitoring.repository.ts
+var MonitoringRepository = class {
+  async createLog(data) {
+    return prisma.monitoringLog.create({ data });
+  }
+  async updateDeviceStatus(deviceId, status) {
+    return prisma.device.update({
+      where: { id: deviceId },
+      data: { currentStatus: status }
+    });
+  }
+  async findActiveDevices() {
+    return prisma.device.findMany({
+      where: { deleted: false, active: true },
+      select: {
+        id: true,
+        name: true,
+        ipAddress: true,
+        currentStatus: true
+      }
+    });
+  }
+  async findEnabledServiceMonitors() {
+    return prisma.serviceMonitor.findMany({
+      where: {
+        enabled: true,
+        device: { deleted: false, active: true }
+      },
+      select: {
+        id: true,
+        name: true,
+        type: true,
+        port: true,
+        timeoutSeconds: true,
+        deviceId: true,
+        device: {
+          select: { id: true, name: true, ipAddress: true }
+        }
+      }
+    });
+  }
+  async findLatestLogByDevice(deviceId) {
+    return prisma.monitoringLog.findFirst({
+      where: { deviceId },
+      orderBy: { checkedAt: "desc" }
+    });
+  }
+};
+
+// src/modules/monitoring/service/alert-engine.service.ts
+import { MonitoringStatus as MonitoringStatus5 } from "@prisma/client";
+var AlertEngineService = class {
+  // -------------------------------------------------------------------------
+  // Device mudou de status
+  // -------------------------------------------------------------------------
+  async handleDeviceStatusChange(device, newStatus) {
+    try {
+      if (newStatus === MonitoringStatus5.OFFLINE) {
+        await prisma.alert.create({
+          data: {
+            deviceId: device.id,
+            title: `Device offline: ${device.name}`,
+            message: `Device ${device.name} (${device.ipAddress}) stopped responding to ping.`,
+            level: "CRITICAL"
+          }
+        });
+        logger.warn({
+          message: `[Alert] Device went OFFLINE`,
+          device: device.name,
+          ip: device.ipAddress
+        });
+      }
+      if (newStatus === MonitoringStatus5.ONLINE) {
+        await prisma.alert.updateMany({
+          where: {
+            deviceId: device.id,
+            resolved: false,
+            level: "CRITICAL"
+          },
+          data: {
+            resolved: true
+          }
+        });
+        logger.info({
+          message: `[Alert] Device back ONLINE \u2014 alerts resolved`,
+          device: device.name
+        });
+      }
+    } catch (err) {
+      logger.error({
+        message: `[AlertEngine] Failed to handle device status change`,
+        error: err instanceof Error ? err.message : String(err)
+      });
+    }
+  }
+  // -------------------------------------------------------------------------
+  // Serviço está down
+  // -------------------------------------------------------------------------
+  async handleServiceDown(sm, errorMessage) {
+    try {
+      const existingAlert = await prisma.alert.findFirst({
+        where: {
+          deviceId: sm.deviceId,
+          resolved: false,
+          title: { contains: sm.type }
+        }
+      });
+      if (existingAlert) return;
+      await prisma.alert.create({
+        data: {
+          deviceId: sm.deviceId,
+          title: `Service down: ${sm.type} on ${sm.device.name}`,
+          message: `Service ${sm.name} (${sm.type}:${sm.port}) on device ${sm.device.name} (${sm.device.ipAddress}) is not responding. ${errorMessage ?? ""}`.trim(),
+          level: "WARNING"
+        }
+      });
+      logger.warn({
+        message: `[Alert] Service DOWN`,
+        service: sm.name,
+        type: sm.type,
+        port: sm.port,
+        device: sm.device.name
+      });
+    } catch (err) {
+      logger.error({
+        message: `[AlertEngine] Failed to handle service down`,
+        error: err instanceof Error ? err.message : String(err)
+      });
+    }
+  }
+};
+
+// src/modules/monitoring/service/monitoring-check.service.ts
+var MonitoringCheckService = class {
+  constructor(repository2 = new MonitoringRepository(), alertEngine = new AlertEngineService()) {
+    this.repository = repository2;
+    this.alertEngine = alertEngine;
+  }
+  repository;
+  alertEngine;
+  // -------------------------------------------------------------------------
+  // Ciclo principal — chamado pelo scheduler
+  // -------------------------------------------------------------------------
+  async runCycle() {
+    logger.info({ message: "[Monitor] Starting monitoring cycle" });
+    const [devices, serviceMonitors] = await Promise.all([
+      this.repository.findActiveDevices(),
+      this.repository.findEnabledServiceMonitors()
+    ]);
+    logger.info({
+      message: `[Monitor] Checking ${devices.length} devices and ${serviceMonitors.length} services`
+    });
+    await this.runWithConcurrencyLimit(
+      devices.map((device) => () => this.checkDevice(device)),
+      10
+    );
+    await this.runWithConcurrencyLimit(
+      serviceMonitors.map((sm) => () => this.checkService(sm)),
+      10
+    );
+    logger.info({ message: "[Monitor] Cycle completed" });
+  }
+  // -------------------------------------------------------------------------
+  // Verificação ICMP de um device
+  // -------------------------------------------------------------------------
+  async checkDevice(device) {
+    try {
+      const result = await icmpCheck(device.ipAddress, 5);
+      const newStatus = result.reachable ? MonitoringStatus6.ONLINE : MonitoringStatus6.OFFLINE;
+      await this.repository.createLog({
+        deviceId: device.id,
+        status: newStatus,
+        responseTime: result.responseTime,
+        packetLoss: result.packetLoss,
+        message: result.message
+      });
+      await this.repository.updateDeviceStatus(device.id, newStatus);
+      if (device.currentStatus !== newStatus) {
+        await this.alertEngine.handleDeviceStatusChange(device, newStatus);
+      }
+      logger.info({
+        message: `[Monitor] Device checked`,
+        device: device.name,
+        ip: device.ipAddress,
+        status: newStatus,
+        responseTime: result.responseTime
+      });
+    } catch (err) {
+      logger.error({
+        message: `[Monitor] Failed to check device`,
+        device: device.name,
+        error: err instanceof Error ? err.message : String(err)
+      });
+    }
+  }
+  // -------------------------------------------------------------------------
+  // Verificação TCP de um serviço
+  // -------------------------------------------------------------------------
+  async checkService(sm) {
+    try {
+      const result = await tcpCheck(
+        sm.device.ipAddress,
+        sm.port,
+        sm.timeoutSeconds * 1e3
+      );
+      const newStatus = result.reachable ? MonitoringStatus6.ONLINE : MonitoringStatus6.OFFLINE;
+      await this.repository.createLog({
+        deviceId: sm.deviceId,
+        status: newStatus,
+        responseTime: result.responseTime,
+        packetLoss: null,
+        message: result.reachable ? `Service ${sm.type}:${sm.port} is up` : `Service ${sm.type}:${sm.port} is down \u2014 ${result.message}`
+      });
+      if (!result.reachable) {
+        await this.alertEngine.handleServiceDown(sm, result.message);
+      }
+      logger.info({
+        message: `[Monitor] Service checked`,
+        service: sm.name,
+        type: sm.type,
+        port: sm.port,
+        device: sm.device.name,
+        reachable: result.reachable,
+        responseTime: result.responseTime
+      });
+    } catch (err) {
+      logger.error({
+        message: `[Monitor] Failed to check service`,
+        service: sm.name,
+        error: err instanceof Error ? err.message : String(err)
+      });
+    }
+  }
+  // -------------------------------------------------------------------------
+  // Controlo de concorrência — evita sobrecarregar a rede com 100 pings ao mesmo tempo
+  // -------------------------------------------------------------------------
+  async runWithConcurrencyLimit(tasks, limit) {
+    const results = [];
+    const executing = /* @__PURE__ */ new Set();
+    for (const task of tasks) {
+      const promise = task().finally(() => executing.delete(promise));
+      results.push(promise);
+      executing.add(promise);
+      if (executing.size >= limit) {
+        await Promise.race(executing);
+      }
+    }
+    await Promise.all(results);
+  }
+};
+
+// src/modules/monitoring/scheduler/monitoring.scheduler.ts
+var schedulerTask = null;
+var isRunning = false;
+var checkService = new MonitoringCheckService();
+var startMonitoringScheduler = () => {
+  if (!env.MONITOR_ENABLED) {
+    logger.info({ message: "[Scheduler] Monitoring is disabled via MONITOR_ENABLED=false" });
+    return;
+  }
+  const expression = env.MONITOR_CRON_EXPRESSION;
+  if (!cron.validate(expression)) {
+    logger.error({
+      message: `[Scheduler] Invalid cron expression: "${expression}". Monitoring will not start.`
+    });
+    return;
+  }
+  schedulerTask = cron.schedule(expression, async () => {
+    if (isRunning) {
+      logger.warn({ message: "[Scheduler] Previous cycle still running \u2014 skipping this tick" });
+      return;
+    }
+    isRunning = true;
+    try {
+      await checkService.runCycle();
+    } catch (err) {
+      logger.error({
+        message: "[Scheduler] Unhandled error in monitoring cycle",
+        error: err instanceof Error ? err.message : String(err)
+      });
+    } finally {
+      isRunning = false;
+    }
+  });
+  logger.info({
+    message: `[Scheduler] Monitoring scheduler started`,
+    expression,
+    description: "Runs on schedule defined by MONITOR_CRON_EXPRESSION"
+  });
+};
+var stopMonitoringScheduler = () => {
+  if (schedulerTask) {
+    schedulerTask.stop();
+    schedulerTask = null;
+    logger.info({ message: "[Scheduler] Monitoring scheduler stopped" });
+  }
+};
+
 // src/server.ts
 var connectDatabaseIfAvailable = async () => {
   try {
     await prisma.$connect();
     await bootstrapAdmin();
+    startMonitoringScheduler();
     logger.info({ message: "Database connected and bootstrap completed" });
   } catch (error) {
     logger.warn({
@@ -2350,6 +4322,7 @@ var server = app.listen(env.APP_PORT, async () => {
 var shutdown = async (signal) => {
   logger.info({ message: `Graceful shutdown started`, signal });
   server.close(async () => {
+    stopMonitoringScheduler();
     await prisma.$disconnect();
     logger.info({ message: "Server closed successfully" });
     process.exit(0);

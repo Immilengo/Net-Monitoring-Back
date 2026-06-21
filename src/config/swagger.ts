@@ -2,11 +2,6 @@ import swaggerJsdoc from 'swagger-jsdoc';
 
 const bearerSecurity = [{ bearerAuth: [] }];
 
-apis: [
-  './src/docs/*.ts',        // <- adicionar esta linha se ainda não existe
-  './src/modules/**/routes/*.ts'
-]
-
 const json = (schema: Record<string, unknown>) => ({
   content: {
     'application/json': {
@@ -19,9 +14,9 @@ export const swaggerSpec = swaggerJsdoc({
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Mayongi Enterprise Backend API',
+      title: 'Net Monitoring Backend API',
       version: '1.0.0',
-      description: 'Enterprise-ready modular monolith backend template'
+      description: 'Enterprise modular monolith backend By Inácio Milengo'
     },
     components: {
       securitySchemes: {
@@ -765,5 +760,5 @@ export const swaggerSpec = swaggerJsdoc({
       }
     }
   },
-  apis: []
+  apis: ['./src/docs/*.ts', './src/modules/**/routes/*.ts']
 });

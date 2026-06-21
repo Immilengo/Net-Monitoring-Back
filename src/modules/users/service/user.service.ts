@@ -35,7 +35,9 @@ export class UserService {
     const userRole = await this.roleRepository.findByName('USER');
     if (!userRole) throw new AppError('Default role not configured', 500);
 
-    const status = input.statusId ? await this.statusService.get(input.statusId) : await this.statusService.getByCode('PENDING');
+    const status = input.statusId
+  ? await this.statusService.get(input.statusId)
+  : await this.statusService.getByCode('ACTIVE');
     const hashed = await bcrypt.hash(input.password, 12);
 
     const user = await this.repository.create({

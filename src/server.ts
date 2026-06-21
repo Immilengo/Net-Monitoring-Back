@@ -10,19 +10,7 @@ const connectDatabaseIfAvailable = async () => {
   try {
     await prisma.$connect();
     await bootstrapAdmin();
-    const connectDatabaseIfAvailable = async () => {
-    try {
-      await prisma.$connect();
-      await bootstrapAdmin();
-      startMonitoringScheduler(); // <- adicionar aqui
-      logger.info({ message: 'Database connected and bootstrap completed' });
-    } catch (error) {
-      logger.warn({
-        message: 'Database unavailable; API started without persistence-dependent bootstrap',
-        error: error instanceof Error ? error.message : String(error)
-      });
-    }
-  };
+    startMonitoringScheduler();
     logger.info({ message: 'Database connected and bootstrap completed' });
   } catch (error) {
     logger.warn({
@@ -47,17 +35,17 @@ const connectRedisIfAvailable = async () => {
 const server = app.listen(env.APP_PORT, async () => {
   logger.info({ message: `Startup: ${env.APP_NAME} on port ${env.APP_PORT}` });
   await connectDatabaseIfAvailable();
- // await connectRedisIfAvailable();
+  // await connectRedisIfAvailable();
   logger.info({ message: 'HTTP server ready' });
 });
 
 const shutdown = async (signal: string) => {
   logger.info({ message: `Graceful shutdown started`, signal });
   server.close(async () => {
-  stopMonitoringScheduler(); // <- adicionar aqui
-  await prisma.$disconnect();
-  logger.info({ message: 'Server closed successfully' });
-  process.exit(0);
+    stopMonitoringScheduler();
+    await prisma.$disconnect();
+    logger.info({ message: 'Server closed successfully' });
+    process.exit(0);
   });
 };
 

@@ -1406,3 +1406,667 @@
 {"level":"info","message":{"durationMs":136,"method":"GET","requestId":"9dab19aa-b8ee-46d0-9d93-633f264ae531","statusCode":200,"url":"/api/users?page=0&size=10&sortBy=createdAt&direction=desc&recordStatus=ACTIVE"},"timestamp":"2026-06-08T01:51:56.367Z"}
 {"level":"info","message":{"durationMs":12,"method":"GET","requestId":"7d72f18d-0349-4275-baa8-3db2f450d52d","statusCode":200,"url":"/api/users/me"},"timestamp":"2026-06-08T01:52:12.217Z"}
 {"level":"info","message":{"durationMs":7,"method":"GET","requestId":"ab114643-8e20-42ef-8a70-877eb272000b","statusCode":200,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-08T01:52:35.663Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-15T03:49:14.947Z"}
+{"error":"Can't reach database server at `localhost`:`5432`\n\nPlease make sure your database server is running at `localhost`:`5432`.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-15T03:49:15.828Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-15T03:49:15.836Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-21T11:06:22.775Z"}
+{"error":"Can't reach database server at `localhost`:`5432`\n\nPlease make sure your database server is running at `localhost`:`5432`.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-21T11:06:24.703Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-21T11:06:24.704Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-21T11:17:25.161Z"}
+{"error":"\nInvalid `prisma.role.upsert()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/auth/service/bootstrap-admin.service.ts:9:23\n\n  6 export const bootstrapAdmin = async () => {\n  7   const roles = ['ADMIN', 'USER', 'MANAGER'];\n  8   for (const role of roles) {\n→ 9     await prisma.role.upsert(\nThe table `public.roles` does not exist in the current database.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-21T11:17:25.630Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-21T11:17:25.630Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGINT","timestamp":"2026-06-21T11:20:17.997Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-21T11:45:36.114Z"}
+{"error":"Can't reach database server at `localhost`:`15432`\n\nPlease make sure your database server is running at `localhost`:`15432`.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-21T11:45:37.478Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-21T11:45:37.479Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-21T11:50:49.555Z"}
+{"level":"info","message":"Default admin checked/created successfully","timestamp":"2026-06-21T11:50:50.461Z"}
+{"description":"Runs on schedule defined by MONITOR_CRON_EXPRESSION","expression":"*/2 * * * *","level":"info","message":"[Scheduler] Monitoring scheduler started","timestamp":"2026-06-21T11:50:50.551Z"}
+{"level":"info","message":"Database connected and bootstrap completed","timestamp":"2026-06-21T11:50:50.552Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-21T11:50:50.553Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"32677e53-a3d0-448e-9932-3f86006ecc55","statusCode":404,"url":"/"},"timestamp":"2026-06-21T11:51:32.900Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"2204e38d-5691-4e0e-9734-116e3a72c610","statusCode":404,"url":"/api-docs"},"timestamp":"2026-06-21T11:51:43.390Z"}
+{"level":"info","message":{"durationMs":2,"method":"GET","requestId":"ba318e1f-f925-472a-b11c-d7e95c8af3a6","statusCode":404,"url":"/api-docs"},"timestamp":"2026-06-21T11:51:57.470Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T11:52:00.067Z"}
+{"error":"\nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:23:26\n\n  20 }\n  21 \n  22 async findActiveDevices() {\n→ 23   return prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T11:52:00.134Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"30ddccab-f5a6-401f-ac08-f0d1677def77","statusCode":304,"url":"/docs/"},"timestamp":"2026-06-21T11:52:06.920Z"}
+{"level":"info","message":{"durationMs":322,"method":"GET","requestId":"01a49f00-2513-4b51-8a86-26f1eaabc2f5","statusCode":200,"url":"/docs/swagger-ui-standalone-preset.js"},"timestamp":"2026-06-21T11:52:07.307Z"}
+{"level":"info","message":{"durationMs":5,"method":"GET","requestId":"4b70076a-2532-419a-a4b0-df43e80b1db8","statusCode":200,"url":"/docs/swagger-ui-init.js"},"timestamp":"2026-06-21T11:52:07.459Z"}
+{"level":"info","message":{"durationMs":488,"method":"GET","requestId":"3fe71792-3d5e-4b78-85ae-3547a445538f","statusCode":200,"url":"/docs/swagger-ui.css"},"timestamp":"2026-06-21T11:52:07.467Z"}
+{"level":"info","message":{"durationMs":846,"method":"GET","requestId":"625418f6-1aac-47c8-9631-5c4af656b82d","statusCode":200,"url":"/docs/swagger-ui-bundle.js"},"timestamp":"2026-06-21T11:52:07.828Z"}
+{"level":"info","message":{"durationMs":103,"method":"GET","requestId":"11c98e23-c3bb-4c9f-a1a1-5d031726af42","statusCode":200,"url":"/docs/favicon-32x32.png"},"timestamp":"2026-06-21T11:52:09.106Z"}
+{"level":"info","message":{"durationMs":3,"method":"GET","requestId":"e6a62fd9-939f-4971-a89e-076ad3c9404c","statusCode":200,"url":"/health"},"timestamp":"2026-06-21T11:52:19.824Z"}
+{"level":"info","message":{"durationMs":1,"method":"GET","requestId":"3a60d969-0e0b-4d13-97ae-2399883c7f35","statusCode":200,"url":"/actuator/health"},"timestamp":"2026-06-21T11:52:39.676Z"}
+{"errors":[],"level":"warn","message":"Missing authorization header","requestId":"dce27712-e25a-449a-bf37-07f1b9aefa5f","timestamp":"2026-06-21T11:53:26.528Z"}
+{"level":"info","message":{"durationMs":4,"method":"GET","requestId":"dce27712-e25a-449a-bf37-07f1b9aefa5f","statusCode":401,"url":"/api/sites?page=0&size=10&sortBy=createdAt&direction=desc&recordStatus=ACTIVE"},"timestamp":"2026-06-21T11:53:26.531Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T11:54:00.087Z"}
+{"error":"\nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:23:26\n\n  20 }\n  21 \n  22 async findActiveDevices() {\n→ 23   return prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T11:54:00.098Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T11:56:00.098Z"}
+{"error":"\nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:23:26\n\n  20 }\n  21 \n  22 async findActiveDevices() {\n→ 23   return prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T11:56:00.107Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T11:58:00.101Z"}
+{"error":"\nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:23:26\n\n  20 }\n  21 \n  22 async findActiveDevices() {\n→ 23   return prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T11:58:00.109Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:00:00.028Z"}
+{"error":"\nInvalid `prisma.serviceMonitor.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:35:34\n\n  32 }\n  33 \n  34 async findEnabledServiceMonitors() {\n→ 35   return prisma.serviceMonitor.findMany(\nThe table `public.service_monitors` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:00:00.038Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:02:00.076Z"}
+{"error":"\nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:23:26\n\n  20 }\n  21 \n  22 async findActiveDevices() {\n→ 23   return prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:02:00.085Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:04:00.117Z"}
+{"error":"\nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:23:26\n\n  20 }\n  21 \n  22 async findActiveDevices() {\n→ 23   return prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:04:00.125Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:06:00.023Z"}
+{"error":"\nInvalid `prisma.serviceMonitor.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:35:34\n\n  32 }\n  33 \n  34 async findEnabledServiceMonitors() {\n→ 35   return prisma.serviceMonitor.findMany(\nThe table `public.service_monitors` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:06:00.029Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:08:00.113Z"}
+{"error":"\nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:23:26\n\n  20 }\n  21 \n  22 async findActiveDevices() {\n→ 23   return prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:08:00.122Z"}
+{"level":"info","message":{"durationMs":928,"method":"POST","requestId":"f04f5d95-5f02-4371-b73f-527789ae64db","statusCode":200,"url":"/public/auth/login"},"timestamp":"2026-06-21T12:08:30.380Z"}
+{"level":"info","message":{"durationMs":163,"method":"GET","requestId":"d09eb251-7441-41c4-b62b-50d19502cf20","statusCode":200,"url":"/api/users/me"},"timestamp":"2026-06-21T12:09:06.353Z"}
+{"level":"info","message":{"durationMs":311,"method":"GET","requestId":"27cf6514-f315-4bfd-977f-86b67b556d4a","statusCode":200,"url":"/api/users?page=0&size=10&sortBy=createdAt&direction=desc&search=ACTIVE"},"timestamp":"2026-06-21T12:09:58.204Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:10:00.115Z"}
+{"error":"\nInvalid `prisma.serviceMonitor.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:35:34\n\n  32 }\n  33 \n  34 async findEnabledServiceMonitors() {\n→ 35   return prisma.serviceMonitor.findMany(\nThe table `public.service_monitors` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:10:00.123Z"}
+{"level":"info","message":{"durationMs":24,"method":"GET","requestId":"8debf134-460d-4e7e-ad0a-fd9dd18226cd","statusCode":200,"url":"/api/users/6295ebcd-deb2-4ed6-bdfc-57802dbfb6fa"},"timestamp":"2026-06-21T12:11:20.594Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:12:00.118Z"}
+{"error":"\nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:23:26\n\n  20 }\n  21 \n  22 async findActiveDevices() {\n→ 23   return prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:12:00.127Z"}
+{"level":"info","message":{"durationMs":17,"method":"GET","requestId":"7e15b889-9cc1-435c-adbd-66a651a7f708","statusCode":200,"url":"/api/users/6295ebcd-deb2-4ed6-bdfc-57802dbfb6fa/profile-image"},"timestamp":"2026-06-21T12:13:24.601Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:14:00.113Z"}
+{"error":"\nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:23:26\n\n  20 }\n  21 \n  22 async findActiveDevices() {\n→ 23   return prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:14:00.121Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"4e78dee8-0003-48ca-8212-a29306d2008a","statusCode":200,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T12:14:11.936Z"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'map')","requestId":"28c85e4e-3eb3-42d9-93cd-655468b6fe9f","stack":"TypeError: Cannot read properties of undefined (reading 'map')\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/validation.middleware.ts:10:44)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/roles.middleware.ts:9:5)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at Route.dispatch (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:117:3)\n    at handle (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:435:11)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at /home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:295:15","timestamp":"2026-06-21T12:14:42.070Z"}
+{"level":"info","message":{"durationMs":8,"method":"POST","requestId":"28c85e4e-3eb3-42d9-93cd-655468b6fe9f","statusCode":500,"url":"/api/users"},"timestamp":"2026-06-21T12:14:42.072Z"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'map')","requestId":"a265f44d-b912-4640-bba7-4be51c2e4e23","stack":"TypeError: Cannot read properties of undefined (reading 'map')\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/validation.middleware.ts:10:44)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/roles.middleware.ts:9:5)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at Route.dispatch (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:117:3)\n    at handle (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:435:11)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at /home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:295:15","timestamp":"2026-06-21T12:14:59.947Z"}
+{"level":"info","message":{"durationMs":4,"method":"POST","requestId":"a265f44d-b912-4640-bba7-4be51c2e4e23","statusCode":500,"url":"/api/users"},"timestamp":"2026-06-21T12:14:59.948Z"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'map')","requestId":"e9280a77-56d1-447f-8824-367c026b409c","stack":"TypeError: Cannot read properties of undefined (reading 'map')\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/validation.middleware.ts:10:44)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/roles.middleware.ts:9:5)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at Route.dispatch (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:117:3)\n    at handle (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:435:11)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at /home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:295:15","timestamp":"2026-06-21T12:15:04.945Z"}
+{"level":"info","message":{"durationMs":6,"method":"POST","requestId":"e9280a77-56d1-447f-8824-367c026b409c","statusCode":500,"url":"/api/users"},"timestamp":"2026-06-21T12:15:04.947Z"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'map')","requestId":"b85dc71f-19c2-41e2-8f17-f6e71fd2b227","stack":"TypeError: Cannot read properties of undefined (reading 'map')\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/validation.middleware.ts:10:44)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/roles.middleware.ts:9:5)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at Route.dispatch (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:117:3)\n    at handle (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:435:11)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at /home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:295:15","timestamp":"2026-06-21T12:15:25.427Z"}
+{"level":"info","message":{"durationMs":4,"method":"POST","requestId":"b85dc71f-19c2-41e2-8f17-f6e71fd2b227","statusCode":500,"url":"/api/users"},"timestamp":"2026-06-21T12:15:25.428Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:16:00.075Z"}
+{"error":"\nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:23:26\n\n  20 }\n  21 \n  22 async findActiveDevices() {\n→ 23   return prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:16:00.084Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:18:00.114Z"}
+{"error":"\nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:23:26\n\n  20 }\n  21 \n  22 async findActiveDevices() {\n→ 23   return prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:18:00.122Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:20:00.097Z"}
+{"error":"\nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:23:26\n\n  20 }\n  21 \n  22 async findActiveDevices() {\n→ 23   return prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:20:00.106Z"}
+{"level":"info","message":{"durationMs":167,"method":"GET","requestId":"66044612-e308-46db-9a05-1def0dd7a29e","statusCode":304,"url":"/api/users?page=0&size=10&sortBy=createdAt&direction=desc&search=ACTIVE"},"timestamp":"2026-06-21T12:20:58.911Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"e8edd181-9350-4c03-93ca-9873d0336098","statusCode":200,"url":"/api/statuses?recordStatus=ACTIVE"},"timestamp":"2026-06-21T12:21:32.088Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:22:00.084Z"}
+{"error":"\nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:23:26\n\n  20 }\n  21 \n  22 async findActiveDevices() {\n→ 23   return prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:22:00.093Z"}
+{"level":"info","message":{"durationMs":42,"method":"POST","requestId":"66afea15-89a9-408c-89cf-d82d2c80b041","statusCode":200,"url":"/api/statuses"},"timestamp":"2026-06-21T12:22:37.412Z"}
+{"level":"info","message":{"durationMs":5,"method":"GET","requestId":"86d6b82a-5bd1-4f2c-a155-a8938decafa5","statusCode":200,"url":"/api/statuses?recordStatus=ACTIVE"},"timestamp":"2026-06-21T12:22:47.629Z"}
+{"errors":[],"level":"warn","message":"Invalid token","requestId":"943eb6bc-afb0-4a78-8efb-7a4a4d33d5e4","timestamp":"2026-06-21T12:23:32.555Z"}
+{"level":"info","message":{"durationMs":3,"method":"GET","requestId":"943eb6bc-afb0-4a78-8efb-7a4a4d33d5e4","statusCode":401,"url":"/api/tickets?page=0&size=10&sortBy=createdAt&direction=desc&recordStatus=ACTIVE"},"timestamp":"2026-06-21T12:23:32.556Z"}
+{"errors":[],"level":"warn","message":"Invalid token","requestId":"ae70a956-3675-4716-b6d5-96c5bf4c7b20","timestamp":"2026-06-21T12:23:43.638Z"}
+{"level":"info","message":{"durationMs":3,"method":"GET","requestId":"ae70a956-3675-4716-b6d5-96c5bf4c7b20","statusCode":401,"url":"/api/statuses?recordStatus=ACTIVE"},"timestamp":"2026-06-21T12:23:43.639Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:24:00.116Z"}
+{"error":"\nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:23:26\n\n  20 }\n  21 \n  22 async findActiveDevices() {\n→ 23   return prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:24:00.126Z"}
+{"level":"info","message":{"durationMs":717,"method":"POST","requestId":"c57b9d3b-6dac-407c-b954-68d698f8b7c9","statusCode":200,"url":"/public/auth/refresh"},"timestamp":"2026-06-21T12:24:20.162Z"}
+{"errors":[],"level":"warn","message":"Invalid token","requestId":"ca9651ec-09b2-4eee-b88b-8aaeb3c8a73c","timestamp":"2026-06-21T12:24:45.328Z"}
+{"level":"info","message":{"durationMs":3,"method":"GET","requestId":"ca9651ec-09b2-4eee-b88b-8aaeb3c8a73c","statusCode":401,"url":"/api/users?page=0&size=10&sortBy=createdAt&direction=desc&search=ACTIVE"},"timestamp":"2026-06-21T12:24:45.329Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"e043819a-9a6b-4019-b600-8de85f40be1e","statusCode":304,"url":"/api/users?page=0&size=10&sortBy=createdAt&direction=desc&search=ACTIVE"},"timestamp":"2026-06-21T12:24:58.954Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:26:00.031Z"}
+{"error":"\nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:23:26\n\n  20 }\n  21 \n  22 async findActiveDevices() {\n→ 23   return prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:26:00.040Z"}
+{"level":"info","message":{"durationMs":121,"method":"POST","requestId":"500a2246-af35-4063-8f5e-1dec4d1b27d7","statusCode":200,"url":"/api/tickets"},"timestamp":"2026-06-21T12:26:54.156Z"}
+{"level":"info","message":{"durationMs":19,"method":"GET","requestId":"77bf4fb0-660a-4597-8d33-7de3ed851482","statusCode":200,"url":"/api/tickets?page=0&size=10&sortBy=createdAt&direction=desc&recordStatus=ACTIVE"},"timestamp":"2026-06-21T12:27:09.326Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:28:00.077Z"}
+{"error":"\nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:23:26\n\n  20 }\n  21 \n  22 async findActiveDevices() {\n→ 23   return prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:28:00.087Z"}
+{"level":"error","message":"\nInvalid `prisma.device.count()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/dashboard/repository/dashboard.repository.ts:10:21\n\n   7 // -------------------------------------------------------------------------\n   8 async getDeviceStatusCounts() {\n   9   const [total, online, offline, warning] = await Promise.all([\n→ 10     prisma.device.count(\nThe table `public.devices` does not exist in the current database.","requestId":"5cd30245-05ee-4bbf-826f-23cb7225a9a1","stack":"PrismaClientKnownRequestError: \nInvalid `prisma.device.count()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/dashboard/repository/dashboard.repository.ts:10:21\n\n   7 // -------------------------------------------------------------------------\n   8 async getDeviceStatusCounts() {\n   9   const [total, online, offline, warning] = await Promise.all([\n→ 10     prisma.device.count(\nThe table `public.devices` does not exist in the current database.\n    at Rn.handleRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:7325)\n    at Rn.handleAndLogRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6754)\n    at Rn.request (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6344)\n    at async Promise.all (index 0)\n    at async DashboardRepository.getDeviceStatusCounts (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/dashboard/repository/dashboard.repository.ts:9:47)\n    at async Promise.all (index 0)\n    at async DashboardService.getSummary (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/dashboard/service/dashboard.service.ts:16:9)\n    at async DashboardController.getSummary (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/dashboard/controller/dashboard.controller.ts:9:18)","timestamp":"2026-06-21T12:28:17.390Z"}
+{"level":"info","message":{"durationMs":53,"method":"GET","requestId":"5cd30245-05ee-4bbf-826f-23cb7225a9a1","statusCode":500,"url":"/api/dashboard/summary"},"timestamp":"2026-06-21T12:28:17.392Z"}
+{"level":"error","message":"\nInvalid `prisma.device.count()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/dashboard/repository/dashboard.repository.ts:11:21\n\n   8 async getDeviceStatusCounts() {\n   9   const [total, online, offline, warning] = await Promise.all([\n  10     prisma.device.count({ where: { deleted: false } }),\n→ 11     prisma.device.count(\nThe table `public.devices` does not exist in the current database.","requestId":"bb729d67-8372-4b67-928a-61e8c6548c33","stack":"PrismaClientKnownRequestError: \nInvalid `prisma.device.count()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/dashboard/repository/dashboard.repository.ts:11:21\n\n   8 async getDeviceStatusCounts() {\n   9   const [total, online, offline, warning] = await Promise.all([\n  10     prisma.device.count({ where: { deleted: false } }),\n→ 11     prisma.device.count(\nThe table `public.devices` does not exist in the current database.\n    at Rn.handleRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:7325)\n    at Rn.handleAndLogRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6754)\n    at Rn.request (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6344)\n    at async Promise.all (index 1)\n    at async DashboardRepository.getDeviceStatusCounts (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/dashboard/repository/dashboard.repository.ts:9:47)\n    at async Promise.all (index 0)\n    at async DashboardService.getSummary (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/dashboard/service/dashboard.service.ts:16:9)\n    at async DashboardController.getSummary (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/dashboard/controller/dashboard.controller.ts:9:18)","timestamp":"2026-06-21T12:28:58.215Z"}
+{"level":"info","message":{"durationMs":25,"method":"GET","requestId":"bb729d67-8372-4b67-928a-61e8c6548c33","statusCode":500,"url":"/api/dashboard/summary"},"timestamp":"2026-06-21T12:28:58.218Z"}
+{"level":"error","message":"\nInvalid `prisma.device.count()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/dashboard/repository/dashboard.repository.ts:10:21\n\n   7 // -------------------------------------------------------------------------\n   8 async getDeviceStatusCounts() {\n   9   const [total, online, offline, warning] = await Promise.all([\n→ 10     prisma.device.count(\nThe table `public.devices` does not exist in the current database.","requestId":"23864d3d-b4bf-40fd-afbe-fdc0e49ecbe5","stack":"PrismaClientKnownRequestError: \nInvalid `prisma.device.count()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/dashboard/repository/dashboard.repository.ts:10:21\n\n   7 // -------------------------------------------------------------------------\n   8 async getDeviceStatusCounts() {\n   9   const [total, online, offline, warning] = await Promise.all([\n→ 10     prisma.device.count(\nThe table `public.devices` does not exist in the current database.\n    at Rn.handleRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:7325)\n    at Rn.handleAndLogRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6754)\n    at Rn.request (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6344)\n    at async Promise.all (index 0)\n    at async DashboardRepository.getDeviceStatusCounts (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/dashboard/repository/dashboard.repository.ts:9:47)\n    at async Promise.all (index 0)\n    at async DashboardService.getCounters (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/dashboard/service/dashboard.service.ts:70:41)\n    at async DashboardController.getCounters (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/dashboard/controller/dashboard.controller.ts:14:18)","timestamp":"2026-06-21T12:29:12.005Z"}
+{"level":"info","message":{"durationMs":33,"method":"GET","requestId":"23864d3d-b4bf-40fd-afbe-fdc0e49ecbe5","statusCode":500,"url":"/api/dashboard/counters"},"timestamp":"2026-06-21T12:29:12.008Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:30:00.083Z"}
+{"error":"\nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:23:26\n\n  20 }\n  21 \n  22 async findActiveDevices() {\n→ 23   return prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:30:00.091Z"}
+{"level":"error","message":"\nInvalid `prisma.alert.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/alerts/repository/alert.repository.ts:45:20\n\n  42 };\n  43 \n  44 const [items, total] = await Promise.all([\n→ 45   prisma.alert.findMany(\nThe table `public.alerts` does not exist in the current database.","requestId":"752865a8-e4f8-4d3c-9fcf-c30f98e28664","stack":"PrismaClientKnownRequestError: \nInvalid `prisma.alert.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/alerts/repository/alert.repository.ts:45:20\n\n  42 };\n  43 \n  44 const [items, total] = await Promise.all([\n→ 45   prisma.alert.findMany(\nThe table `public.alerts` does not exist in the current database.\n    at Rn.handleRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:7325)\n    at Rn.handleAndLogRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6754)\n    at Rn.request (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6344)\n    at async Promise.all (index 0)\n    at async AlertRepository.findMany (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/alerts/repository/alert.repository.ts:44:28)\n    at async AlertService.list (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/alerts/service/alert.service.ts:41:30)\n    at async AlertController.list (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/alerts/controller/alert.controller.ts:9:18)","timestamp":"2026-06-21T12:30:03.626Z"}
+{"level":"info","message":{"durationMs":15,"method":"GET","requestId":"752865a8-e4f8-4d3c-9fcf-c30f98e28664","statusCode":500,"url":"/api/alerts?page=0&size=10&sortBy=createdAt&direction=desc"},"timestamp":"2026-06-21T12:30:03.630Z"}
+{"level":"error","message":"\nInvalid `prisma.alert.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/alerts/repository/alert.repository.ts:45:20\n\n  42 };\n  43 \n  44 const [items, total] = await Promise.all([\n→ 45   prisma.alert.findMany(\nThe table `public.alerts` does not exist in the current database.","requestId":"70bf5936-2426-44cc-bee2-e0843d4d23eb","stack":"PrismaClientKnownRequestError: \nInvalid `prisma.alert.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/alerts/repository/alert.repository.ts:45:20\n\n  42 };\n  43 \n  44 const [items, total] = await Promise.all([\n→ 45   prisma.alert.findMany(\nThe table `public.alerts` does not exist in the current database.\n    at Rn.handleRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:7325)\n    at Rn.handleAndLogRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6754)\n    at Rn.request (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6344)\n    at async Promise.all (index 0)\n    at async AlertRepository.findMany (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/alerts/repository/alert.repository.ts:44:28)\n    at async AlertService.list (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/alerts/service/alert.service.ts:41:30)\n    at async AlertController.list (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/alerts/controller/alert.controller.ts:9:18)","timestamp":"2026-06-21T12:30:44.093Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"70bf5936-2426-44cc-bee2-e0843d4d23eb","statusCode":500,"url":"/api/alerts?page=0&size=10&sortBy=createdAt&direction=desc&level=INFO&acknowledged=true&resolved=false"},"timestamp":"2026-06-21T12:30:44.095Z"}
+{"level":"error","message":"\nInvalid `prisma.alert.count()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/alerts/repository/alert.repository.ts:67:25\n\n  64 }\n  65 \n  66 async countByLevel(level: AlertLevel) {\n→ 67   return prisma.alert.count(\nThe table `public.alerts` does not exist in the current database.","requestId":"c89da20e-4bee-41a1-b456-d1050a3a62dd","stack":"PrismaClientKnownRequestError: \nInvalid `prisma.alert.count()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/alerts/repository/alert.repository.ts:67:25\n\n  64 }\n  65 \n  66 async countByLevel(level: AlertLevel) {\n→ 67   return prisma.alert.count(\nThe table `public.alerts` does not exist in the current database.\n    at Rn.handleRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:7325)\n    at Rn.handleAndLogRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6754)\n    at Rn.request (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6344)\n    at async Promise.all (index 3)\n    at async AlertService.getSummary (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/alerts/service/alert.service.ts:122:46)\n    at async AlertController.getSummary (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/alerts/controller/alert.controller.ts:48:18)","timestamp":"2026-06-21T12:31:14.499Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"c89da20e-4bee-41a1-b456-d1050a3a62dd","statusCode":500,"url":"/api/alerts/summary"},"timestamp":"2026-06-21T12:31:14.500Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:32:00.081Z"}
+{"error":"\nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:23:26\n\n  20 }\n  21 \n  22 async findActiveDevices() {\n→ 23   return prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:32:00.092Z"}
+{"level":"error","message":"\nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/devices/repository/device.repository.ts:63:21\n\n  60 };\n  61 \n  62 const [items, total] = await Promise.all([\n→ 63   prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.","requestId":"98704b23-52a7-4da4-854c-d0ff3d321a76","stack":"PrismaClientKnownRequestError: \nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/devices/repository/device.repository.ts:63:21\n\n  60 };\n  61 \n  62 const [items, total] = await Promise.all([\n→ 63   prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.\n    at Rn.handleRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:7325)\n    at Rn.handleAndLogRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6754)\n    at Rn.request (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6344)\n    at async Promise.all (index 0)\n    at async DeviceRepository.findMany (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/devices/repository/device.repository.ts:62:28)\n    at async DeviceService.list (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/devices/service/device.service.ts:70:30)\n    at async DeviceController.list (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/devices/controller/device.controller.ts:14:18)","timestamp":"2026-06-21T12:32:22.427Z"}
+{"level":"info","message":{"durationMs":19,"method":"GET","requestId":"98704b23-52a7-4da4-854c-d0ff3d321a76","statusCode":500,"url":"/api/devices?page=0&size=10&sortBy=createdAt&direction=desc&recordStatus=ACTIVE"},"timestamp":"2026-06-21T12:32:22.429Z"}
+{"level":"error","message":"\nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/devices/repository/device.repository.ts:63:21\n\n  60 };\n  61 \n  62 const [items, total] = await Promise.all([\n→ 63   prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.","requestId":"a06d3c79-e125-4919-a1a9-c4834dffb216","stack":"PrismaClientKnownRequestError: \nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/devices/repository/device.repository.ts:63:21\n\n  60 };\n  61 \n  62 const [items, total] = await Promise.all([\n→ 63   prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.\n    at Rn.handleRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:7325)\n    at Rn.handleAndLogRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6754)\n    at Rn.request (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6344)\n    at async Promise.all (index 0)\n    at async DeviceRepository.findMany (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/devices/repository/device.repository.ts:62:28)\n    at async DeviceService.list (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/devices/service/device.service.ts:70:30)\n    at async DeviceController.list (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/devices/controller/device.controller.ts:14:18)","timestamp":"2026-06-21T12:32:43.604Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"a06d3c79-e125-4919-a1a9-c4834dffb216","statusCode":500,"url":"/api/devices?page=0&size=10&sortBy=createdAt&direction=desc&recordStatus=ACTIVE&type=ROUTER&currentStatus=ONLINE&active=true"},"timestamp":"2026-06-21T12:32:43.606Z"}
+{"level":"error","message":"\nInvalid `prisma.site.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/sites/repository/site.repository.ts:39:19\n\n  36 };\n  37 \n  38 const [items, total] = await Promise.all([\n→ 39   prisma.site.findMany(\nThe table `public.sites` does not exist in the current database.","requestId":"c2f90ba4-eafe-4ad1-b44a-de45fdc2d90f","stack":"PrismaClientKnownRequestError: \nInvalid `prisma.site.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/sites/repository/site.repository.ts:39:19\n\n  36 };\n  37 \n  38 const [items, total] = await Promise.all([\n→ 39   prisma.site.findMany(\nThe table `public.sites` does not exist in the current database.\n    at Rn.handleRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:7325)\n    at Rn.handleAndLogRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6754)\n    at Rn.request (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6344)\n    at async Promise.all (index 0)\n    at async SiteRepository.findMany (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/sites/repository/site.repository.ts:38:28)\n    at async SiteService.list (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/sites/controller/site.controller.ts:54:30)\n    at async <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/sites/routes/site.routes.ts:28:18)","timestamp":"2026-06-21T12:33:07.718Z"}
+{"level":"info","message":{"durationMs":21,"method":"GET","requestId":"c2f90ba4-eafe-4ad1-b44a-de45fdc2d90f","statusCode":500,"url":"/api/sites?page=0&size=10&sortBy=createdAt&direction=desc&recordStatus=ACTIVE"},"timestamp":"2026-06-21T12:33:07.722Z"}
+{"level":"error","message":"\nInvalid `prisma.site.findFirst()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/sites/repository/site.repository.ts:14:24\n\n  11 }\n  12 \n  13 async findByName(name: string) {\n→ 14   return prisma.site.findFirst(\nThe table `public.sites` does not exist in the current database.","requestId":"daf5c342-6ff6-4d29-9886-c5eba7d36b5e","stack":"PrismaClientKnownRequestError: \nInvalid `prisma.site.findFirst()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/sites/repository/site.repository.ts:14:24\n\n  11 }\n  12 \n  13 async findByName(name: string) {\n→ 14   return prisma.site.findFirst(\nThe table `public.sites` does not exist in the current database.\n    at Rn.handleRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:7325)\n    at Rn.handleAndLogRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6754)\n    at Rn.request (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6344)\n    at async SiteService.create (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/sites/controller/site.controller.ts:15:22)\n    at async <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/sites/routes/site.routes.ts:19:18)","timestamp":"2026-06-21T12:33:21.552Z"}
+{"level":"info","message":{"durationMs":10,"method":"POST","requestId":"daf5c342-6ff6-4d29-9886-c5eba7d36b5e","statusCode":500,"url":"/api/sites"},"timestamp":"2026-06-21T12:33:21.554Z"}
+{"level":"error","message":"\nInvalid `prisma.serviceMonitor.count()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/service-monitors/repository/service-monitor.repository.ts:71:29\n\n  68   orderBy: { [params.sortBy]: params.direction },\n  69   include: this.include\n  70 }),\n→ 71 prisma.serviceMonitor.count(\nThe table `public.service_monitors` does not exist in the current database.","requestId":"f053e126-ba0f-43ba-9d13-47bbfe67edeb","stack":"PrismaClientKnownRequestError: \nInvalid `prisma.serviceMonitor.count()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/service-monitors/repository/service-monitor.repository.ts:71:29\n\n  68   orderBy: { [params.sortBy]: params.direction },\n  69   include: this.include\n  70 }),\n→ 71 prisma.serviceMonitor.count(\nThe table `public.service_monitors` does not exist in the current database.\n    at Rn.handleRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:7325)\n    at Rn.handleAndLogRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6754)\n    at Rn.request (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6344)\n    at async Promise.all (index 1)\n    at async ServiceMonitorRepository.findMany (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/service-monitors/repository/service-monitor.repository.ts:63:28)\n    at async ServiceMonitorService.list (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/service-monitors/service/service-monitor.service.ts:83:30)\n    at async ServiceMonitorController.list (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/service-monitors/controller/service-monitor.controller.ts:14:18)","timestamp":"2026-06-21T12:33:47.760Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"f053e126-ba0f-43ba-9d13-47bbfe67edeb","statusCode":500,"url":"/api/service-monitors?page=0&size=10"},"timestamp":"2026-06-21T12:33:47.762Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:34:00.081Z"}
+{"error":"\nInvalid `prisma.serviceMonitor.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:35:34\n\n  32 }\n  33 \n  34 async findEnabledServiceMonitors() {\n→ 35   return prisma.serviceMonitor.findMany(\nThe table `public.service_monitors` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:34:00.089Z"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'map')","requestId":"acdb52f2-b83a-44a2-9764-2af66b2edca8","stack":"TypeError: Cannot read properties of undefined (reading 'map')\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/validation.middleware.ts:10:44)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/roles.middleware.ts:9:5)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at Route.dispatch (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:117:3)\n    at handle (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:435:11)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at /home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:295:15","timestamp":"2026-06-21T12:34:00.405Z"}
+{"level":"info","message":{"durationMs":5,"method":"POST","requestId":"acdb52f2-b83a-44a2-9764-2af66b2edca8","statusCode":500,"url":"/api/service-monitors"},"timestamp":"2026-06-21T12:34:00.407Z"}
+{"level":"error","message":"\nInvalid `prisma.site.findFirst()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/sites/repository/site.repository.ts:14:24\n\n  11 }\n  12 \n  13 async findByName(name: string) {\n→ 14   return prisma.site.findFirst(\nThe table `public.sites` does not exist in the current database.","requestId":"b4cd406c-041a-4e80-b6d5-300025c9b312","stack":"PrismaClientKnownRequestError: \nInvalid `prisma.site.findFirst()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/sites/repository/site.repository.ts:14:24\n\n  11 }\n  12 \n  13 async findByName(name: string) {\n→ 14   return prisma.site.findFirst(\nThe table `public.sites` does not exist in the current database.\n    at Rn.handleRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:7325)\n    at Rn.handleAndLogRequestError (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6754)\n    at Rn.request (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/@prisma/client/runtime/library.js:174:6344)\n    at async SiteService.create (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/sites/controller/site.controller.ts:15:22)\n    at async <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/sites/routes/site.routes.ts:19:18)","timestamp":"2026-06-21T12:35:39.830Z"}
+{"level":"info","message":{"durationMs":7,"method":"POST","requestId":"b4cd406c-041a-4e80-b6d5-300025c9b312","statusCode":500,"url":"/api/sites"},"timestamp":"2026-06-21T12:35:39.831Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:36:00.026Z"}
+{"error":"\nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:23:26\n\n  20 }\n  21 \n  22 async findActiveDevices() {\n→ 23   return prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:36:00.035Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:38:00.105Z"}
+{"error":"\nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:23:26\n\n  20 }\n  21 \n  22 async findActiveDevices() {\n→ 23   return prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:38:00.111Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:40:00.046Z"}
+{"error":"\nInvalid `prisma.serviceMonitor.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:35:34\n\n  32 }\n  33 \n  34 async findEnabledServiceMonitors() {\n→ 35   return prisma.serviceMonitor.findMany(\nThe table `public.service_monitors` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:40:00.053Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGINT","timestamp":"2026-06-21T12:41:31.964Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGINT","timestamp":"2026-06-21T12:41:31.967Z"}
+{"level":"info","message":"Server closed successfully","timestamp":"2026-06-21T12:41:31.974Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:42:00.097Z"}
+{"error":"\nInvalid `prisma.device.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:23:26\n\n  20 }\n  21 \n  22 async findActiveDevices() {\n→ 23   return prisma.device.findMany(\nThe table `public.devices` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:42:00.105Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:44:00.033Z"}
+{"error":"\nInvalid `prisma.serviceMonitor.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:35:34\n\n  32 }\n  33 \n  34 async findEnabledServiceMonitors() {\n→ 35   return prisma.serviceMonitor.findMany(\nThe table `public.service_monitors` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:44:00.042Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T12:46:00.117Z"}
+{"error":"\nInvalid `prisma.serviceMonitor.findMany()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/monitoring/repository/monitoring.repository.ts:35:34\n\n  32 }\n  33 \n  34 async findEnabledServiceMonitors() {\n→ 35   return prisma.serviceMonitor.findMany(\nThe table `public.service_monitors` does not exist in the current database.","level":"error","message":"[Scheduler] Unhandled error in monitoring cycle","timestamp":"2026-06-21T12:46:00.126Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGINT","timestamp":"2026-06-21T12:46:44.757Z"}
+{"level":"info","message":"[Scheduler] Monitoring scheduler stopped","timestamp":"2026-06-21T12:46:44.760Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGINT","timestamp":"2026-06-21T12:46:44.762Z"}
+{"level":"info","message":"Server closed successfully","timestamp":"2026-06-21T12:46:44.769Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-21T13:02:47.545Z"}
+{"level":"info","message":"Default admin checked/created successfully","timestamp":"2026-06-21T13:02:49.468Z"}
+{"description":"Runs on schedule defined by MONITOR_CRON_EXPRESSION","expression":"*/2 * * * *","level":"info","message":"[Scheduler] Monitoring scheduler started","timestamp":"2026-06-21T13:02:49.531Z"}
+{"level":"info","message":"Database connected and bootstrap completed","timestamp":"2026-06-21T13:02:49.532Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-21T13:02:49.533Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:04:00.039Z"}
+{"level":"info","message":"[Monitor] Checking 0 devices and 0 services","timestamp":"2026-06-21T13:04:00.161Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:04:00.161Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"5cca1b1f-09bf-473d-91d9-e5639e463afa","statusCode":304,"url":"/docs/"},"timestamp":"2026-06-21T13:04:47.306Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"ce6d17fa-8dd5-4e72-9af8-e9a42af3314e","statusCode":304,"url":"/docs/swagger-ui.css"},"timestamp":"2026-06-21T13:04:47.356Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"2bad11f4-c01b-427f-87a5-6ecfbd6dd61e","statusCode":304,"url":"/docs/swagger-ui-bundle.js"},"timestamp":"2026-06-21T13:04:47.359Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"e74f607d-81b4-4a46-b81f-acdcd0ff5cef","statusCode":304,"url":"/docs/swagger-ui-init.js"},"timestamp":"2026-06-21T13:04:47.382Z"}
+{"level":"info","message":{"durationMs":24,"method":"GET","requestId":"b91e5e38-a794-441c-84e1-04b8ddc39588","statusCode":304,"url":"/docs/swagger-ui-standalone-preset.js"},"timestamp":"2026-06-21T13:04:47.390Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"7e003c31-bd0d-4ff7-a40f-8270eef508a5","statusCode":304,"url":"/docs/favicon-32x32.png"},"timestamp":"2026-06-21T13:04:49.025Z"}
+{"level":"info","message":{"durationMs":4,"method":"GET","requestId":"bd02780e-0b0c-474e-ba18-e0a482eef0eb","statusCode":200,"url":"/health"},"timestamp":"2026-06-21T13:04:55.616Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:06:00.025Z"}
+{"level":"info","message":"[Monitor] Checking 0 devices and 0 services","timestamp":"2026-06-21T13:06:00.033Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:06:00.034Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:08:00.020Z"}
+{"level":"info","message":"[Monitor] Checking 0 devices and 0 services","timestamp":"2026-06-21T13:08:00.028Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:08:00.029Z"}
+{"level":"info","message":{"durationMs":458,"method":"POST","requestId":"72717ef2-7d8c-4d41-8519-85b14bc35020","statusCode":200,"url":"/public/auth/login"},"timestamp":"2026-06-21T13:08:55.416Z"}
+{"level":"info","message":{"durationMs":51,"method":"GET","requestId":"e253c942-3704-4430-9c5f-42e50e2f6107","statusCode":200,"url":"/api/sites?page=0&size=10&sortBy=createdAt&direction=desc&recordStatus=ACTIVE"},"timestamp":"2026-06-21T13:09:24.527Z"}
+{"level":"info","message":{"durationMs":608,"method":"POST","requestId":"ccfb1bb3-bf05-447e-b532-738ca1069a67","statusCode":201,"url":"/api/sites"},"timestamp":"2026-06-21T13:09:36.061Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:10:00.028Z"}
+{"level":"info","message":"[Monitor] Checking 0 devices and 0 services","timestamp":"2026-06-21T13:10:00.040Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:10:00.041Z"}
+{"level":"info","message":{"durationMs":18,"method":"GET","requestId":"184afb20-df03-4c62-8a0b-d8db998306a9","statusCode":200,"url":"/api/devices?page=0&size=10&sortBy=createdAt&direction=desc&recordStatus=ACTIVE"},"timestamp":"2026-06-21T13:10:05.215Z"}
+{"level":"info","message":{"durationMs":74,"method":"POST","requestId":"74e13b41-3f0b-4065-ab4f-b814b91545ca","statusCode":201,"url":"/api/devices"},"timestamp":"2026-06-21T13:10:29.815Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"9c559027-85c2-4016-87b4-666087dd9b90","statusCode":200,"url":"/api/devices/0a7d567c-42a7-40e0-bf65-177059529b67"},"timestamp":"2026-06-21T13:10:56.763Z"}
+{"level":"info","message":{"durationMs":244,"method":"GET","requestId":"c0c382b4-63c3-4e8f-9bc7-ec982a68cba3","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-21T13:11:31.971Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:12:00.035Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:12:00.045Z"}
+{"errors":[],"level":"warn","message":"Device is already active","requestId":"f998f8e9-fb9b-49e7-9b6a-c46842ab95ec","timestamp":"2026-06-21T13:12:02.202Z"}
+{"level":"info","message":{"durationMs":15,"method":"PATCH","requestId":"f998f8e9-fb9b-49e7-9b6a-c46842ab95ec","statusCode":400,"url":"/api/devices/0a7d567c-42a7-40e0-bf65-177059529b67/restore"},"timestamp":"2026-06-21T13:12:02.205Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:12:05.059Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:12:05.059Z"}
+{"level":"info","message":{"durationMs":22,"method":"GET","requestId":"fb582771-8adf-43d4-8e99-360324526ee9","statusCode":200,"url":"/api/dashboard/counters"},"timestamp":"2026-06-21T13:12:23.715Z"}
+{"level":"info","message":{"durationMs":17,"method":"GET","requestId":"66d44b81-e032-4e24-a52e-dd5ea88a0164","statusCode":200,"url":"/api/alerts?page=0&size=10&sortBy=createdAt&direction=desc"},"timestamp":"2026-06-21T13:13:21.342Z"}
+{"level":"info","message":{"durationMs":15,"method":"GET","requestId":"2f8aac93-c5a1-4714-ac67-bffc63c2d7c4","statusCode":200,"url":"/api/alerts/summary"},"timestamp":"2026-06-21T13:13:36.472Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:14:00.032Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:14:00.039Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:14:04.081Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:14:04.082Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:16:00.029Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:16:00.044Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:16:04.548Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:16:04.549Z"}
+{"level":"info","message":{"durationMs":21,"method":"GET","requestId":"058034c2-ce5e-4ec8-a3ee-bd1cd31fc325","statusCode":200,"url":"/api/monitoring-logs?page=0&size=10&sortBy=checkedAt&direction=desc"},"timestamp":"2026-06-21T13:16:25.314Z"}
+{"level":"info","message":{"durationMs":116,"method":"GET","requestId":"939ed498-1c39-4169-9289-78a8d5e37ae7","statusCode":200,"url":"/api/monitoring-logs/stats?deviceId=0a7d567c-42a7-40e0-bf65-177059529b67"},"timestamp":"2026-06-21T13:17:50.591Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:18:00.028Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:18:00.034Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:18:04.069Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:18:04.069Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:20:00.030Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:20:00.040Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:20:05.101Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:20:05.101Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:22:00.023Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:22:00.028Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:22:04.046Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:22:04.046Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:24:00.024Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:24:00.033Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:24:04.045Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:24:04.046Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:26:00.026Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:26:00.031Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:26:04.123Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:26:04.124Z"}
+{"errors":[],"level":"warn","message":"Invalid token","requestId":"4344ce13-a8e2-44c7-850e-d42fcdeb580f","timestamp":"2026-06-21T13:27:35.250Z"}
+{"level":"info","message":{"durationMs":5,"method":"POST","requestId":"4344ce13-a8e2-44c7-850e-d42fcdeb580f","statusCode":401,"url":"/api/users"},"timestamp":"2026-06-21T13:27:35.252Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:28:00.035Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:28:00.042Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:28:04.457Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:28:04.457Z"}
+{"level":"info","message":{"durationMs":140,"method":"POST","requestId":"dafebfc1-f802-4dcc-8861-659c0b3cf37d","statusCode":200,"url":"/public/auth/refresh"},"timestamp":"2026-06-21T13:28:25.847Z"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'map')","requestId":"89529a76-4cef-43ec-bccb-b5c08d1f90a9","stack":"TypeError: Cannot read properties of undefined (reading 'map')\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/validation.middleware.ts:17:44)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/roles.middleware.ts:9:5)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at Route.dispatch (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:117:3)\n    at handle (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:435:11)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at /home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:295:15","timestamp":"2026-06-21T13:28:52.584Z"}
+{"level":"info","message":{"durationMs":7,"method":"POST","requestId":"89529a76-4cef-43ec-bccb-b5c08d1f90a9","statusCode":500,"url":"/api/users"},"timestamp":"2026-06-21T13:28:52.586Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:30:00.029Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:30:00.036Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:30:04.067Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:30:04.067Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:32:00.038Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:32:00.047Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:32:04.079Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:32:04.079Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:34:00.037Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:34:00.045Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:34:04.289Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:34:04.289Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:36:00.020Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:36:00.025Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:36:05.458Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:36:05.459Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:38:00.019Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:38:00.022Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:38:04.010Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:38:04.011Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:40:00.039Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:40:00.045Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:40:04.133Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:40:04.134Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:42:00.030Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:42:00.034Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:42:04.255Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:42:04.256Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGINT","timestamp":"2026-06-21T13:43:02.566Z"}
+{"level":"info","message":"[Scheduler] Monitoring scheduler stopped","timestamp":"2026-06-21T13:43:02.571Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGINT","timestamp":"2026-06-21T13:43:02.573Z"}
+{"level":"info","message":"Server closed successfully","timestamp":"2026-06-21T13:43:02.583Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-21T13:43:18.682Z"}
+{"level":"info","message":"Default admin checked/created successfully","timestamp":"2026-06-21T13:43:19.516Z"}
+{"description":"Runs on schedule defined by MONITOR_CRON_EXPRESSION","expression":"*/2 * * * *","level":"info","message":"[Scheduler] Monitoring scheduler started","timestamp":"2026-06-21T13:43:19.558Z"}
+{"level":"info","message":"Database connected and bootstrap completed","timestamp":"2026-06-21T13:43:19.559Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-21T13:43:19.560Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"aabc7cde-5691-420c-930b-71dd7a45fe20","statusCode":304,"url":"/actuator/health"},"timestamp":"2026-06-21T13:43:47.265Z"}
+{"level":"info","message":{"durationMs":5,"method":"GET","requestId":"2756b851-34d2-4c00-a172-9d9de982a714","statusCode":304,"url":"/actuator/health"},"timestamp":"2026-06-21T13:43:55.459Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:44:00.028Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:44:00.171Z"}
+{"level":"info","message":{"durationMs":3,"method":"GET","requestId":"7a2cd5ca-6799-4364-9a14-f36d676a0a99","statusCode":200,"url":"/health"},"timestamp":"2026-06-21T13:44:04.054Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:44:04.209Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:44:04.210Z"}
+{"errors":[],"level":"warn","message":"Invalid token","requestId":"5c85457a-a2bb-4f29-992a-182e03f70bf5","timestamp":"2026-06-21T13:45:44.198Z"}
+{"level":"info","message":{"durationMs":13,"method":"GET","requestId":"5c85457a-a2bb-4f29-992a-182e03f70bf5","statusCode":401,"url":"/api/users?page=0&size=10&sortBy=createdAt&direction=desc&search=ACTIVE"},"timestamp":"2026-06-21T13:45:44.200Z"}
+{"level":"info","message":{"durationMs":453,"method":"POST","requestId":"b2b90f45-74c7-4d24-83a6-0c608aaba2fe","statusCode":200,"url":"/public/auth/login"},"timestamp":"2026-06-21T13:45:55.990Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:46:00.022Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:46:00.033Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:46:06.084Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:46:06.084Z"}
+{"level":"info","message":{"durationMs":28,"method":"GET","requestId":"0a8108ca-125c-4035-ba58-264ec67cad06","statusCode":200,"url":"/api/users?page=0&size=10&sortBy=createdAt&direction=desc&search=ACTIVE"},"timestamp":"2026-06-21T13:46:48.246Z"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'map')","requestId":"43392a9f-ce33-4e04-9e5d-f6efdb98c602","stack":"TypeError: Cannot read properties of undefined (reading 'map')\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/validation.middleware.ts:17:44)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/roles.middleware.ts:9:5)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at Route.dispatch (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:117:3)\n    at handle (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:435:11)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at /home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:295:15","timestamp":"2026-06-21T13:46:56.160Z"}
+{"level":"info","message":{"durationMs":10,"method":"POST","requestId":"43392a9f-ce33-4e04-9e5d-f6efdb98c602","statusCode":500,"url":"/api/users"},"timestamp":"2026-06-21T13:46:56.163Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:48:00.033Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:48:00.040Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:48:04.065Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:48:04.066Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGTERM","timestamp":"2026-06-21T13:48:54.062Z"}
+{"level":"info","message":"[Scheduler] Monitoring scheduler stopped","timestamp":"2026-06-21T13:48:54.066Z"}
+{"level":"info","message":"Server closed successfully","timestamp":"2026-06-21T13:48:54.075Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-21T13:49:01.532Z"}
+{"level":"info","message":"Default admin checked/created successfully","timestamp":"2026-06-21T13:49:02.463Z"}
+{"description":"Runs on schedule defined by MONITOR_CRON_EXPRESSION","expression":"*/2 * * * *","level":"info","message":"[Scheduler] Monitoring scheduler started","timestamp":"2026-06-21T13:49:02.500Z"}
+{"level":"info","message":"Database connected and bootstrap completed","timestamp":"2026-06-21T13:49:02.501Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-21T13:49:02.501Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGTERM","timestamp":"2026-06-21T13:49:33.015Z"}
+{"level":"info","message":"[Scheduler] Monitoring scheduler stopped","timestamp":"2026-06-21T13:49:33.018Z"}
+{"level":"info","message":"Server closed successfully","timestamp":"2026-06-21T13:49:33.025Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-21T13:49:40.438Z"}
+{"level":"info","message":"Default admin checked/created successfully","timestamp":"2026-06-21T13:49:43.030Z"}
+{"description":"Runs on schedule defined by MONITOR_CRON_EXPRESSION","expression":"*/2 * * * *","level":"info","message":"[Scheduler] Monitoring scheduler started","timestamp":"2026-06-21T13:49:43.082Z"}
+{"level":"info","message":"Database connected and bootstrap completed","timestamp":"2026-06-21T13:49:43.083Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-21T13:49:43.084Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:50:00.032Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:50:00.160Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:50:04.266Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:50:04.267Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGINT","timestamp":"2026-06-21T13:51:34.387Z"}
+{"level":"info","message":"[Scheduler] Monitoring scheduler stopped","timestamp":"2026-06-21T13:51:34.394Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGINT","timestamp":"2026-06-21T13:51:34.399Z"}
+{"level":"info","message":"Server closed successfully","timestamp":"2026-06-21T13:51:34.405Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-21T13:51:40.727Z"}
+{"level":"info","message":"Default admin checked/created successfully","timestamp":"2026-06-21T13:51:41.659Z"}
+{"description":"Runs on schedule defined by MONITOR_CRON_EXPRESSION","expression":"*/2 * * * *","level":"info","message":"[Scheduler] Monitoring scheduler started","timestamp":"2026-06-21T13:51:41.688Z"}
+{"level":"info","message":"Database connected and bootstrap completed","timestamp":"2026-06-21T13:51:41.689Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-21T13:51:41.690Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:52:00.021Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:52:00.178Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:52:04.381Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:52:04.383Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:54:00.032Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:54:00.042Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:54:04.098Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:54:04.099Z"}
+{"level":"info","message":{"durationMs":705,"method":"POST","requestId":"1d067e3a-ac76-4ecd-92bf-3613f0c5b471","statusCode":200,"url":"/public/auth/login"},"timestamp":"2026-06-21T13:55:32.379Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:56:00.033Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:56:00.040Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:56:04.077Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:56:04.078Z"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'map')","requestId":"2b25b401-9c70-4d08-8c2b-e81f56c12a13","stack":"TypeError: Cannot read properties of undefined (reading 'map')\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/validation.middleware.ts:17:44)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/roles.middleware.ts:9:5)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at Route.dispatch (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:117:3)\n    at handle (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:435:11)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at /home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:295:15","timestamp":"2026-06-21T13:56:06.982Z"}
+{"level":"info","message":{"durationMs":10,"method":"POST","requestId":"2b25b401-9c70-4d08-8c2b-e81f56c12a13","statusCode":500,"url":"/api/users"},"timestamp":"2026-06-21T13:56:06.984Z"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'map')","requestId":"223edaa7-c7e7-4b75-bfae-d92accd185ef","stack":"TypeError: Cannot read properties of undefined (reading 'map')\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/validation.middleware.ts:17:44)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/roles.middleware.ts:9:5)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at Route.dispatch (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:117:3)\n    at handle (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:435:11)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at /home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:295:15","timestamp":"2026-06-21T13:56:48.982Z"}
+{"level":"info","message":{"durationMs":5,"method":"POST","requestId":"223edaa7-c7e7-4b75-bfae-d92accd185ef","statusCode":500,"url":"/api/users"},"timestamp":"2026-06-21T13:56:48.983Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T13:58:00.039Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T13:58:00.047Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T13:58:04.070Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T13:58:04.070Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:00:00.041Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:00:00.048Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:00:04.060Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:00:04.061Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:02:00.030Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:02:00.037Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:02:04.406Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:02:04.407Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:04:00.039Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:04:00.049Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:04:04.076Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:04:04.076Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:06:00.042Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:06:00.048Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:06:07.121Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:06:07.122Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:08:00.035Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:08:00.042Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:08:04.102Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:08:04.103Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:10:00.039Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:10:00.046Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:10:04.267Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:10:04.267Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGTERM","timestamp":"2026-06-21T14:11:33.282Z"}
+{"level":"info","message":"[Scheduler] Monitoring scheduler stopped","timestamp":"2026-06-21T14:11:33.284Z"}
+{"level":"info","message":"Server closed successfully","timestamp":"2026-06-21T14:11:33.290Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-21T14:11:38.358Z"}
+{"level":"info","message":"Default admin checked/created successfully","timestamp":"2026-06-21T14:11:39.535Z"}
+{"description":"Runs on schedule defined by MONITOR_CRON_EXPRESSION","expression":"*/2 * * * *","level":"info","message":"[Scheduler] Monitoring scheduler started","timestamp":"2026-06-21T14:11:39.560Z"}
+{"level":"info","message":"Database connected and bootstrap completed","timestamp":"2026-06-21T14:11:39.562Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-21T14:11:39.562Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:12:00.028Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:12:00.190Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:12:04.872Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:12:04.873Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGTERM","timestamp":"2026-06-21T14:13:16.133Z"}
+{"level":"info","message":"[Scheduler] Monitoring scheduler stopped","timestamp":"2026-06-21T14:13:16.142Z"}
+{"level":"info","message":"Server closed successfully","timestamp":"2026-06-21T14:13:16.157Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-21T14:13:18.840Z"}
+{"level":"info","message":"Default admin checked/created successfully","timestamp":"2026-06-21T14:13:21.398Z"}
+{"description":"Runs on schedule defined by MONITOR_CRON_EXPRESSION","expression":"*/2 * * * *","level":"info","message":"[Scheduler] Monitoring scheduler started","timestamp":"2026-06-21T14:13:21.453Z"}
+{"level":"info","message":"Database connected and bootstrap completed","timestamp":"2026-06-21T14:13:21.455Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-21T14:13:21.456Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGTERM","timestamp":"2026-06-21T14:13:33.360Z"}
+{"level":"info","message":"[Scheduler] Monitoring scheduler stopped","timestamp":"2026-06-21T14:13:33.365Z"}
+{"level":"info","message":"Server closed successfully","timestamp":"2026-06-21T14:13:33.375Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-21T14:13:38.447Z"}
+{"level":"info","message":"Default admin checked/created successfully","timestamp":"2026-06-21T14:13:40.592Z"}
+{"description":"Runs on schedule defined by MONITOR_CRON_EXPRESSION","expression":"*/2 * * * *","level":"info","message":"[Scheduler] Monitoring scheduler started","timestamp":"2026-06-21T14:13:40.698Z"}
+{"level":"info","message":"Database connected and bootstrap completed","timestamp":"2026-06-21T14:13:40.702Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-21T14:13:40.703Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGTERM","timestamp":"2026-06-21T14:13:41.438Z"}
+{"level":"info","message":"[Scheduler] Monitoring scheduler stopped","timestamp":"2026-06-21T14:13:41.442Z"}
+{"level":"info","message":"Server closed successfully","timestamp":"2026-06-21T14:13:41.450Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-21T14:13:43.754Z"}
+{"level":"info","message":"Default admin checked/created successfully","timestamp":"2026-06-21T14:13:45.332Z"}
+{"description":"Runs on schedule defined by MONITOR_CRON_EXPRESSION","expression":"*/2 * * * *","level":"info","message":"[Scheduler] Monitoring scheduler started","timestamp":"2026-06-21T14:13:45.378Z"}
+{"level":"info","message":"Database connected and bootstrap completed","timestamp":"2026-06-21T14:13:45.379Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-21T14:13:45.380Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGTERM","timestamp":"2026-06-21T14:13:49.414Z"}
+{"level":"info","message":"[Scheduler] Monitoring scheduler stopped","timestamp":"2026-06-21T14:13:49.416Z"}
+{"level":"info","message":"Server closed successfully","timestamp":"2026-06-21T14:13:49.425Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-21T14:13:52.445Z"}
+{"level":"info","message":"Default admin checked/created successfully","timestamp":"2026-06-21T14:13:54.389Z"}
+{"description":"Runs on schedule defined by MONITOR_CRON_EXPRESSION","expression":"*/2 * * * *","level":"info","message":"[Scheduler] Monitoring scheduler started","timestamp":"2026-06-21T14:13:54.422Z"}
+{"level":"info","message":"Database connected and bootstrap completed","timestamp":"2026-06-21T14:13:54.423Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-21T14:13:54.423Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGTERM","timestamp":"2026-06-21T14:13:57.780Z"}
+{"level":"info","message":"[Scheduler] Monitoring scheduler stopped","timestamp":"2026-06-21T14:13:57.783Z"}
+{"level":"info","message":"Server closed successfully","timestamp":"2026-06-21T14:13:57.792Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-21T14:14:00.016Z"}
+{"level":"info","message":"Default admin checked/created successfully","timestamp":"2026-06-21T14:14:00.920Z"}
+{"description":"Runs on schedule defined by MONITOR_CRON_EXPRESSION","expression":"*/2 * * * *","level":"info","message":"[Scheduler] Monitoring scheduler started","timestamp":"2026-06-21T14:14:00.967Z"}
+{"level":"info","message":"Database connected and bootstrap completed","timestamp":"2026-06-21T14:14:00.968Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-21T14:14:00.969Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:16:00.075Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:16:00.317Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:16:05.978Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:16:05.979Z"}
+{"errors":[],"level":"warn","message":"Missing authorization header","requestId":"3217886d-bfa8-44fa-bac4-d3f7b4d5c4f4","timestamp":"2026-06-21T14:17:28.291Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"3217886d-bfa8-44fa-bac4-d3f7b4d5c4f4","statusCode":401,"url":"/api/sites?size=100"},"timestamp":"2026-06-21T14:17:28.299Z"}
+{"errors":[],"level":"warn","message":"Missing authorization header","requestId":"250b8afc-9e79-45f6-8fce-3a8078124b57","timestamp":"2026-06-21T14:17:28.312Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"250b8afc-9e79-45f6-8fce-3a8078124b57","statusCode":401,"url":"/api/sites?size=100"},"timestamp":"2026-06-21T14:17:28.319Z"}
+{"errors":[],"level":"warn","message":"Missing authorization header","requestId":"5925ddfb-a6dd-410a-bdb1-d4830e2922a6","timestamp":"2026-06-21T14:17:28.589Z"}
+{"level":"info","message":{"durationMs":2,"method":"GET","requestId":"5925ddfb-a6dd-410a-bdb1-d4830e2922a6","statusCode":401,"url":"/api/sites?size=100"},"timestamp":"2026-06-21T14:17:28.591Z"}
+{"errors":[],"level":"warn","message":"Missing authorization header","requestId":"13d3e77a-6b06-4103-9dbd-27e122652c7d","timestamp":"2026-06-21T14:17:28.600Z"}
+{"level":"info","message":{"durationMs":14,"method":"GET","requestId":"13d3e77a-6b06-4103-9dbd-27e122652c7d","statusCode":401,"url":"/api/sites?size=100"},"timestamp":"2026-06-21T14:17:28.612Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:18:00.041Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:18:00.049Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:18:04.131Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:18:04.132Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:20:00.044Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:20:00.052Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:20:04.131Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:20:04.131Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:22:00.029Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:22:00.035Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:22:04.688Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:22:04.689Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:24:00.049Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:24:00.056Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:24:04.065Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:24:04.066Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:26:00.046Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:26:00.054Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:26:04.152Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:26:04.152Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:28:00.026Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:28:00.033Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:28:04.626Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:28:04.626Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:30:00.032Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:30:00.040Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:30:04.335Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:30:04.337Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:32:00.048Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:32:00.056Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:32:04.188Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:32:04.188Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:34:00.049Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:34:00.057Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:34:04.386Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:34:04.386Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:36:00.047Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:36:00.055Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:36:04.397Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:36:04.398Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:38:00.038Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:38:00.047Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:38:04.085Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:38:04.086Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:40:00.038Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:40:00.044Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:40:07.763Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:40:07.764Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:42:00.044Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:42:00.051Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:42:04.084Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:42:04.085Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:44:00.034Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:44:00.043Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:44:04.373Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:44:04.374Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:46:00.045Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:46:00.052Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:46:04.083Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:46:04.084Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:48:00.051Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:48:00.061Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:48:04.072Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:48:04.072Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:50:00.034Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:50:00.043Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:50:04.227Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:50:04.228Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:52:00.047Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:52:00.054Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:52:07.395Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:52:07.395Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:54:00.045Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:54:00.054Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:54:07.452Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:54:07.452Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:56:00.047Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:56:00.056Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:56:07.384Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:56:07.384Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T14:58:00.041Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T14:58:00.046Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T14:58:02.395Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T14:58:02.395Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:00:00.043Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:00:00.050Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:00:02.541Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:00:02.541Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:02:00.052Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:02:00.060Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:02:02.318Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:02:02.319Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:04:00.048Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:04:00.054Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:04:03.630Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:04:03.630Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:06:00.046Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:06:00.052Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:06:05.108Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:06:05.108Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:08:00.042Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:08:00.047Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:08:07.073Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:08:07.074Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:10:00.046Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:10:00.058Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:10:04.263Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:10:04.264Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:12:00.040Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:12:00.046Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:12:05.312Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:12:05.313Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:14:00.042Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:14:00.047Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:14:04.628Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:14:04.629Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:16:00.030Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:16:00.038Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:16:07.317Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:16:07.318Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:18:00.044Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:18:00.052Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:18:04.573Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:18:04.573Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:20:00.042Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:20:00.049Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:20:04.663Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:20:04.663Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:22:00.020Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:22:00.027Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:22:04.506Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:22:04.507Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:24:00.062Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:24:00.077Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:24:06.266Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:24:06.267Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:26:00.039Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:26:00.045Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:26:04.749Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:26:04.749Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:28:00.042Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:28:00.048Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:28:05.652Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:28:05.652Z"}
+{"level":"info","message":{"durationMs":4,"method":"GET","requestId":"c5ece8c0-2611-44b8-864f-07f4f32cf00a","statusCode":404,"url":"/api/auth/me"},"timestamp":"2026-06-21T15:29:32.321Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:30:00.041Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:30:00.050Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:30:05.408Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:30:05.409Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:32:00.045Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:32:00.051Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:32:05.150Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:32:05.151Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:34:00.046Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:34:00.054Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:34:04.562Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:34:04.563Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:36:00.043Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:36:00.051Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:36:04.693Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:36:04.693Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:38:00.042Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:38:00.048Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:38:04.919Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:38:04.920Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:40:00.018Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:40:00.024Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:40:07.075Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:40:07.075Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:42:00.043Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:42:00.049Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:42:04.642Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:42:04.642Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:44:00.045Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:44:00.053Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:44:04.585Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:44:04.585Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:46:00.045Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:46:00.055Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:46:04.796Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:46:04.796Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:48:00.043Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:48:00.049Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:48:04.585Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:48:04.585Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:50:00.051Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:50:00.060Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:50:04.586Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:50:04.586Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:52:00.032Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:52:00.038Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:52:04.786Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:52:04.787Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:54:00.036Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:54:00.040Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:54:05.101Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:54:05.101Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:56:00.028Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:56:00.033Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:56:07.719Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:56:07.720Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T15:58:00.049Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T15:58:00.055Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T15:58:04.563Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T15:58:04.564Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T16:00:00.044Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T16:00:00.050Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T16:00:05.164Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T16:00:05.164Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T16:02:00.044Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T16:02:00.049Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T16:02:04.596Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T16:02:04.597Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T16:04:00.035Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T16:04:00.039Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T16:04:04.542Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T16:04:04.543Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T16:06:00.021Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T16:06:00.029Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T16:06:07.809Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T16:06:07.809Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T16:08:00.042Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T16:08:00.048Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T16:08:04.576Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T16:08:04.577Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T16:10:00.030Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T16:10:00.036Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T16:10:04.541Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T16:10:04.542Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T16:12:00.040Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T16:12:00.047Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T16:12:10.518Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T16:12:10.519Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T16:14:00.038Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T16:14:00.043Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T16:14:04.743Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T16:14:04.743Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T16:16:00.027Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T16:16:00.033Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T16:16:05.234Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T16:16:05.234Z"}
