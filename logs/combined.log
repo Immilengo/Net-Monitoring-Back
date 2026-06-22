@@ -2346,3 +2346,668 @@
 {"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T18:32:00.028Z"}
 {"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T18:32:04.755Z"}
 {"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T18:32:04.756Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T18:34:00.023Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T18:34:00.029Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T18:34:05.037Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T18:34:05.038Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGINT","timestamp":"2026-06-21T18:35:12.326Z"}
+{"level":"info","message":"[Scheduler] Monitoring scheduler stopped","timestamp":"2026-06-21T18:35:12.328Z"}
+{"level":"info","message":"Server closed successfully","timestamp":"2026-06-21T18:35:12.336Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-21T18:37:10.699Z"}
+{"level":"info","message":"Default admin checked/created successfully","timestamp":"2026-06-21T18:37:14.214Z"}
+{"description":"Runs on schedule defined by MONITOR_CRON_EXPRESSION","expression":"*/2 * * * *","level":"info","message":"[Scheduler] Monitoring scheduler started","timestamp":"2026-06-21T18:37:14.255Z"}
+{"level":"info","message":"Database connected and bootstrap completed","timestamp":"2026-06-21T18:37:14.256Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-21T18:37:14.257Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T18:38:00.020Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T18:38:00.131Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T18:38:08.870Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T18:38:08.871Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"62c03570-e8ad-41bb-b919-ac5a75852bca","statusCode":304,"url":"/docs/"},"timestamp":"2026-06-21T18:38:43.580Z"}
+{"level":"info","message":{"durationMs":2,"method":"GET","requestId":"8de2279c-bf04-4753-a8b4-4e6929ddc297","statusCode":304,"url":"/docs/swagger-ui.css"},"timestamp":"2026-06-21T18:38:50.468Z"}
+{"level":"info","message":{"durationMs":1,"method":"GET","requestId":"1da87524-b8de-4ce4-be9f-54c32ea6a108","statusCode":304,"url":"/docs/swagger-ui-standalone-preset.js"},"timestamp":"2026-06-21T18:38:50.481Z"}
+{"level":"info","message":{"durationMs":2,"method":"GET","requestId":"e847e3fb-79cf-466e-af74-043fa1606127","statusCode":304,"url":"/docs/swagger-ui-bundle.js"},"timestamp":"2026-06-21T18:38:50.647Z"}
+{"level":"info","message":{"durationMs":5,"method":"GET","requestId":"a773eeea-e051-4a27-ae48-dca2cc22ec4c","statusCode":200,"url":"/docs/swagger-ui-init.js"},"timestamp":"2026-06-21T18:38:50.807Z"}
+{"level":"info","message":{"durationMs":1,"method":"GET","requestId":"3190cf69-08b3-4b1b-ab31-fc1c1776aa41","statusCode":304,"url":"/docs/favicon-32x32.png"},"timestamp":"2026-06-21T18:39:33.551Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T18:40:00.034Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T18:40:00.043Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T18:40:05.123Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T18:40:05.124Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T18:42:00.031Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T18:42:00.038Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T18:42:07.547Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T18:42:07.548Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T18:44:00.033Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T18:44:00.039Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T18:44:04.918Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T18:44:04.919Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T18:46:00.033Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T18:46:00.038Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T18:46:05.068Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T18:46:05.069Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T18:48:00.035Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T18:48:00.042Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T18:48:05.735Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T18:48:05.736Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T18:50:00.028Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T18:50:00.033Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T18:50:05.838Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T18:50:05.839Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T18:52:00.036Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T18:52:00.043Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T18:52:05.610Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T18:52:05.610Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T18:54:00.029Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T18:54:00.033Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T18:54:04.711Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T18:54:04.711Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-21T19:03:36.812Z"}
+{"level":"info","message":"Default admin checked/created successfully","timestamp":"2026-06-21T19:03:37.957Z"}
+{"description":"Runs on schedule defined by MONITOR_CRON_EXPRESSION","expression":"*/2 * * * *","level":"info","message":"[Scheduler] Monitoring scheduler started","timestamp":"2026-06-21T19:03:38.006Z"}
+{"level":"info","message":"Database connected and bootstrap completed","timestamp":"2026-06-21T19:03:38.008Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-21T19:03:38.008Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:04:00.040Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:04:00.204Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:04:03.449Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:04:03.450Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:06:00.043Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:06:00.063Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:06:04.062Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:06:04.062Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:08:00.027Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:08:00.036Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:08:03.695Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:08:03.696Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:10:00.044Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:10:00.052Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:10:03.230Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:10:03.231Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:12:00.040Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:12:00.047Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:12:03.207Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:12:03.207Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:14:00.046Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:14:00.053Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:14:03.674Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:14:03.675Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:16:00.042Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:16:00.049Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:16:03.208Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:16:03.208Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:18:00.043Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:18:00.052Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:18:03.253Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:18:03.254Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:20:00.042Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:20:00.051Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:20:03.219Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:20:03.220Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:22:00.046Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:22:00.053Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:22:03.364Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:22:03.365Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:24:00.035Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:24:00.040Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:24:04.242Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:24:04.242Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:26:00.032Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:26:00.037Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:26:03.198Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:26:03.199Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:28:00.035Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:28:00.041Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:28:07.004Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:28:07.005Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:30:00.051Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:30:00.071Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:30:05.999Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:30:06.000Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:32:00.039Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:32:00.046Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:32:04.889Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:32:04.889Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:34:00.034Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:34:00.039Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:34:05.423Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:34:05.424Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:36:00.050Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:36:00.303Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:36:05.512Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:36:05.512Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:38:00.037Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:38:00.042Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:38:05.882Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:38:05.882Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:40:00.047Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:40:00.057Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:40:05.582Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:40:05.582Z"}
+{"level":"info","message":{"durationMs":7072,"method":"POST","requestId":"6c2dbf41-3224-4a89-beea-e1e82c89bdba","statusCode":200,"url":"/public/auth/login"},"timestamp":"2026-06-21T19:41:59.832Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:42:00.028Z"}
+{"level":"info","message":{"durationMs":2279,"method":"GET","requestId":"aae32de1-21ef-41dd-a21b-0e75fdb314ac","statusCode":200,"url":"/api/users/me"},"timestamp":"2026-06-21T19:42:02.138Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:42:04.191Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:42:11.951Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:42:11.951Z"}
+{"level":"info","message":{"durationMs":69,"method":"GET","requestId":"06c418c7-01d0-41b3-bad7-389b9dcffbad","statusCode":304,"url":"/api/users/me"},"timestamp":"2026-06-21T19:42:55.599Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:44:00.034Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:44:00.053Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:44:05.337Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:44:05.338Z"}
+{"level":"info","message":{"durationMs":1102,"method":"POST","requestId":"c8128010-4872-4201-b101-7ce1e5645027","statusCode":200,"url":"/public/auth/login"},"timestamp":"2026-06-21T19:44:25.064Z"}
+{"level":"info","message":{"durationMs":13,"method":"GET","requestId":"71cb445e-25bd-4564-bfd2-076bdc836f8d","statusCode":304,"url":"/api/users/me"},"timestamp":"2026-06-21T19:44:25.106Z"}
+{"level":"info","message":{"durationMs":962,"method":"GET","requestId":"3c7f46e8-39cb-403e-b9ad-7cd6289c08f9","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-21T19:44:26.805Z"}
+{"level":"info","message":{"durationMs":53,"method":"GET","requestId":"41dbec9a-5630-413e-ac46-ee18cdc98fcf","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-21T19:44:26.866Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:46:00.034Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:46:00.122Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:46:07.143Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:46:07.143Z"}
+{"level":"info","message":{"durationMs":55,"method":"GET","requestId":"87508f72-e789-4f10-8556-8be5430bf988","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-21T19:46:17.293Z"}
+{"level":"info","message":{"durationMs":76,"method":"GET","requestId":"18290192-cc6b-43cb-9ab4-2ed6bb0fbe0e","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-21T19:46:19.568Z"}
+{"level":"info","message":{"durationMs":36,"method":"GET","requestId":"d4200975-e31c-48c7-b17a-6dca50a8c03d","statusCode":304,"url":"/api/users/me"},"timestamp":"2026-06-21T19:46:19.589Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:48:00.034Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:48:00.042Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:48:05.939Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:48:05.940Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:50:00.034Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:50:00.039Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:50:06.349Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:50:06.349Z"}
+{"level":"info","message":{"durationMs":29,"method":"GET","requestId":"6e6e62c2-e3ae-4e9d-9e11-0ba220d0e292","statusCode":200,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T19:50:45.484Z"}
+{"level":"info","message":{"durationMs":21,"method":"GET","requestId":"0fa25544-dea1-4ac9-b26e-fbb70dcc4ae6","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T19:50:45.525Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"f5907715-5601-4ac8-a052-a5e5e1d052f7","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T19:50:45.888Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"33fb1089-560a-4832-b9e2-f72df3993d73","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T19:50:45.905Z"}
+{"level":"info","message":{"durationMs":17,"method":"GET","requestId":"5079f5cf-72e5-41f1-8ab3-d3a5ea057d5d","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T19:50:54.760Z"}
+{"level":"info","message":{"durationMs":18,"method":"GET","requestId":"c7f6cb9f-7cba-4733-b019-5020dc50dca0","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T19:50:54.788Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"7e09a886-7d0a-4c7b-b229-f042e44214ee","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T19:50:55.050Z"}
+{"level":"info","message":{"durationMs":14,"method":"GET","requestId":"33992ed5-0366-41a3-b01c-8fdca24c8e87","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T19:50:55.676Z"}
+{"level":"info","message":{"durationMs":14,"method":"GET","requestId":"9a2254a9-0984-498f-b7ff-be031ce8aa53","statusCode":200,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T19:51:04.167Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"717a9dc3-95d9-4fa1-ae31-7b5416fda447","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T19:51:06.116Z"}
+{"level":"info","message":{"durationMs":19,"method":"GET","requestId":"878a8168-b8c5-44d8-bc14-6aeda5613930","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T19:51:06.145Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"11c4cd78-8c09-43e8-88f0-0c9e369d7221","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T19:51:06.158Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:52:00.034Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:52:00.041Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:52:06.802Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:52:06.803Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"0e546f4b-ae9e-469a-851c-f7135879febb","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T19:52:48.307Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"4f756176-693d-4773-9a23-e051482f8b77","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T19:52:49.280Z"}
+{"level":"info","message":{"durationMs":24,"method":"GET","requestId":"006ed937-aba2-449f-a6a4-ca7d03b0770c","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T19:53:07.155Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"f7bc4231-7c68-4b72-8d12-1662d7a0a3b2","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T19:53:07.175Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"890c59c7-8984-4616-9778-ac542c1bf648","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T19:53:07.188Z"}
+{"level":"info","message":{"durationMs":19,"method":"GET","requestId":"073092b6-924f-4324-a4f2-26e8f0458e29","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T19:53:07.213Z"}
+{"level":"info","message":{"durationMs":19,"method":"GET","requestId":"aa629eac-3192-46ea-a3ca-6d5f13e4a3d6","statusCode":200,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-21T19:53:17.310Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"6c2cb00f-5bde-4a88-ab77-500e3a7f82c8","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-21T19:53:17.322Z"}
+{"level":"info","message":{"durationMs":15,"method":"GET","requestId":"4bedde91-ac61-49a9-8d86-a6c341bc8afd","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-21T19:53:17.605Z"}
+{"level":"info","message":{"durationMs":19,"method":"GET","requestId":"be7a0105-8cb1-4ecc-bb57-81b39eaa4b54","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-21T19:53:17.626Z"}
+{"level":"info","message":{"durationMs":34,"method":"GET","requestId":"fc26521c-adb5-4029-a68b-609eafdb871a","statusCode":200,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T19:53:26.132Z"}
+{"level":"info","message":{"durationMs":22,"method":"GET","requestId":"2eed518d-7998-4c2a-b2df-868ba4825c90","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T19:53:26.421Z"}
+{"level":"info","message":{"durationMs":18,"method":"GET","requestId":"1ddebeb7-f21c-4d0b-bedd-fb34d6a3ddb6","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T19:53:26.441Z"}
+{"level":"info","message":{"durationMs":23,"method":"GET","requestId":"3e5ca29f-c786-41ef-aa97-a095f137e665","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T19:53:26.469Z"}
+{"level":"info","message":{"durationMs":22,"method":"GET","requestId":"cc6648ee-1dca-44ac-8498-6bdcf5899ca9","statusCode":200,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T19:53:50.027Z"}
+{"level":"info","message":{"durationMs":60,"method":"GET","requestId":"540f61d8-b512-4e30-9219-86289a66f631","statusCode":200,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T19:53:50.081Z"}
+{"level":"info","message":{"durationMs":15,"method":"GET","requestId":"59efbc25-3c51-4c25-b8e8-a62d27658fb9","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T19:53:50.129Z"}
+{"level":"info","message":{"durationMs":15,"method":"GET","requestId":"dacf3b0f-b755-4843-afc1-50751db8521f","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T19:53:50.136Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"2286bbe8-c0e3-46d7-b7f9-c0c6d93eaaa0","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T19:53:50.339Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"f6f46fe8-5401-435f-8bf2-00c966437c60","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T19:53:50.347Z"}
+{"level":"info","message":{"durationMs":16,"method":"GET","requestId":"c650fa5c-581c-4b4c-a71e-b90afd4b29d4","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T19:53:50.366Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"ea8b1ee2-b9ea-49ea-9cd6-5c5466b89053","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T19:53:50.380Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:54:00.017Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:54:00.023Z"}
+{"level":"info","message":{"durationMs":13,"method":"GET","requestId":"636b486f-c451-4de3-b5d0-68508353ed41","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T19:54:04.933Z"}
+{"level":"info","message":{"durationMs":13,"method":"GET","requestId":"6a374fd1-6330-42d8-8ae4-4ab44b54f4e7","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T19:54:04.954Z"}
+{"level":"info","message":{"durationMs":43,"method":"GET","requestId":"661831da-ac27-452e-9662-dac39a8d7a1a","statusCode":304,"url":"/api/users/me"},"timestamp":"2026-06-21T19:54:04.958Z"}
+{"level":"info","message":{"durationMs":29,"method":"GET","requestId":"dc06c312-f35f-4b10-a03e-1a462e0f6796","statusCode":304,"url":"/api/users/me"},"timestamp":"2026-06-21T19:54:04.991Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"ac07637d-18bc-4d4c-90b8-2e3d754debcb","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T19:54:05.248Z"}
+{"level":"info","message":{"durationMs":23,"method":"GET","requestId":"3ef44b1f-0a9d-427f-9f2f-0033758bb747","statusCode":304,"url":"/api/users/me"},"timestamp":"2026-06-21T19:54:05.256Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"61099330-ef59-406e-9b67-d8481acaca19","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T19:54:05.273Z"}
+{"level":"info","message":{"durationMs":25,"method":"GET","requestId":"67dfec7f-6a3b-4280-b997-980eb562dadc","statusCode":304,"url":"/api/users/me"},"timestamp":"2026-06-21T19:54:05.304Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:54:07.080Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:54:07.082Z"}
+{"level":"info","message":{"durationMs":17,"method":"GET","requestId":"6e45148d-a97d-4e6a-9dd3-2d69469303ef","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T19:54:38.322Z"}
+{"level":"info","message":{"durationMs":20,"method":"GET","requestId":"4d0891c8-8ed4-4da7-9d73-9de72dcb7054","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T19:54:38.336Z"}
+{"level":"info","message":{"durationMs":14,"method":"GET","requestId":"fddd5d69-fadc-49af-87db-6e634f2e117c","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T19:54:38.338Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"d54bfdeb-8a05-4e47-812c-51404248a0dd","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T19:54:38.347Z"}
+{"level":"info","message":{"durationMs":13,"method":"GET","requestId":"d63904cb-d90c-48db-a7ad-87f8fc1eb49d","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T19:54:38.601Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"4c135fa8-731a-4025-9268-f0e31197ef15","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T19:54:38.603Z"}
+{"level":"info","message":{"durationMs":23,"method":"GET","requestId":"a2deeaf9-8896-4459-89fb-f32e634a4358","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T19:54:38.628Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"6662f2a0-ebcc-4cd1-9f5d-e6b021067adc","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T19:54:38.629Z"}
+{"level":"info","message":{"durationMs":20,"method":"GET","requestId":"10393a05-8e93-4b35-bb7e-1210e6ebde9e","statusCode":200,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T19:55:39.827Z"}
+{"level":"info","message":{"durationMs":26,"method":"GET","requestId":"d157c17d-05b1-4ca5-be70-e7f08b2965c7","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T19:55:39.857Z"}
+{"level":"info","message":{"durationMs":22,"method":"GET","requestId":"f12bd8eb-06a4-4939-b47c-8a8dd8e1fbb0","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T19:55:40.111Z"}
+{"level":"info","message":{"durationMs":25,"method":"GET","requestId":"b92ebf5b-a944-4aa4-82c6-9cbb60dfaa73","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T19:55:40.140Z"}
+{"level":"info","message":{"durationMs":3739,"method":"GET","requestId":"51155540-1b63-4cbf-8043-a5589d1c9c2c","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-21T19:55:52.402Z"}
+{"level":"info","message":{"durationMs":23,"method":"GET","requestId":"1ad3df19-91ef-4720-8b65-85e587e863b6","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-21T19:55:52.635Z"}
+{"level":"info","message":{"durationMs":27,"method":"GET","requestId":"6f72fa9c-b829-4fb7-a62b-80e90d4c1861","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-21T19:55:52.663Z"}
+{"level":"info","message":{"durationMs":28,"method":"GET","requestId":"dba1cf98-5f96-4d14-a78f-b23e1157ee1d","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-21T19:55:52.694Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:56:00.017Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:56:00.024Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:56:10.353Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:56:10.354Z"}
+{"level":"info","message":{"durationMs":33,"method":"GET","requestId":"d321652f-5573-4d1b-bb84-dad76149653c","statusCode":304,"url":"/api/users/me"},"timestamp":"2026-06-21T19:56:24.234Z"}
+{"level":"info","message":{"durationMs":24,"method":"GET","requestId":"5130ce99-2bf6-4052-a805-fe4a5af92945","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T19:56:24.236Z"}
+{"level":"info","message":{"durationMs":27,"method":"GET","requestId":"6811d020-861d-418e-93c2-5662f530bea8","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T19:56:24.278Z"}
+{"level":"info","message":{"durationMs":47,"method":"GET","requestId":"8dbc47ca-ec92-4884-a7f8-b1cc826f7a5c","statusCode":304,"url":"/api/users/me"},"timestamp":"2026-06-21T19:56:24.285Z"}
+{"level":"info","message":{"durationMs":5,"method":"GET","requestId":"7ea25b86-371c-457b-b0d9-26ec64eb3425","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T19:56:24.490Z"}
+{"level":"info","message":{"durationMs":20,"method":"GET","requestId":"afa58e65-840e-488e-9061-ce3fdfe8fc98","statusCode":304,"url":"/api/users/me"},"timestamp":"2026-06-21T19:56:24.500Z"}
+{"level":"info","message":{"durationMs":17,"method":"GET","requestId":"e714eb11-ff56-449e-8743-97acd326a75b","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T19:56:24.511Z"}
+{"level":"info","message":{"durationMs":30,"method":"GET","requestId":"e532ce00-8572-422b-8ad4-34579364296b","statusCode":304,"url":"/api/users/me"},"timestamp":"2026-06-21T19:56:24.533Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T19:58:00.034Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T19:58:00.050Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T19:58:07.466Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T19:58:07.466Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"0de7f162-80bf-4c0a-af35-ebd610733f19","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T19:58:08.873Z"}
+{"level":"info","message":{"durationMs":14,"method":"GET","requestId":"7681c376-e12e-4aba-b191-7695b5bc3d9a","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T19:58:08.882Z"}
+{"level":"info","message":{"durationMs":20,"method":"GET","requestId":"5ac2caeb-5b60-46bf-9924-7f9b1249f97f","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T19:58:08.895Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"d5441b24-1b03-4584-a2c3-bd5480c0d7cf","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T19:58:08.897Z"}
+{"level":"info","message":{"durationMs":14,"method":"GET","requestId":"b2aa8ace-9def-4b3f-b466-5cf5aef9ebc7","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T19:58:09.143Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"3552f4eb-246d-414a-9383-3737954b5ff7","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T19:58:09.147Z"}
+{"level":"info","message":{"durationMs":23,"method":"GET","requestId":"e92d883e-eab5-44ca-9012-55441c126479","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T19:58:09.183Z"}
+{"level":"info","message":{"durationMs":15,"method":"GET","requestId":"681e4ab4-892f-4beb-adfd-0f0246698187","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T19:58:09.185Z"}
+{"level":"info","message":{"durationMs":28,"method":"GET","requestId":"8b914089-edc9-4176-bd9f-28a6afa13cc6","statusCode":200,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T19:58:49.340Z"}
+{"level":"info","message":{"durationMs":26,"method":"GET","requestId":"effdc6dd-1515-4545-96e2-e59d72875bbe","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T19:58:49.369Z"}
+{"level":"info","message":{"durationMs":17,"method":"GET","requestId":"8e906754-d2d3-4dc5-bf7b-24bcc4d97a20","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T19:58:49.607Z"}
+{"level":"info","message":{"durationMs":17,"method":"GET","requestId":"76ee818d-76d6-4a37-b8aa-4c9361df4e10","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T19:58:49.628Z"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'map')","requestId":"901253f8-96aa-4447-a537-87c25b30512b","stack":"TypeError: Cannot read properties of undefined (reading 'map')\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/validation.middleware.ts:17:44)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/roles.middleware.ts:9:5)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at Route.dispatch (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:117:3)\n    at handle (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:435:11)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at /home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:295:15","timestamp":"2026-06-21T19:59:22.425Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"901253f8-96aa-4447-a537-87c25b30512b","statusCode":500,"url":"/api/monitoring-logs?page=1&size=200&status=online"},"timestamp":"2026-06-21T19:59:22.428Z"}
+{"errors":[],"level":"warn","message":"Invalid token","requestId":"713a7daa-ac4f-43cf-b7fb-2ca4526a159d","timestamp":"2026-06-21T19:59:25.267Z"}
+{"level":"info","message":{"durationMs":4,"method":"GET","requestId":"713a7daa-ac4f-43cf-b7fb-2ca4526a159d","statusCode":401,"url":"/api/monitoring-logs?page=1&size=200&status=warning"},"timestamp":"2026-06-21T19:59:25.268Z"}
+{"level":"info","message":{"durationMs":207,"method":"POST","requestId":"bda39431-e19c-4d14-b2b1-e97178b8dc3a","statusCode":200,"url":"/public/auth/refresh"},"timestamp":"2026-06-21T19:59:25.486Z"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'map')","requestId":"3fd32980-e909-424e-976e-9c3f32c0a5e7","stack":"TypeError: Cannot read properties of undefined (reading 'map')\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/validation.middleware.ts:17:44)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/roles.middleware.ts:9:5)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at Route.dispatch (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:117:3)\n    at handle (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:435:11)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at /home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:295:15","timestamp":"2026-06-21T19:59:25.496Z"}
+{"level":"info","message":{"durationMs":4,"method":"GET","requestId":"3fd32980-e909-424e-976e-9c3f32c0a5e7","statusCode":500,"url":"/api/monitoring-logs?page=1&size=200&status=warning"},"timestamp":"2026-06-21T19:59:25.497Z"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'map')","requestId":"3e35e2a5-9759-4e40-ba08-ca7d301224fb","stack":"TypeError: Cannot read properties of undefined (reading 'map')\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/validation.middleware.ts:17:44)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at <anonymous> (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/middlewares/roles.middleware.ts:9:5)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at next (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:157:13)\n    at Route.dispatch (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/route.js:117:3)\n    at handle (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:435:11)\n    at Layer.handleRequest (/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/lib/layer.js:152:17)\n    at /home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/node_modules/router/index.js:295:15","timestamp":"2026-06-21T19:59:28.315Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"3e35e2a5-9759-4e40-ba08-ca7d301224fb","statusCode":500,"url":"/api/monitoring-logs?page=1&size=200&status=offline"},"timestamp":"2026-06-21T19:59:28.316Z"}
+{"level":"info","message":{"durationMs":16,"method":"GET","requestId":"da19baf0-1ed3-4ccf-ace2-10a85dadc7de","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-21T19:59:32.593Z"}
+{"level":"info","message":{"durationMs":33,"method":"GET","requestId":"944b502a-5692-402c-8762-bc3a4a36beff","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-21T19:59:32.637Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"3bc41dae-3c5c-4414-aae9-715bff3bb706","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-21T19:59:32.888Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"a2e52b65-9cef-42b0-a9fa-7205870fea1f","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-21T19:59:32.899Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"423faf3e-d8a9-4546-bcba-1c5c3927685e","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T19:59:35.643Z"}
+{"level":"info","message":{"durationMs":18,"method":"GET","requestId":"4533ee2e-c4d0-442b-b749-06a376dfee9a","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T19:59:35.667Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"4fcb3c9f-1300-4594-b1d1-00f2dea7569e","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T19:59:35.961Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"582ae3be-444d-4a8a-bf4f-ddfb99760fec","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T19:59:35.974Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"726bc168-9409-4f60-acba-ae867a1dc64e","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T19:59:37.961Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"6dc91816-637b-44a8-9009-3746317f54c8","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T19:59:37.975Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"199ee37c-7150-400f-9525-efa35d19cbdf","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T19:59:38.252Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"8d80aeec-742b-431a-8580-d9de336defcd","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T19:59:38.265Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"36d3af38-a67b-4cbe-bedf-4ede26b8cc65","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T19:59:53.680Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"9d5bb845-4ec1-4029-88be-56ea64fc40be","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T19:59:53.696Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"aadfc199-6e2d-4965-9d4e-d0ca00aa4bc8","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T19:59:53.975Z"}
+{"level":"info","message":{"durationMs":15,"method":"GET","requestId":"55564f6d-32c9-4f5e-a45e-78996e5fe8b2","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T19:59:53.992Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:00:00.028Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:00:00.032Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:00:04.607Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:00:04.607Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"7dd0d0e5-9bd3-4b24-995d-89b8ae502189","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:00:12.370Z"}
+{"level":"info","message":{"durationMs":14,"method":"GET","requestId":"d770c30c-2fc0-4966-89b9-992a04fa1c2f","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:00:12.393Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"0b046641-d520-4476-907a-2e8b8d210b5e","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:00:12.663Z"}
+{"level":"info","message":{"durationMs":20,"method":"GET","requestId":"97a37be1-61c1-4f40-80fc-b906174c2c3f","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:00:12.685Z"}
+{"level":"info","message":{"durationMs":30,"method":"GET","requestId":"fb24e180-1b9e-474f-b3a9-762755e8a960","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-21T20:00:20.756Z"}
+{"level":"info","message":{"durationMs":39,"method":"GET","requestId":"ecec56fc-3954-44b9-85d4-02cdd5a2b88c","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-21T20:00:20.803Z"}
+{"level":"info","message":{"durationMs":20,"method":"GET","requestId":"676ba374-0226-44f1-829e-808705d33a8e","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-21T20:00:21.364Z"}
+{"level":"info","message":{"durationMs":20,"method":"GET","requestId":"773b3e9f-347a-488e-882b-6b3a7e7a2b52","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-21T20:00:21.389Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:02:00.034Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:02:00.041Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:02:04.617Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:02:04.618Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:04:00.033Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:04:00.039Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:04:05.494Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:04:05.495Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:06:00.033Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:06:00.038Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:06:04.604Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:06:04.605Z"}
+{"level":"info","message":{"durationMs":16,"method":"GET","requestId":"22b7172f-2ccf-4d60-8947-d01ad60b4cbc","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T20:06:58.849Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"506894df-5cc3-43fe-8de9-22b68c21b0a1","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T20:06:58.863Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"509f4651-62d7-45ce-ad5a-6ffc207ad4b0","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T20:06:59.088Z"}
+{"level":"info","message":{"durationMs":19,"method":"GET","requestId":"31b36b2b-fb3d-4677-8499-bc2c1da5975d","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T20:06:59.109Z"}
+{"level":"info","message":{"durationMs":787,"method":"POST","requestId":"a130690d-3e48-40d3-8ae0-7936050910ac","statusCode":201,"url":"/api/sites"},"timestamp":"2026-06-21T20:07:26.966Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"a69d76aa-3171-4aa5-ad6f-bb209a86ffe2","statusCode":200,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T20:07:26.990Z"}
+{"level":"info","message":{"durationMs":5,"method":"GET","requestId":"e5324e42-8575-4a09-9002-b4bbcbbcebed","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T20:07:36.030Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"43118476-4220-487d-98b2-70e6e6103330","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T20:07:37.007Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"75ba9079-7168-4d04-a7e5-f75ad3b1f94d","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T20:07:37.769Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:08:00.030Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:08:00.035Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:08:06.165Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:08:06.166Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:10:00.036Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:10:00.041Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:10:05.237Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:10:05.238Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:12:00.035Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:12:00.041Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:12:05.625Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:12:05.625Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:14:00.032Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:14:00.038Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:14:09.063Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:14:09.063Z"}
+{"errors":[],"level":"warn","message":"Invalid token","requestId":"817042bc-eace-4b05-80f7-5e0748033405","timestamp":"2026-06-21T20:14:54.686Z"}
+{"level":"info","message":{"durationMs":5,"method":"GET","requestId":"817042bc-eace-4b05-80f7-5e0748033405","statusCode":401,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T20:14:54.688Z"}
+{"errors":[],"level":"warn","message":"Invalid token","requestId":"8eda4f02-351e-4f9b-a12d-36e32be898f8","timestamp":"2026-06-21T20:14:54.713Z"}
+{"level":"info","message":{"durationMs":27,"method":"GET","requestId":"8eda4f02-351e-4f9b-a12d-36e32be898f8","statusCode":401,"url":"/api/users/me"},"timestamp":"2026-06-21T20:14:54.724Z"}
+{"level":"info","message":{"durationMs":1594,"method":"POST","requestId":"dc4151a8-628e-4ebd-bfaf-a869ade34bc3","statusCode":200,"url":"/public/auth/refresh"},"timestamp":"2026-06-21T20:14:56.347Z"}
+{"level":"info","message":{"durationMs":119,"method":"GET","requestId":"22d87540-a4db-464b-8912-8922520bbb73","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T20:14:56.479Z"}
+{"level":"info","message":{"durationMs":1924,"method":"POST","requestId":"d26cb09c-353d-4b20-a7dc-6afb02de4249","statusCode":200,"url":"/public/auth/refresh"},"timestamp":"2026-06-21T20:14:56.685Z"}
+{"level":"info","message":{"durationMs":37,"method":"GET","requestId":"d1a396e6-8db2-476f-a237-a068f07e8009","statusCode":304,"url":"/api/users/me"},"timestamp":"2026-06-21T20:14:56.740Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGTERM","timestamp":"2026-06-21T20:15:24.197Z"}
+{"level":"info","message":"[Scheduler] Monitoring scheduler stopped","timestamp":"2026-06-21T20:15:24.199Z"}
+{"level":"info","message":"Server closed successfully","timestamp":"2026-06-21T20:15:24.706Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-21T20:19:11.608Z"}
+{"level":"info","message":"Default admin checked/created successfully","timestamp":"2026-06-21T20:19:26.458Z"}
+{"description":"Runs on schedule defined by MONITOR_CRON_EXPRESSION","expression":"*/2 * * * *","level":"info","message":"[Scheduler] Monitoring scheduler started","timestamp":"2026-06-21T20:19:26.577Z"}
+{"level":"info","message":"Database connected and bootstrap completed","timestamp":"2026-06-21T20:19:26.578Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-21T20:19:26.578Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:20:00.037Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:20:00.215Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:20:05.261Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:20:05.262Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:22:00.038Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:22:00.050Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:22:04.564Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:22:04.565Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:24:00.028Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:24:00.033Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:24:06.048Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:24:06.049Z"}
+{"level":"info","message":{"durationMs":531,"method":"POST","requestId":"898ca66f-f516-4eae-80ec-ed010ed88ca4","statusCode":200,"url":"/public/auth/login"},"timestamp":"2026-06-21T20:24:58.298Z"}
+{"level":"info","message":{"durationMs":22,"method":"GET","requestId":"14e722c3-c6c7-415f-8e3e-c34ac2e88301","statusCode":200,"url":"/api/users/me"},"timestamp":"2026-06-21T20:24:58.335Z"}
+{"level":"info","message":{"durationMs":33,"method":"GET","requestId":"32dbd9e8-1212-44ef-9a77-a51cf0495df0","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:24:59.231Z"}
+{"level":"info","message":{"durationMs":32,"method":"GET","requestId":"2e2080ff-a547-4347-96c3-10e533b8e9c3","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:24:59.269Z"}
+{"level":"info","message":{"durationMs":784,"method":"GET","requestId":"387cbe3f-874b-41b0-8cc1-d92bc59cf9d3","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-21T20:25:00.032Z"}
+{"level":"info","message":{"durationMs":61,"method":"GET","requestId":"67859e09-ac2e-43a2-bc81-ecc5899c6a66","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-21T20:25:00.109Z"}
+{"level":"info","message":{"durationMs":19,"method":"GET","requestId":"24f30b43-cca7-4147-a590-b403834123b8","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:25:14.231Z"}
+{"level":"info","message":{"durationMs":15,"method":"GET","requestId":"559c0304-c317-4dad-894f-3495e0e97da8","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:25:14.250Z"}
+{"level":"info","message":{"durationMs":15,"method":"GET","requestId":"1e695d6d-7f2f-4956-8564-11332ef27859","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:25:14.540Z"}
+{"level":"info","message":{"durationMs":18,"method":"GET","requestId":"59121334-2453-4546-95e1-41b3a2708314","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:25:14.568Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"86b0ec11-a462-4624-8c99-e0cff7f696a8","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:25:21.540Z"}
+{"level":"info","message":{"durationMs":19,"method":"GET","requestId":"14499033-9405-49b4-8742-b973758bd2c0","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:25:21.567Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"0dbe354e-ec27-4854-847a-5b23d758d5e3","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:25:21.787Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"bddc011c-8508-4e25-ba0c-42cfada2be1e","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:25:21.803Z"}
+{"level":"info","message":{"durationMs":19,"method":"GET","requestId":"724c469b-a718-4b3a-b9ba-60b9a850c8ad","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T20:25:36.959Z"}
+{"level":"info","message":{"durationMs":15,"method":"GET","requestId":"252ae70c-2891-4fbc-903b-58d6d0df60d8","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T20:25:36.979Z"}
+{"level":"info","message":{"durationMs":19,"method":"GET","requestId":"636fc2a6-2fa4-492f-927b-98ade9ecc813","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T20:25:37.250Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"b4935bc6-f6b1-4ed1-9c9d-9a68d3b86cf2","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T20:25:37.262Z"}
+{"level":"info","message":{"durationMs":920,"method":"PATCH","requestId":"e9e521b8-576a-4d47-89d0-b0318eb2c113","statusCode":200,"url":"/api/sites/689462c1-04ef-4446-b77f-43d7cec7e5a7"},"timestamp":"2026-06-21T20:25:49.756Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"ec0df132-10e5-426e-94f1-e802f41530c2","statusCode":200,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T20:25:49.786Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:26:00.019Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:26:00.026Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:26:04.971Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:26:04.971Z"}
+{"level":"info","message":{"durationMs":447,"method":"GET","requestId":"cd39bfc2-27f7-4dd6-9267-300849c015c5","statusCode":200,"url":"/api/sites?page=1&size=100&search=s"},"timestamp":"2026-06-21T20:26:09.625Z"}
+{"level":"info","message":{"durationMs":13,"method":"GET","requestId":"b060a63d-f8cc-4cd8-b4d0-379cfc02f4aa","statusCode":200,"url":"/api/sites?page=1&size=100&search=se"},"timestamp":"2026-06-21T20:26:10.180Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"65c19d1f-ccf8-49cf-8071-9f6baf443940","statusCode":304,"url":"/api/sites?page=1&size=100&search=s"},"timestamp":"2026-06-21T20:26:12.393Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"45eff2d0-7b7a-4999-bd2a-742a98628e86","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T20:26:12.667Z"}
+{"level":"info","message":{"durationMs":35,"method":"GET","requestId":"e336f4d2-2a9a-42f7-9a26-3a47e2f9d2d7","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:26:32.464Z"}
+{"level":"info","message":{"durationMs":29,"method":"GET","requestId":"212d4ce8-c067-4522-8127-0e82ce2b0607","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:26:32.508Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"45e04c24-be95-4726-be4d-94f084e2d33f","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:26:32.759Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"79ed3b03-1e2c-4373-8edc-f5a2aaf90621","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:26:32.769Z"}
+{"level":"info","message":{"durationMs":16,"method":"GET","requestId":"f3c8fb34-6ed5-42e9-b85f-f92bf889e5ba","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-21T20:26:37.492Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"c105369b-4df6-4099-abad-8a6133999efd","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-21T20:26:37.505Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"a0f0c219-916e-443b-b68d-a88a3d44df9d","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-21T20:26:37.775Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"16b5e934-5630-47b6-87de-b79c70bcd04a","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-21T20:26:37.786Z"}
+{"level":"info","message":{"durationMs":34,"method":"GET","requestId":"a86cc5c1-a772-4220-bc59-81b6000f6f7a","statusCode":200,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T20:26:44.805Z"}
+{"level":"info","message":{"durationMs":29,"method":"GET","requestId":"24d2679d-9354-44cc-b8c8-54fc3315ffca","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T20:26:44.840Z"}
+{"level":"info","message":{"durationMs":21,"method":"GET","requestId":"6d3e4aaf-1942-443a-ab87-ef9ea8ebe389","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T20:26:45.036Z"}
+{"level":"info","message":{"durationMs":24,"method":"GET","requestId":"2a49d66b-5570-4c5b-85a1-1d38ef8f4b4a","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T20:26:45.066Z"}
+{"level":"info","message":{"durationMs":30,"method":"GET","requestId":"28f34753-cd3f-4f8f-b027-5dca073a1611","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T20:26:49.308Z"}
+{"level":"info","message":{"durationMs":20,"method":"GET","requestId":"8e867ec4-a036-413c-a531-be66ea89dd8f","statusCode":200,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T20:26:49.318Z"}
+{"level":"info","message":{"durationMs":21,"method":"GET","requestId":"fcdcaf76-c7e8-406d-8e05-9f31ef1bb9a8","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T20:26:49.354Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"22ee2f66-5574-45a1-af1f-f5141ea6c39f","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T20:26:49.356Z"}
+{"level":"info","message":{"durationMs":87,"method":"GET","requestId":"2bcfb204-a29c-402d-ab37-9950936d107d","statusCode":200,"url":"/api/users/summary"},"timestamp":"2026-06-21T20:26:49.359Z"}
+{"level":"info","message":{"durationMs":36,"method":"GET","requestId":"cc6c0e08-c38d-4213-bc7a-868650ed3e45","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-21T20:26:49.399Z"}
+{"level":"info","message":{"durationMs":16,"method":"GET","requestId":"2a9af8ed-d5d2-4aa6-a323-c989593548aa","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T20:26:49.551Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"c018a297-980d-48be-9041-51fbf812f60f","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T20:26:49.553Z"}
+{"level":"info","message":{"durationMs":16,"method":"GET","requestId":"30a89dc2-35f7-4b0a-99b7-0734c6758887","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T20:26:49.575Z"}
+{"level":"info","message":{"durationMs":22,"method":"GET","requestId":"3cee1eac-8c0b-4b8e-a61d-1808e933a517","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T20:26:49.587Z"}
+{"level":"info","message":{"durationMs":30,"method":"GET","requestId":"5c9833dc-bb85-4e6e-ab38-e7738a36cb2d","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-21T20:26:49.609Z"}
+{"level":"info","message":{"durationMs":22,"method":"GET","requestId":"0eee0f24-b2f0-4674-9528-97588ad2ffc7","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-21T20:26:49.635Z"}
+{"level":"info","message":{"durationMs":516,"method":"POST","requestId":"6dafd88f-0a80-472b-950d-aaa3c5a9016a","statusCode":200,"url":"/api/users"},"timestamp":"2026-06-21T20:27:55.889Z"}
+{"level":"info","message":{"durationMs":13,"method":"GET","requestId":"9f452974-4330-4b95-8751-0a85cf167e86","statusCode":200,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T20:27:56.009Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:28:00.021Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:28:00.028Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:28:05.344Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:28:05.344Z"}
+{"level":"info","message":{"durationMs":27,"method":"GET","requestId":"30ab61db-ca06-4b4b-b14a-5ebf8d50a8cd","statusCode":200,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T20:28:08.178Z"}
+{"level":"info","message":{"durationMs":39,"method":"GET","requestId":"1b30b2fd-3ae1-49fb-989b-029d52029d3a","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T20:28:08.221Z"}
+{"level":"info","message":{"durationMs":20,"method":"GET","requestId":"cd1354d7-5c29-41ce-b980-6ce7b223ffce","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T20:28:08.479Z"}
+{"level":"info","message":{"durationMs":28,"method":"GET","requestId":"d86d3a30-30de-4f83-bdb3-bdd96f1f56d3","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T20:28:08.510Z"}
+{"level":"info","message":{"durationMs":21,"method":"GET","requestId":"90dad714-bea5-4f01-8e14-f7207b151941","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T20:28:09.865Z"}
+{"level":"info","message":{"durationMs":15,"method":"GET","requestId":"d872f67e-c12a-4d8b-84ef-41a6a6558e95","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T20:28:09.873Z"}
+{"level":"info","message":{"durationMs":15,"method":"GET","requestId":"164dbdc4-22c9-4ec2-851a-d379c6084a0c","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T20:28:09.899Z"}
+{"level":"info","message":{"durationMs":14,"method":"GET","requestId":"aa386da7-1d7e-47c0-ae3c-ffecc2f3cab7","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T20:28:09.907Z"}
+{"level":"info","message":{"durationMs":74,"method":"GET","requestId":"2a681fab-ee69-43c9-9676-96fd12925555","statusCode":200,"url":"/api/users/summary"},"timestamp":"2026-06-21T20:28:09.951Z"}
+{"level":"info","message":{"durationMs":38,"method":"GET","requestId":"55f571ba-d7fb-498d-94f8-b8d24e4a743a","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-21T20:28:09.996Z"}
+{"level":"info","message":{"durationMs":19,"method":"GET","requestId":"35d5fbcf-994c-4f61-9e1b-3feb8d68ab62","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T20:28:10.137Z"}
+{"level":"info","message":{"durationMs":13,"method":"GET","requestId":"21b1b4f9-0e60-4603-8fef-89caa3c2b579","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T20:28:10.141Z"}
+{"level":"info","message":{"durationMs":25,"method":"GET","requestId":"208c1848-7d1a-403a-bbb2-86f46583e824","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T20:28:10.169Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"910afedb-0eba-4864-8a52-739b5a48541e","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T20:28:10.178Z"}
+{"level":"info","message":{"durationMs":61,"method":"GET","requestId":"5a094d6f-7449-4bbc-ac20-46d22f13594a","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-21T20:28:10.192Z"}
+{"level":"info","message":{"durationMs":24,"method":"GET","requestId":"c9b073d4-885d-4f69-abad-f791319e7f40","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-21T20:28:10.218Z"}
+{"level":"info","message":{"durationMs":24,"method":"GET","requestId":"3b8883c6-f4ab-4b92-a105-844190e63bfe","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T20:28:19.803Z"}
+{"level":"info","message":{"durationMs":31,"method":"GET","requestId":"3b4b50f0-80e3-46b5-b5f7-44a36a6d402d","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T20:28:19.836Z"}
+{"level":"info","message":{"durationMs":16,"method":"GET","requestId":"42c4c594-4d16-4738-aab5-d055490d37e3","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T20:28:20.092Z"}
+{"level":"info","message":{"durationMs":25,"method":"GET","requestId":"d6d7f379-6811-4657-bba3-3225922f2ea9","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-21T20:28:20.122Z"}
+{"level":"info","message":{"durationMs":14,"method":"GET","requestId":"b5f8768f-e004-4808-a813-1336dc63c8c4","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-21T20:28:21.459Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"a859650f-657f-4f96-9194-ba719a65abd6","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-21T20:28:21.476Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"fb25f0f3-0e65-44b3-8d2d-5dd5d0645e68","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-21T20:28:21.740Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"06f639f7-3901-4556-881f-1adf0cbb0adf","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-21T20:28:21.752Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"569c2a8c-bcca-45b3-91b8-4190b4fb2e1f","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:28:22.736Z"}
+{"level":"info","message":{"durationMs":14,"method":"GET","requestId":"a3acc376-25d1-4127-813a-3fe2f0faab15","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:28:22.760Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"4d743508-237e-4342-af6c-9d643009aac2","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:28:23.033Z"}
+{"level":"info","message":{"durationMs":13,"method":"GET","requestId":"35956b66-0fa9-44ef-b4d0-aa434bee2757","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:28:23.049Z"}
+{"level":"info","message":{"durationMs":17,"method":"GET","requestId":"de584f48-3286-40b6-877d-0d221a60d75c","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T20:28:25.003Z"}
+{"level":"info","message":{"durationMs":26,"method":"GET","requestId":"6e2d8360-7caf-4a49-af0d-22aa2018f19b","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T20:28:25.035Z"}
+{"level":"info","message":{"durationMs":19,"method":"GET","requestId":"0c4df6ad-f346-459d-a654-3416c418997c","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T20:28:25.058Z"}
+{"level":"info","message":{"durationMs":19,"method":"GET","requestId":"970c7161-5de3-470a-a545-3372cc4135e0","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T20:28:25.068Z"}
+{"level":"info","message":{"durationMs":66,"method":"GET","requestId":"6e369cab-a327-4904-b5a2-7aa763f701ce","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-21T20:28:25.082Z"}
+{"level":"info","message":{"durationMs":40,"method":"GET","requestId":"9598bd19-a9f9-4bed-9d73-7febbedd9b24","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-21T20:28:25.128Z"}
+{"level":"info","message":{"durationMs":16,"method":"GET","requestId":"81eff4d3-b393-4d88-9f12-406994708657","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T20:28:25.290Z"}
+{"level":"info","message":{"durationMs":13,"method":"GET","requestId":"ff3d8569-b357-44c5-be3f-1751f7d6fc79","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T20:28:25.294Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"cf3aa1e1-dc1a-4f6f-bc88-8bfef7d28ac0","statusCode":304,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T20:28:25.314Z"}
+{"level":"info","message":{"durationMs":21,"method":"GET","requestId":"d308cae4-6c8b-4492-aff7-5762462bc182","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T20:28:25.320Z"}
+{"level":"info","message":{"durationMs":37,"method":"GET","requestId":"5e251f6b-d950-4ce4-8595-22612fa23b43","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-21T20:28:25.322Z"}
+{"level":"info","message":{"durationMs":26,"method":"GET","requestId":"1f961331-9076-44c5-a4cf-f05d3f4b1a40","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-21T20:28:25.354Z"}
+{"level":"info","message":{"durationMs":41,"method":"POST","requestId":"48960c27-d513-422e-bfc9-f8798a9b2344","statusCode":200,"url":"/public/auth/logout"},"timestamp":"2026-06-21T20:28:32.562Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:30:00.029Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:30:00.036Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:30:05.729Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:30:05.730Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:32:00.029Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:32:00.033Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:32:04.564Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:32:04.565Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:34:00.027Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:34:00.035Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:34:12.108Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:34:12.109Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:36:00.033Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:36:00.037Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:36:07.744Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:36:07.744Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:38:00.037Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:38:00.045Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:38:07.090Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:38:07.090Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:40:00.030Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:40:00.036Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:40:05.982Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:40:05.984Z"}
+{"errors":[],"level":"warn","message":"Missing authorization header","requestId":"c65ee798-d687-41d4-95ed-bb6f14a54367","timestamp":"2026-06-21T20:40:08.864Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"c65ee798-d687-41d4-95ed-bb6f14a54367","statusCode":401,"url":"/api/users/summary"},"timestamp":"2026-06-21T20:40:08.866Z"}
+{"errors":[],"level":"warn","message":"Missing authorization header","requestId":"1e6dfde3-5fd9-4c17-a787-a3ea9a2ff2d0","timestamp":"2026-06-21T20:40:08.908Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"1e6dfde3-5fd9-4c17-a787-a3ea9a2ff2d0","statusCode":401,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-21T20:40:08.912Z"}
+{"errors":[],"level":"warn","message":"Missing authorization header","requestId":"1e43a7de-38b5-4915-9fc7-33ffa935edac","timestamp":"2026-06-21T20:40:09.470Z"}
+{"level":"info","message":{"durationMs":2,"method":"GET","requestId":"1e43a7de-38b5-4915-9fc7-33ffa935edac","statusCode":401,"url":"/api/roles?recordStatus=ACTIVE"},"timestamp":"2026-06-21T20:40:09.471Z"}
+{"errors":[],"level":"warn","message":"Email not verified. Please verify your account before login.","requestId":"1b32d984-0493-46b5-b79b-eb8566f63b51","timestamp":"2026-06-21T20:40:14.236Z"}
+{"level":"info","message":{"durationMs":444,"method":"POST","requestId":"1b32d984-0493-46b5-b79b-eb8566f63b51","statusCode":400,"url":"/public/auth/login"},"timestamp":"2026-06-21T20:40:14.238Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:42:00.039Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:42:00.046Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:42:04.638Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:42:04.638Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:44:00.038Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:44:00.044Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:44:05.751Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:44:05.751Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:46:00.028Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:46:00.033Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:46:07.104Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:46:07.105Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGTERM","timestamp":"2026-06-21T20:47:40.032Z"}
+{"level":"info","message":"[Scheduler] Monitoring scheduler stopped","timestamp":"2026-06-21T20:47:40.034Z"}
+{"level":"info","message":"Server closed successfully","timestamp":"2026-06-21T20:47:40.044Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-21T20:48:14.617Z"}
+{"level":"info","message":"Default admin checked/created successfully","timestamp":"2026-06-21T20:48:21.226Z"}
+{"description":"Runs on schedule defined by MONITOR_CRON_EXPRESSION","expression":"*/2 * * * *","level":"info","message":"[Scheduler] Monitoring scheduler started","timestamp":"2026-06-21T20:48:21.284Z"}
+{"level":"info","message":"Database connected and bootstrap completed","timestamp":"2026-06-21T20:48:21.285Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-21T20:48:21.286Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGTERM","timestamp":"2026-06-21T20:48:25.533Z"}
+{"level":"info","message":"[Scheduler] Monitoring scheduler stopped","timestamp":"2026-06-21T20:48:25.538Z"}
+{"level":"info","message":"Server closed successfully","timestamp":"2026-06-21T20:48:25.555Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-21T20:48:28.064Z"}
+{"level":"info","message":"Default admin checked/created successfully","timestamp":"2026-06-21T20:48:28.878Z"}
+{"description":"Runs on schedule defined by MONITOR_CRON_EXPRESSION","expression":"*/2 * * * *","level":"info","message":"[Scheduler] Monitoring scheduler started","timestamp":"2026-06-21T20:48:28.912Z"}
+{"level":"info","message":"Database connected and bootstrap completed","timestamp":"2026-06-21T20:48:28.913Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-21T20:48:28.913Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:50:00.029Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:50:00.164Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:50:04.793Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:50:04.794Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:52:00.022Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:52:00.033Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:52:04.662Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:52:04.663Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:54:00.012Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:54:00.022Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:54:06.606Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:54:06.607Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:56:00.015Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:56:00.022Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:56:04.622Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:56:04.623Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T20:58:00.018Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T20:58:00.025Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T20:58:04.547Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T20:58:04.547Z"}
+{"level":"info","message":{"durationMs":984,"method":"POST","requestId":"798e8b34-a7ce-491b-b6d9-e4f12100790e","statusCode":200,"url":"/public/auth/login"},"timestamp":"2026-06-21T20:59:46.055Z"}
+{"level":"info","message":{"durationMs":22,"method":"GET","requestId":"1bf26163-94a6-48d5-8bd9-1b3729a7b767","statusCode":200,"url":"/api/users/me"},"timestamp":"2026-06-21T20:59:46.273Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"447fe585-1542-406c-a3b4-c081e7b31d05","timestamp":"2026-06-21T20:59:47.442Z"}
+{"level":"info","message":{"durationMs":16,"method":"GET","requestId":"447fe585-1542-406c-a3b4-c081e7b31d05","statusCode":403,"url":"/api/dashboard/summary"},"timestamp":"2026-06-21T20:59:47.445Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"e5f8e327-2217-484a-9a85-53d91aa0fa81","timestamp":"2026-06-21T20:59:47.917Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"e5f8e327-2217-484a-9a85-53d91aa0fa81","statusCode":403,"url":"/api/dashboard/summary"},"timestamp":"2026-06-21T20:59:47.920Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"0ad9682f-766c-4fce-bde5-c0dad3c7c4dc","timestamp":"2026-06-21T20:59:48.486Z"}
+{"level":"info","message":{"durationMs":5,"method":"GET","requestId":"0ad9682f-766c-4fce-bde5-c0dad3c7c4dc","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:59:48.488Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"d0ff881c-a95d-46fa-8cec-cf888356a3e9","timestamp":"2026-06-21T20:59:48.532Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"d0ff881c-a95d-46fa-8cec-cf888356a3e9","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T20:59:48.535Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T21:00:00.015Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T21:00:00.022Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T21:00:05.587Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T21:00:05.588Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"a29fc33b-97b8-4766-b695-c046dbcca383","timestamp":"2026-06-21T21:00:07.384Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"a29fc33b-97b8-4766-b695-c046dbcca383","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:07.388Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"9ed74a2c-021b-45bc-ab76-7f3d90caf8e2","timestamp":"2026-06-21T21:00:07.395Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"9ed74a2c-021b-45bc-ab76-7f3d90caf8e2","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:07.400Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"0e79ee09-f2d1-47e3-9fd3-867c258cf2d4","timestamp":"2026-06-21T21:00:07.687Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"0e79ee09-f2d1-47e3-9fd3-867c258cf2d4","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:07.692Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"556b8d9d-9158-460a-90db-605754271394","timestamp":"2026-06-21T21:00:07.700Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"556b8d9d-9158-460a-90db-605754271394","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:07.702Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"590dbeb8-d630-4636-9575-534bc0338167","timestamp":"2026-06-21T21:00:10.666Z"}
+{"level":"info","message":{"durationMs":25,"method":"GET","requestId":"590dbeb8-d630-4636-9575-534bc0338167","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:10.674Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"4d41b0f0-5673-4b17-9c06-ff0f0a864b9d","timestamp":"2026-06-21T21:00:10.680Z"}
+{"level":"info","message":{"durationMs":5,"method":"GET","requestId":"4d41b0f0-5673-4b17-9c06-ff0f0a864b9d","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:10.683Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"439c54df-bf82-452e-9f3a-d1d94ad1ced9","timestamp":"2026-06-21T21:00:10.971Z"}
+{"level":"info","message":{"durationMs":5,"method":"GET","requestId":"439c54df-bf82-452e-9f3a-d1d94ad1ced9","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:10.972Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"40a2277c-206d-4b3b-8195-aee4dd1ef251","timestamp":"2026-06-21T21:00:10.978Z"}
+{"level":"info","message":{"durationMs":5,"method":"GET","requestId":"40a2277c-206d-4b3b-8195-aee4dd1ef251","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:10.980Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"d7d877eb-a248-45f6-bd7b-d41b46c30a78","timestamp":"2026-06-21T21:00:14.479Z"}
+{"level":"info","message":{"durationMs":4,"method":"GET","requestId":"d7d877eb-a248-45f6-bd7b-d41b46c30a78","statusCode":403,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T21:00:14.480Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"bed4eb4d-f81f-4739-b2c0-fabe31992397","timestamp":"2026-06-21T21:00:14.491Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"bed4eb4d-f81f-4739-b2c0-fabe31992397","statusCode":403,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T21:00:14.495Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"0c87f016-f043-4130-a69d-c7e94c2695dc","timestamp":"2026-06-21T21:00:14.652Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"0c87f016-f043-4130-a69d-c7e94c2695dc","statusCode":403,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T21:00:14.655Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"00c428c6-d9b1-4b7c-a98e-fedde832d852","timestamp":"2026-06-21T21:00:14.664Z"}
+{"level":"info","message":{"durationMs":4,"method":"GET","requestId":"00c428c6-d9b1-4b7c-a98e-fedde832d852","statusCode":403,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T21:00:14.666Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"f968d522-180f-4b0c-b439-eb9e89a8a1d2","timestamp":"2026-06-21T21:00:24.662Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"f968d522-180f-4b0c-b439-eb9e89a8a1d2","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:24.667Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"e393c97a-bfec-4613-ae0b-41fe9ead0f2e","timestamp":"2026-06-21T21:00:24.867Z"}
+{"level":"info","message":{"durationMs":38,"method":"GET","requestId":"e393c97a-bfec-4613-ae0b-41fe9ead0f2e","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:24.890Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"711dabf3-f885-4c29-85ec-66a40e292d91","timestamp":"2026-06-21T21:00:25.015Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"711dabf3-f885-4c29-85ec-66a40e292d91","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:25.018Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"1ef46104-5e12-4f85-a6ce-2d0e84acc673","timestamp":"2026-06-21T21:00:25.031Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"1ef46104-5e12-4f85-a6ce-2d0e84acc673","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:25.034Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"0a8997d0-e022-460d-a4fb-1aa19064acfb","timestamp":"2026-06-21T21:00:31.151Z"}
+{"level":"info","message":{"durationMs":5,"method":"GET","requestId":"0a8997d0-e022-460d-a4fb-1aa19064acfb","statusCode":403,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T21:00:31.153Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"c42cde5a-f798-4fb2-9c77-2d20dec3f60c","timestamp":"2026-06-21T21:00:31.161Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"c42cde5a-f798-4fb2-9c77-2d20dec3f60c","statusCode":403,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T21:00:31.164Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"24a2306d-7b04-4d1e-b3c4-5ac0035a908b","timestamp":"2026-06-21T21:00:31.404Z"}
+{"level":"info","message":{"durationMs":5,"method":"GET","requestId":"24a2306d-7b04-4d1e-b3c4-5ac0035a908b","statusCode":403,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T21:00:31.406Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"4fce4f73-4be4-4a08-b8e6-6577f42384ca","timestamp":"2026-06-21T21:00:32.065Z"}
+{"level":"info","message":{"durationMs":4,"method":"GET","requestId":"4fce4f73-4be4-4a08-b8e6-6577f42384ca","statusCode":403,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-21T21:00:32.067Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"ce2dc059-21a2-4b19-8dd3-affec029886b","timestamp":"2026-06-21T21:00:38.013Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"ce2dc059-21a2-4b19-8dd3-affec029886b","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:38.015Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"d6931138-fd2e-44c5-9e69-669f07de5df2","timestamp":"2026-06-21T21:00:38.034Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"d6931138-fd2e-44c5-9e69-669f07de5df2","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:38.037Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"ac28ac95-d345-4a71-be31-04a366757caf","timestamp":"2026-06-21T21:00:38.301Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"ac28ac95-d345-4a71-be31-04a366757caf","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:38.304Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"1f516cf0-5c63-44d1-9687-a4ff75349189","timestamp":"2026-06-21T21:00:38.319Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"1f516cf0-5c63-44d1-9687-a4ff75349189","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:38.322Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"4a2d4fb6-da38-467b-b158-2480ab2f3bfa","timestamp":"2026-06-21T21:00:41.830Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"4a2d4fb6-da38-467b-b158-2480ab2f3bfa","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:41.834Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"ab25f498-48e2-4abc-ad71-1cb132a09733","timestamp":"2026-06-21T21:00:41.845Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"ab25f498-48e2-4abc-ad71-1cb132a09733","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:41.847Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"bd31569e-e0a1-4fbc-85d6-77761dda78b3","timestamp":"2026-06-21T21:00:42.125Z"}
+{"level":"info","message":{"durationMs":4,"method":"GET","requestId":"bd31569e-e0a1-4fbc-85d6-77761dda78b3","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:42.127Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"f56d72cf-a5e4-4081-9248-c6a0ac49046c","timestamp":"2026-06-21T21:00:42.133Z"}
+{"level":"info","message":{"durationMs":4,"method":"GET","requestId":"f56d72cf-a5e4-4081-9248-c6a0ac49046c","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:42.135Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"1c3dff9b-32ae-4bd4-baba-fcb1026c7744","timestamp":"2026-06-21T21:00:44.866Z"}
+{"level":"info","message":{"durationMs":5,"method":"GET","requestId":"1c3dff9b-32ae-4bd4-baba-fcb1026c7744","statusCode":403,"url":"/api/dashboard/summary"},"timestamp":"2026-06-21T21:00:44.868Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"98403140-8a1f-4c62-8d33-8f721f7c64c6","timestamp":"2026-06-21T21:00:44.872Z"}
+{"level":"info","message":{"durationMs":4,"method":"GET","requestId":"98403140-8a1f-4c62-8d33-8f721f7c64c6","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:44.874Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"2c8a6f5c-594d-4532-a745-2aa319f3b023","timestamp":"2026-06-21T21:00:44.967Z"}
+{"level":"info","message":{"durationMs":4,"method":"GET","requestId":"2c8a6f5c-594d-4532-a745-2aa319f3b023","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:44.969Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"5f47446a-bd2b-49f7-8d8c-aa34adad5e04","timestamp":"2026-06-21T21:00:44.974Z"}
+{"level":"info","message":{"durationMs":4,"method":"GET","requestId":"5f47446a-bd2b-49f7-8d8c-aa34adad5e04","statusCode":403,"url":"/api/dashboard/summary"},"timestamp":"2026-06-21T21:00:44.976Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"784c2f9c-a53d-464f-8a68-ef2fd4bfe83b","timestamp":"2026-06-21T21:00:45.414Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"784c2f9c-a53d-464f-8a68-ef2fd4bfe83b","statusCode":403,"url":"/api/dashboard/summary"},"timestamp":"2026-06-21T21:00:45.416Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"26993506-55d2-4e01-b155-8e2995506f34","timestamp":"2026-06-21T21:00:45.426Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"26993506-55d2-4e01-b155-8e2995506f34","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:45.427Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"ef06bd47-75ec-4539-9027-be1230ac1b40","timestamp":"2026-06-21T21:00:45.437Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"ef06bd47-75ec-4539-9027-be1230ac1b40","statusCode":403,"url":"/api/dashboard/summary"},"timestamp":"2026-06-21T21:00:45.440Z"}
+{"errors":[],"level":"warn","message":"Forbidden","requestId":"f40b954e-4a49-4c29-ae2a-1dd77b5061c9","timestamp":"2026-06-21T21:00:45.444Z"}
+{"level":"info","message":{"durationMs":4,"method":"GET","requestId":"f40b954e-4a49-4c29-ae2a-1dd77b5061c9","statusCode":403,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-21T21:00:45.446Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T21:02:00.013Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T21:02:00.018Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T21:02:04.923Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T21:02:04.924Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T21:04:00.009Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T21:04:00.014Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T21:04:06.996Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T21:04:06.999Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T21:06:00.015Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T21:06:00.021Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T21:06:05.058Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T21:06:05.059Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T21:08:00.019Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T21:08:00.022Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T21:08:05.875Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T21:08:05.875Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T21:10:00.014Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T21:10:00.019Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T21:10:09.155Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T21:10:09.156Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T21:12:00.018Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T21:12:00.025Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T21:12:09.321Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T21:12:09.321Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T21:14:00.013Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T21:14:00.018Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T21:14:10.480Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T21:14:10.481Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T21:16:00.068Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T21:16:00.075Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T21:16:09.101Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T21:16:09.101Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-21T21:18:00.014Z"}
+{"level":"info","message":"[Monitor] Checking 1 devices and 0 services","timestamp":"2026-06-21T21:18:00.020Z"}
+{"device":"Core Switch 01","ip":"192.168.1.1","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-21T21:18:08.158Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-21T21:18:08.159Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-22T07:12:00.026Z"}
+{"error":"\nInvalid `prisma.role.upsert()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/auth/service/bootstrap-admin.service.ts:9:23\n\n  6 export const bootstrapAdmin = async () => {\n  7   const roles = ['ADMIN', 'USER', 'MANAGER'];\n  8   for (const role of roles) {\n→ 9     await prisma.role.upsert(\nThe table `public.roles` does not exist in the current database.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-22T07:12:02.566Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-22T07:12:02.567Z"}

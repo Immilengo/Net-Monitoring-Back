@@ -31,6 +31,11 @@ export class UserController {
     res.json(successResponse('Users retrieved successfully', data));
   }
 
+  async summary(req: Request, res: Response) {
+    const data = await service.summary();
+    res.json(successResponse('Users summary retrieved successfully', data));
+  }
+
   async getById(req: Request, res: Response) {
     ensureSelfOrAdmin(req, req.params.id);
     const data = await service.getById(req.params.id);

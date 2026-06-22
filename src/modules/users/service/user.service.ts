@@ -10,6 +10,7 @@ import { CreateUserDto } from '../dto/create-user.dto';
 import { UpdateUserDto } from '../dto/update-user.dto';
 import { toUserOutput } from '../mapper/user.mapper';
 import { UserRepository } from '../repository/user.repository';
+import { UserSummaryOutput } from '../interfaces/user.interface';
 
 export class UserService {
   constructor(
@@ -94,6 +95,33 @@ export class UserService {
 
     const mapped = await Promise.all(items.map((item) => this.toResponse(item)));
     return toPageResponse(mapped, total, page, size);
+  }
+
+  async summary(): Promise<UserSummaryOutput> {
+    const recentUsers = await prisma.user.findMany({
+      where: { deleted: false },
+      include: { status: true, roles: { include: { role: true } } },
+      orderBy: { createdAt: 'desc' },
+      take: 5
+    });
+
+    const allUsers = await prisma.user.findMany({
+      where: { deleted: false },
+      include: { status: true, roles: { include: { role: true } } }
+    });
+
+    const total = allUsers.length;
+    const active = allUsers.filter((user) => (user.status?.code || '').toUpperCase() === 'ACTIVE').length;
+    const inactive = await prisma.user.count({ where: { deleted: true } });
+    const verified = allUsers.filter((user) => user.emailVerified).length;
+    const admins = allUsers.filter((user) => user.roles.some((entry) => entry.role.name === 'ADMIN')).length;
+    const operators = allUsers.filter((user) => user.roles.some((entry) => entry.role.name === 'MANAGER')).length;
+    const viewers = allUsers.filter((user) => user.roles.some((entry) => entry.role.name === 'VIEWER')).length;
+
+    return {
+      totals: { total, active, inactive, verified, admins, operators, viewers },
+      recentUsers: await Promise.all(recentUsers.map((user) => this.toResponse(user)))
+    };
   }
 
   async patch(id: string, input: UpdateUserDto, actorId?: string) {

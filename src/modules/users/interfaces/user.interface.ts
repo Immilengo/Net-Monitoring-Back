@@ -10,3 +10,16 @@ export interface UserOutput {
   createdAt: Date;
   updatedAt: Date;
 }
+
+export interface UserSummaryOutput {
+  totals: {
+    total: number;
+    active: number;
+    inactive: number;
+    verified: number;
+    admins: number;
+    operators: number;
+    viewers: number;
+  };
+  recentUsers: UserOutput[];
+}

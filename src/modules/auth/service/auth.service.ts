@@ -27,15 +27,6 @@ export class AuthService {
     return this.repository.upsertStatus(code);
   }
 
-  private ensureActiveAndVerified(user: { emailVerified: boolean; status: { code: string } | null }) {
-    if (!user.emailVerified) {
-      throw new AppError('Email not verified. Please verify your account before login.', 400);
-    }
-    if (!user.status || user.status.code.toUpperCase() !== 'ACTIVE') {
-      throw new AppError('Account is not active. Please contact support.', 400);
-    }
-  }
-
   private generateOpaqueToken() {
     return randomBytes(48).toString('base64url');
   }
@@ -63,27 +54,24 @@ export class AuthService {
     const userRole = await this.repository.getRoleByName('USER');
     if (!userRole) throw new AppError('Default role not configured', 500);
 
-    const pendingStatus = await this.getOrCreateStatus('PENDING');
+    const activeStatus = await this.getOrCreateStatus('ACTIVE');
     const hashed = await bcrypt.hash(input.password, 12);
-    const emailVerificationToken = this.generateOpaqueToken();
 
     const user = await this.repository.createUser({
       ...input,
       password: hashed,
       roleId: userRole.id,
-      statusId: pendingStatus.id,
-      emailVerificationToken,
-      emailVerificationExpiresAt: new Date(Date.now() + EMAIL_TOKEN_TTL_MS)
+      statusId: activeStatus.id,
+      emailVerified: true,
+      emailVerificationToken: null,
+      emailVerificationExpiresAt: null
     });
 
-    const sent = await this.sendVerificationEmail(user.email, emailVerificationToken);
     await this.audit.log({ userId: user.id, action: 'REGISTER', resource: 'AUTH', resourceId: user.id });
 
     return {
       user: toAuthUserOutput(user),
-      message: sent
-        ? 'User registered successfully. Verification email sent.'
-        : 'User registered successfully, but verification email could not be sent now. Use resend verification endpoint.'
+      message: 'User registered successfully.'
     };
   }
 
@@ -94,7 +82,9 @@ export class AuthService {
     const valid = await bcrypt.compare(input.password, user.password);
     if (!valid) throw new AppError('Invalid credentials', 400);
 
-    this.ensureActiveAndVerified(user);
+    if (!user.status || user.status.code.toUpperCase() !== 'ACTIVE') {
+      throw new AppError('Account is not active. Please contact support.', 400);
+    }
     const tokens = await this.issueTokens(user);
     await this.audit.log({ userId: user.id, action: 'LOGIN', resource: 'AUTH', resourceId: user.id });
     return tokens;
@@ -114,7 +104,9 @@ export class AuthService {
       throw new AppError('Refresh token expired. Please login again.', 400);
     }
 
-    this.ensureActiveAndVerified(token.user);
+    if (!token.user.status || token.user.status.code.toUpperCase() !== 'ACTIVE') {
+      throw new AppError('Account is not active. Please contact support.', 400);
+    }
     await this.repository.revokeRefreshToken(token.id);
     return this.issueTokens(token.user);
   }
