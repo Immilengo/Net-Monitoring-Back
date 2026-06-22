@@ -1,0 +1,12 @@
+Também vi que o comando que tentaste está errado:
+npx run prisma dev não é um comando válido para este projeto
+O caminho certo é este:
+Subir o Postgres do projetodocker compose up -d postgres
+
+Aplicar as migraçõesnpx prisma migrate deploy
+
+Gerar o client se precisaresnpx prisma generate
+
+Iniciar o backendnpm run dev
+
+O docker compose up -d postgres

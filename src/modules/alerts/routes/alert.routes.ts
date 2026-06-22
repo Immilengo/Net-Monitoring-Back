@@ -14,20 +14,20 @@ alertRoutes.use(authMiddleware);
 // Sumário para o dashboard — sem paginação
 alertRoutes.get(
   '/summary',
-  rolesMiddleware(['ADMIN', 'MANAGER']),
+  rolesMiddleware(['ADMIN', 'MANAGER', 'VIEWER']),
   asyncHandler(controller.getSummary.bind(controller))
 );
 
 alertRoutes.get(
   '/',
-  rolesMiddleware(['ADMIN', 'MANAGER']),
+  rolesMiddleware(['ADMIN', 'MANAGER', 'VIEWER']),
   validationMiddleware(listAlertSchema, 'query'),
   asyncHandler(controller.list.bind(controller))
 );
 
 alertRoutes.get(
   '/:id',
-  rolesMiddleware(['ADMIN', 'MANAGER']),
+  rolesMiddleware(['ADMIN', 'MANAGER', 'VIEWER']),
   asyncHandler(controller.getById.bind(controller))
 );
 

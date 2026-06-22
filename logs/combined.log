@@ -3011,3 +3011,432 @@
 {"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-22T07:12:00.026Z"}
 {"error":"\nInvalid `prisma.role.upsert()` invocation in\n/home/inacio/Área de Trabalho/web/Net-Monitor-FullStack/net-monitor/src/modules/auth/service/bootstrap-admin.service.ts:9:23\n\n  6 export const bootstrapAdmin = async () => {\n  7   const roles = ['ADMIN', 'USER', 'MANAGER'];\n  8   for (const role of roles) {\n→ 9     await prisma.role.upsert(\nThe table `public.roles` does not exist in the current database.","level":"warn","message":"Database unavailable; API started without persistence-dependent bootstrap","timestamp":"2026-06-22T07:12:02.566Z"}
 {"level":"info","message":"HTTP server ready","timestamp":"2026-06-22T07:12:02.567Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGINT","timestamp":"2026-06-22T07:15:47.004Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGINT","timestamp":"2026-06-22T07:15:47.007Z"}
+{"level":"info","message":"Server closed successfully","timestamp":"2026-06-22T07:15:47.013Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-22T07:53:09.335Z"}
+{"level":"info","message":"Default admin checked/created successfully","timestamp":"2026-06-22T07:53:10.176Z"}
+{"description":"Runs on schedule defined by MONITOR_CRON_EXPRESSION","expression":"*/2 * * * *","level":"info","message":"[Scheduler] Monitoring scheduler started","timestamp":"2026-06-22T07:53:10.575Z"}
+{"level":"info","message":"Database connected and bootstrap completed","timestamp":"2026-06-22T07:53:10.576Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-22T07:53:10.577Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T07:54:00.041Z"}
+{"level":"info","message":"[Monitor] Checking 0 devices and 0 services","timestamp":"2026-06-22T07:54:00.150Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T07:54:00.151Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T07:56:00.055Z"}
+{"level":"info","message":"[Monitor] Checking 0 devices and 0 services","timestamp":"2026-06-22T07:56:00.073Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T07:56:00.074Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T07:58:00.031Z"}
+{"level":"info","message":"[Monitor] Checking 0 devices and 0 services","timestamp":"2026-06-22T07:58:00.040Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T07:58:00.040Z"}
+{"errors":[],"level":"warn","message":"Invalid credentials","requestId":"b3d84c8b-36ad-4b28-8d84-49363799f4b9","timestamp":"2026-06-22T07:58:32.770Z"}
+{"level":"info","message":{"durationMs":17,"method":"POST","requestId":"b3d84c8b-36ad-4b28-8d84-49363799f4b9","statusCode":400,"url":"/public/auth/login"},"timestamp":"2026-06-22T07:58:32.775Z"}
+{"level":"info","message":{"durationMs":494,"method":"POST","requestId":"0772f37a-0bba-4653-86ce-c4a13c53f6f2","statusCode":200,"url":"/public/auth/login"},"timestamp":"2026-06-22T07:58:42.278Z"}
+{"level":"info","message":{"durationMs":77,"method":"GET","requestId":"66098b68-dc4a-40ca-acbf-353bc20f3b6e","statusCode":200,"url":"/api/users/me"},"timestamp":"2026-06-22T07:58:42.406Z"}
+{"level":"info","message":{"durationMs":451,"method":"GET","requestId":"58657e9f-2766-44fb-b0ae-38209038145b","statusCode":200,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T07:58:44.396Z"}
+{"level":"info","message":{"durationMs":14,"method":"GET","requestId":"1509e2bd-8619-48f1-9a8d-aea5783213f6","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T07:58:44.435Z"}
+{"level":"info","message":{"durationMs":619,"method":"GET","requestId":"af5828ea-3110-40f8-a92b-5bbd62a2d234","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T07:58:44.574Z"}
+{"level":"info","message":{"durationMs":35,"method":"GET","requestId":"5ab0c3fe-47aa-47b6-ad09-f71642067f84","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T07:58:44.614Z"}
+{"level":"info","message":{"durationMs":98,"method":"GET","requestId":"660d0ff9-a569-4c7c-a355-1b304542f6ec","statusCode":200,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-22T07:58:53.629Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"542d7509-1c81-4df5-a35c-78b49d634c75","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-22T07:58:53.642Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"8abcc3f2-0a38-417d-b5cf-1a4129e7671f","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-22T07:58:53.652Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"ae3499c7-0b16-46b2-99c5-0e5ccd62b699","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-22T07:58:53.669Z"}
+{"level":"info","message":{"durationMs":27,"method":"GET","requestId":"225781ef-36df-438a-b52a-fbd364eb3a4a","statusCode":200,"url":"/api/users/summary"},"timestamp":"2026-06-22T07:58:53.681Z"}
+{"level":"info","message":{"durationMs":16,"method":"GET","requestId":"182b8eaa-dcb0-423c-b1ad-586f2518919e","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-22T07:58:53.701Z"}
+{"level":"info","message":{"durationMs":20,"method":"GET","requestId":"f22753bc-36bd-43d2-bc33-12a1fb4364af","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-22T07:58:53.723Z"}
+{"level":"info","message":{"durationMs":23,"method":"GET","requestId":"c01e4ba9-40f3-4640-a004-069f1f4d33a8","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-22T07:58:53.749Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"ece1cd67-dff3-40f6-9b5e-f24413350f51","statusCode":200,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-22T07:59:00.625Z"}
+{"level":"info","message":{"durationMs":13,"method":"GET","requestId":"13a6b081-5f60-40a3-ba49-a183e5890805","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-22T07:59:00.646Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"e8e5122a-a1ea-461a-8d86-82ac3c1314ad","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-22T07:59:00.832Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"f66fc712-5368-45d8-8331-7d07455951b9","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-22T07:59:00.843Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"e4178d29-3fb7-4982-8fdd-a91965cfce62","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-22T07:59:05.020Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"7d965a46-5bd6-464b-b884-9f3f15ba3b04","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-22T07:59:05.030Z"}
+{"level":"info","message":{"durationMs":5,"method":"GET","requestId":"8934a81f-d4b8-478f-b87f-fd2be29710c8","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-22T07:59:05.038Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"6fa4e18f-5dad-4c94-9351-31fb8fe545b8","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-22T07:59:05.049Z"}
+{"level":"info","message":{"durationMs":17,"method":"GET","requestId":"6321fbb0-0191-49cf-acb9-993515bdd708","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T07:59:10.198Z"}
+{"level":"info","message":{"durationMs":17,"method":"GET","requestId":"6db851d0-c9dc-4873-8dfa-a03bd684f75a","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T07:59:10.217Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"76c97a38-2f62-46bb-8915-46afbe072d92","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T07:59:10.524Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"fb149abd-f968-47ba-b989-d7965e2b023f","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T07:59:10.538Z"}
+{"level":"info","message":{"durationMs":14,"method":"GET","requestId":"077d50a0-02ce-4463-9cb4-b8e125873986","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T07:59:16.626Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"1b49830c-7970-4f6e-95a9-6e11ee70bc8b","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T07:59:16.645Z"}
+{"level":"info","message":{"durationMs":5,"method":"GET","requestId":"53bba527-671d-42c8-aadb-07323234cb73","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T07:59:16.919Z"}
+{"level":"info","message":{"durationMs":15,"method":"GET","requestId":"d7d65c39-a213-4922-870f-1fbe6994e761","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T07:59:16.936Z"}
+{"level":"info","message":{"durationMs":14,"method":"GET","requestId":"f56bf69b-9cc4-4aba-9a6d-e2cea27ac7db","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T07:59:21.155Z"}
+{"level":"info","message":{"durationMs":15,"method":"GET","requestId":"438798db-2821-4a49-a0ac-897c8d748c26","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T07:59:21.179Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"da8717cd-5d4c-46b0-ae17-459bf325a052","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T07:59:21.475Z"}
+{"level":"info","message":{"durationMs":13,"method":"GET","requestId":"b99b9ac0-7133-4622-89ce-71dc26d645aa","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T07:59:21.490Z"}
+{"level":"info","message":{"durationMs":42,"method":"GET","requestId":"95550203-ceb1-42d6-904d-d462d56fff39","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T07:59:26.794Z"}
+{"level":"info","message":{"durationMs":25,"method":"GET","requestId":"b3cd29dd-8483-48e5-b33d-5c7a938f03b2","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T07:59:26.801Z"}
+{"level":"info","message":{"durationMs":20,"method":"GET","requestId":"97d8261f-4d27-4935-8ffe-bd029aef9e93","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T07:59:26.828Z"}
+{"level":"info","message":{"durationMs":28,"method":"GET","requestId":"84763e43-7fb3-4a35-811e-fa8448cf41ba","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T07:59:26.843Z"}
+{"level":"info","message":{"durationMs":26,"method":"GET","requestId":"1dfb5c94-894e-4314-91f8-3a584556753d","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T07:59:27.357Z"}
+{"level":"info","message":{"durationMs":16,"method":"GET","requestId":"b095611b-4ce4-4e62-982a-5e1a61c58ab3","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T07:59:27.360Z"}
+{"level":"info","message":{"durationMs":22,"method":"GET","requestId":"007d91ad-0244-4419-a776-d9aa38ff4fc8","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T07:59:27.385Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"18114dcd-049b-49cd-aad7-a968866dde37","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T07:59:27.390Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"8551e2f3-0fbe-4e71-b63e-5d6492b59cc0","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-22T07:59:31.640Z"}
+{"level":"info","message":{"durationMs":20,"method":"GET","requestId":"40f6379b-630c-489e-bf46-0a09b171002e","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-22T07:59:31.664Z"}
+{"level":"info","message":{"durationMs":56,"method":"GET","requestId":"12d7c8bd-1ea5-411f-9706-8a20c33f7db4","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-22T07:59:31.690Z"}
+{"level":"info","message":{"durationMs":30,"method":"GET","requestId":"a2f4e6fc-fe1f-40f8-b760-8046836cd38d","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-22T07:59:31.723Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"c4ac03ba-58c4-407e-bcdf-4ebaf4f9bd63","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-22T07:59:31.915Z"}
+{"level":"info","message":{"durationMs":13,"method":"GET","requestId":"155e4952-26d2-475a-aebf-20ff6b9a1f10","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-22T07:59:31.932Z"}
+{"level":"info","message":{"durationMs":39,"method":"GET","requestId":"854e71d2-ed0e-465d-997b-6aa9a8189c97","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-22T07:59:31.949Z"}
+{"level":"info","message":{"durationMs":22,"method":"GET","requestId":"81d30e39-2e82-4f1f-9871-dfc61cafc711","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-22T07:59:31.974Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T08:00:00.037Z"}
+{"level":"info","message":"[Monitor] Checking 0 devices and 0 services","timestamp":"2026-06-22T08:00:00.043Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T08:00:00.044Z"}
+{"level":"info","message":{"durationMs":646,"method":"POST","requestId":"305ac35c-c65b-4df6-a82e-368100c3f05f","statusCode":200,"url":"/api/users"},"timestamp":"2026-06-22T08:00:01.526Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"79942849-fcce-4308-a403-953f83bc04d7","statusCode":200,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-22T08:00:01.545Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"d3cd26f0-cd9b-43b2-90d3-b7ed5b8640bf","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-22T08:00:05.511Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"924504c1-309e-487a-b647-07bee225cd72","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-22T08:00:05.525Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"ecdf9099-368d-451f-bc02-f0096db10dd2","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-22T08:00:05.814Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"b584fa82-c3a1-408c-8acb-9327489d27d0","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-22T08:00:05.827Z"}
+{"level":"info","message":{"durationMs":17,"method":"GET","requestId":"fa960216-e1ce-4e51-9731-b7db153d0158","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-22T08:00:07.131Z"}
+{"level":"info","message":{"durationMs":18,"method":"GET","requestId":"8f76e43c-aeeb-4ac3-83e9-3cd716b1645f","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-22T08:00:07.152Z"}
+{"level":"info","message":{"durationMs":51,"method":"GET","requestId":"36eb5166-d4fd-47a6-a827-e37a9c906358","statusCode":200,"url":"/api/users/summary"},"timestamp":"2026-06-22T08:00:07.159Z"}
+{"level":"info","message":{"durationMs":25,"method":"GET","requestId":"edd4b2be-3ebb-4a9d-a165-8bce5b9d9b72","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-22T08:00:07.193Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"63aa1417-2530-44b7-8a8a-21b85efd9452","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-22T08:00:07.413Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"1ed0cc88-b50f-481b-bd40-f5a125384f50","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-22T08:00:07.424Z"}
+{"level":"info","message":{"durationMs":33,"method":"GET","requestId":"0e9fa80e-37d9-4938-be9c-91542b3dbc15","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-22T08:00:07.442Z"}
+{"level":"info","message":{"durationMs":22,"method":"GET","requestId":"d32eeddc-dcca-4444-a542-c0247c065e2d","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-22T08:00:07.466Z"}
+{"level":"info","message":{"durationMs":2016,"method":"POST","requestId":"06102e56-5453-47d6-99e3-b248f037141b","statusCode":200,"url":"/public/auth/logout"},"timestamp":"2026-06-22T08:00:16.647Z"}
+{"level":"info","message":{"durationMs":433,"method":"POST","requestId":"49310519-33da-4ed4-803c-9e1d96ecd5c1","statusCode":200,"url":"/public/auth/login"},"timestamp":"2026-06-22T08:00:19.792Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"aea74e4e-e2af-44a3-b5dd-b2e95d6ac338","statusCode":200,"url":"/api/users/me"},"timestamp":"2026-06-22T08:00:19.816Z"}
+{"level":"info","message":{"durationMs":30,"method":"GET","requestId":"6cf73a76-51bf-409f-a22f-0b8d9c496513","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T08:00:20.151Z"}
+{"level":"info","message":{"durationMs":19,"method":"GET","requestId":"17a0f814-fa45-4089-8ce1-84b16f1b1216","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T08:00:20.155Z"}
+{"level":"info","message":{"durationMs":32,"method":"GET","requestId":"735be910-b078-4040-8140-a438362e4df4","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T08:00:20.188Z"}
+{"level":"info","message":{"durationMs":16,"method":"GET","requestId":"a17a63ef-d795-4792-a3dc-58ba5ac901cf","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T08:00:20.192Z"}
+{"level":"info","message":{"durationMs":14,"method":"GET","requestId":"95f3fab8-d262-4670-9dc7-08a91458fbb3","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-22T08:00:24.284Z"}
+{"level":"info","message":{"durationMs":16,"method":"GET","requestId":"65dc8093-a33d-4d29-87bb-dbf980b6ea25","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-22T08:00:24.309Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"f3ec08ff-992d-4eb7-9761-43dc65d8df4c","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-22T08:00:24.586Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"4b663470-93ec-4e4a-84ee-80b9b7c5a4d5","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-22T08:00:24.596Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"66ea0e33-8377-4347-ae3b-19c3d0015c0a","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-22T08:00:25.935Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"1780b960-c6ca-4dba-9676-7f79a4c5e9a7","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-22T08:00:25.947Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"c05e4547-20fa-4352-947d-508640d24657","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-22T08:00:26.201Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"cd280a0b-0594-4e74-83ae-05b8cab0db6b","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-22T08:00:26.210Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"946ec4f5-34fb-42c9-992c-da6f9bc437d0","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T08:00:27.481Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"f82a862b-f2bc-49c8-9c14-d6ca28f526ea","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T08:00:27.499Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"96f104de-a0d8-4887-a9c1-90882c89f51b","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T08:00:27.774Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"80943326-8d84-4b4f-9661-642fc264a92f","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T08:00:27.786Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"2db4c835-3841-460a-a3a8-f757d7ff05b0","statusCode":200,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T08:00:30.537Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"2722e8ea-1730-413e-aabf-431d7e18f61c","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T08:00:30.547Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"7990e90d-e22d-4ed9-8136-28c4c3fefcf2","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T08:00:30.560Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"cfddd475-6e30-4ba1-88f8-95b1103f51fe","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T08:00:30.569Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"06397292-6012-43b7-b993-511abd7d7927","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T08:00:32.224Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"98e0d64a-1e97-4b7b-bc7a-bb70b144437f","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T08:00:32.240Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"e4b3ebe4-6209-4c7d-b0d3-8cd6ab7f9daa","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T08:00:32.545Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"fc2bb113-f093-4275-91ce-187ef1094bf1","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T08:00:32.555Z"}
+{"level":"info","message":{"durationMs":14,"method":"GET","requestId":"a2c66438-1f63-4513-b343-213fa9db7c99","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T08:00:37.882Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"88b985c3-c345-4b94-8579-c3abc990b3da","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T08:00:37.895Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"b007e7de-3cd5-41ed-989d-1ba2142874dc","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T08:00:38.165Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"0da21193-dd99-4d64-92ef-aa29b638efde","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T08:00:38.180Z"}
+{"level":"info","message":{"durationMs":36,"method":"GET","requestId":"6f118d78-c697-4c5b-84be-757020d99610","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T08:00:39.111Z"}
+{"level":"info","message":{"durationMs":38,"method":"GET","requestId":"c47f3962-41b0-4150-83ee-5540a9d3f578","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T08:00:39.121Z"}
+{"level":"info","message":{"durationMs":23,"method":"GET","requestId":"5729dfc4-2beb-4e03-b7a3-d9378f7fcff4","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T08:00:39.147Z"}
+{"level":"info","message":{"durationMs":31,"method":"GET","requestId":"2511a264-ea27-48b7-827c-116e5dfac1b4","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T08:00:39.160Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"da3e7c8e-b526-4674-b0cc-27c7c0324ee2","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T08:00:39.600Z"}
+{"level":"info","message":{"durationMs":33,"method":"GET","requestId":"c52a13fc-ae0b-4046-b57e-874a858e177e","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T08:00:39.606Z"}
+{"level":"info","message":{"durationMs":15,"method":"GET","requestId":"3fae9512-1bb4-47be-872b-20b613a4b472","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T08:00:39.627Z"}
+{"level":"info","message":{"durationMs":20,"method":"GET","requestId":"0f7d5f2b-0676-4bb0-a5a9-4654cffbc343","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T08:00:39.638Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T08:02:00.030Z"}
+{"level":"info","message":"[Monitor] Checking 0 devices and 0 services","timestamp":"2026-06-22T08:02:00.039Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T08:02:00.039Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGINT","timestamp":"2026-06-22T08:02:34.726Z"}
+{"level":"info","message":"[Scheduler] Monitoring scheduler stopped","timestamp":"2026-06-22T08:02:34.730Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGINT","timestamp":"2026-06-22T08:02:34.731Z"}
+{"level":"info","message":"Server closed successfully","timestamp":"2026-06-22T08:02:34.771Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-22T09:18:14.447Z"}
+{"level":"info","message":"Default admin checked/created successfully","timestamp":"2026-06-22T09:18:19.161Z"}
+{"description":"Runs on schedule defined by MONITOR_CRON_EXPRESSION","expression":"*/2 * * * *","level":"info","message":"[Scheduler] Monitoring scheduler started","timestamp":"2026-06-22T09:18:20.000Z"}
+{"level":"info","message":"Database connected and bootstrap completed","timestamp":"2026-06-22T09:18:20.002Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-22T09:18:20.002Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T09:20:00.038Z"}
+{"level":"info","message":"[Monitor] Checking 0 devices and 0 services","timestamp":"2026-06-22T09:20:05.313Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T09:20:05.314Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T09:22:00.033Z"}
+{"level":"info","message":"[Monitor] Checking 0 devices and 0 services","timestamp":"2026-06-22T09:22:00.049Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T09:22:00.050Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T09:24:00.030Z"}
+{"level":"info","message":"[Monitor] Checking 0 devices and 0 services","timestamp":"2026-06-22T09:24:00.037Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T09:24:00.038Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T09:26:00.032Z"}
+{"level":"info","message":"[Monitor] Checking 0 devices and 0 services","timestamp":"2026-06-22T09:26:00.039Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T09:26:00.040Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T09:28:00.034Z"}
+{"level":"info","message":"[Monitor] Checking 0 devices and 0 services","timestamp":"2026-06-22T09:28:00.040Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T09:28:00.041Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T09:30:00.039Z"}
+{"level":"info","message":"[Monitor] Checking 0 devices and 0 services","timestamp":"2026-06-22T09:30:00.049Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T09:30:00.050Z"}
+{"errors":[],"level":"warn","message":"Invalid token","requestId":"22a7be67-2412-4a96-b5da-f5edbb17f967","timestamp":"2026-06-22T09:30:04.942Z"}
+{"level":"info","message":{"durationMs":20,"method":"GET","requestId":"22a7be67-2412-4a96-b5da-f5edbb17f967","statusCode":401,"url":"/api/users/me"},"timestamp":"2026-06-22T09:30:04.950Z"}
+{"level":"info","message":{"durationMs":1251,"method":"POST","requestId":"dc858bb7-7f6b-41b7-8a6f-54c2a7fc2823","statusCode":200,"url":"/public/auth/refresh"},"timestamp":"2026-06-22T09:30:08.153Z"}
+{"level":"info","message":{"durationMs":733,"method":"GET","requestId":"ab0da6db-aa2a-454a-89a8-b7279c7d22c0","statusCode":304,"url":"/api/users/me"},"timestamp":"2026-06-22T09:30:08.895Z"}
+{"level":"info","message":{"durationMs":935,"method":"POST","requestId":"0c88eaad-9743-456f-b09a-34e685de7c28","statusCode":200,"url":"/public/auth/login"},"timestamp":"2026-06-22T09:30:13.019Z"}
+{"level":"info","message":{"durationMs":19,"method":"GET","requestId":"f4ccf948-7a92-465a-8f73-0e5d1ba240e1","statusCode":304,"url":"/api/users/me"},"timestamp":"2026-06-22T09:30:13.097Z"}
+{"level":"info","message":{"durationMs":1448,"method":"GET","requestId":"7509bcca-ba27-48da-b0af-f9c4f1d3b795","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:30:15.454Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"8e7490d4-bf22-4244-89b0-e4b4ffe4de27","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:30:15.466Z"}
+{"level":"info","message":{"durationMs":1840,"method":"GET","requestId":"c060f95e-e799-4a70-932f-443d54d2a7e2","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T09:30:15.711Z"}
+{"level":"info","message":{"durationMs":43,"method":"GET","requestId":"b7f8a326-730d-4dcb-bbd7-e40e3205df8e","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T09:30:15.761Z"}
+{"level":"info","message":{"durationMs":17,"method":"GET","requestId":"2f7d9164-39e7-4627-9d80-efd5da506c25","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:30:32.395Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"53b788e5-b7d4-4f95-8d10-f109256c7e47","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:30:32.412Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"a47e4315-79c4-48fb-8524-0e23f0675a9d","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:30:32.694Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"05b781fd-d2e6-42d6-a5d4-26bfe49cceca","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:30:32.705Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"c91ce1b3-c564-45c0-afa3-1b61ce9f08dc","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:30:34.830Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"08d4f868-4da6-4b3a-af3b-183832f4735e","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:30:34.841Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"cb7fd9d7-dad7-40ac-a878-9076fc728ff8","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:30:35.159Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"4a162db0-eaca-4aff-9597-3ecfc25adc0c","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:30:35.172Z"}
+{"level":"info","message":{"durationMs":45,"method":"GET","requestId":"9c480b7c-842f-4667-a30a-641ee4b60688","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:31:39.790Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"f639df3f-42a8-4fa7-bf3c-bf3b10ea275d","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:31:39.799Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"b817557b-d036-41a8-98f6-7b415f343447","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:31:39.906Z"}
+{"level":"info","message":{"durationMs":18,"method":"GET","requestId":"98bd3fb0-3b6c-4ebb-a296-079c1ed651c4","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:31:39.926Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T09:32:00.026Z"}
+{"level":"info","message":"[Monitor] Checking 0 devices and 0 services","timestamp":"2026-06-22T09:32:00.035Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T09:32:00.036Z"}
+{"level":"info","message":{"durationMs":1056,"method":"POST","requestId":"c51b161b-1b09-42bd-ac4d-6b5eea720de4","statusCode":201,"url":"/api/devices"},"timestamp":"2026-06-22T09:32:24.418Z"}
+{"level":"info","message":{"durationMs":25,"method":"GET","requestId":"65807ecd-2efe-484c-bb89-b595c56307e2","statusCode":200,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:32:33.840Z"}
+{"level":"info","message":{"durationMs":18,"method":"GET","requestId":"45fd0ef1-c2d1-4044-b9fe-1b44fe2ac85e","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:32:33.866Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"17f22c6e-15dc-490a-9859-e2ed90fa2085","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:32:34.128Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"a1b06c20-8898-4eb7-a99e-019a52c4faab","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:32:34.138Z"}
+{"level":"info","message":{"durationMs":4,"method":"GET","requestId":"24645d7e-c548-4b65-bd75-fb08d6584491","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:32:38.840Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"07aa8445-2617-4b57-ba6d-6c29323995ae","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:32:38.852Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"26030e05-6e20-4cf5-9d71-2fffb20bc09f","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:32:39.147Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"fed98713-9b57-43b1-89b3-b4e949d6e8a6","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:32:39.156Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"0af18d61-d648-4c9e-bf96-ad00bef24e82","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:32:42.764Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"f3677329-6cbf-4695-a894-5400b69a5665","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:32:42.779Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"62dc0c71-9242-4355-a39a-43434f7a9fe5","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:32:43.076Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"7cd881e7-cace-4bfb-b7fd-f6e66e4b463c","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:32:43.091Z"}
+{"level":"info","message":{"durationMs":226,"method":"POST","requestId":"a8fd9399-795c-4039-9b31-0d5267f3ed4e","statusCode":200,"url":"/public/auth/logout"},"timestamp":"2026-06-22T09:32:49.217Z"}
+{"level":"info","message":{"durationMs":575,"method":"POST","requestId":"e09672ed-18ca-4f1d-beb6-2869f1e1c0db","statusCode":200,"url":"/public/auth/login"},"timestamp":"2026-06-22T09:32:56.639Z"}
+{"level":"info","message":{"durationMs":15,"method":"GET","requestId":"7aeb0283-1c29-4f08-8b9f-38c0ea058fd6","statusCode":200,"url":"/api/users/me"},"timestamp":"2026-06-22T09:32:56.672Z"}
+{"level":"info","message":{"durationMs":18,"method":"GET","requestId":"b64fc4f8-a905-4e7d-8127-db8fe0c8ec9d","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T09:32:56.900Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"2fe245fb-8b6f-427a-903d-2e977b3e18d6","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:32:56.902Z"}
+{"level":"info","message":{"durationMs":15,"method":"GET","requestId":"3af625e1-88ef-4547-94ca-a81e05745468","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:32:56.928Z"}
+{"level":"info","message":{"durationMs":29,"method":"GET","requestId":"377f3599-c496-4b0e-af9d-155f8a49c778","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T09:32:56.932Z"}
+{"level":"info","message":{"durationMs":45,"method":"GET","requestId":"503b0bb6-5a7d-41e8-a976-03dffd0b2c31","statusCode":200,"url":"/api/users/summary"},"timestamp":"2026-06-22T09:33:04.414Z"}
+{"level":"info","message":{"durationMs":19,"method":"GET","requestId":"7a3b58c1-0209-4e51-b9ea-c7da8e719657","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-22T09:33:04.436Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"0eb359c4-972e-4c6f-bf4d-b0c26e3477b8","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-22T09:33:04.459Z"}
+{"level":"info","message":{"durationMs":32,"method":"GET","requestId":"8610e531-8a43-4f2c-a0c3-b035515c181e","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-22T09:33:04.469Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"c94dd413-df88-4e6a-bf46-64ca514648ee","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-22T09:33:04.471Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"4d10d3ce-fdb5-4eb0-92dc-46bd3b9e4978","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-22T09:33:04.489Z"}
+{"level":"info","message":{"durationMs":20,"method":"GET","requestId":"1ac249c8-43de-4302-844a-d39d4095b2ef","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-22T09:33:04.511Z"}
+{"level":"info","message":{"durationMs":49,"method":"GET","requestId":"822d7afd-5f82-49e2-a4dc-82eae7a62884","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-22T09:33:04.522Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"2c7505ad-617d-4d30-8f78-68623abd78c2","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:33:07.871Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"e0e3da57-6c0c-41fc-bf51-e28f56da0633","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:33:07.887Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"ab04f94d-250e-4db3-90ca-692f3a9e6221","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:33:08.181Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"b2d3675a-7e5f-4203-97fd-6f580b3e1a57","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:33:08.191Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"f1640ff4-fd3f-4b3f-9098-7eaa9dbab3c9","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:33:12.442Z"}
+{"level":"info","message":{"durationMs":18,"method":"GET","requestId":"d7523972-5ff8-4f71-9c82-fb52916377e6","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:33:12.464Z"}
+{"level":"info","message":{"durationMs":5,"method":"GET","requestId":"f03935db-f342-4807-8a6d-d05100ba9d47","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:33:12.749Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"0ebbfee1-8bcf-488d-add2-e8ea6e888537","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:33:12.759Z"}
+{"errors":[],"level":"warn","message":"A device with this IP address already exists","requestId":"9a7406f3-9710-4862-8a29-12eac7eadd70","timestamp":"2026-06-22T09:33:31.993Z"}
+{"level":"info","message":{"durationMs":10,"method":"POST","requestId":"9a7406f3-9710-4862-8a29-12eac7eadd70","statusCode":409,"url":"/api/devices"},"timestamp":"2026-06-22T09:33:31.995Z"}
+{"level":"info","message":{"durationMs":77,"method":"POST","requestId":"ef40505f-ac67-4611-b6e7-06ed37e3f781","statusCode":201,"url":"/api/devices"},"timestamp":"2026-06-22T09:33:39.961Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"a7436230-3b6c-41f6-ac84-f4079e042fb0","statusCode":200,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:33:44.013Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"3de0e2f1-1145-40ce-aea2-3491d263467d","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:33:44.023Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"f6a6029d-1414-4d68-a4a1-c6167d51ec67","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:33:44.327Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"a599793c-a926-464d-84ca-0f994866c911","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:33:44.336Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"51416851-d20b-452a-8bc2-678a8d803811","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:33:47.534Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"970e8d0d-9203-4b5c-ac8b-625661b17626","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:33:47.547Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"9ad1a457-256c-43cc-9c98-7f4555a647da","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:33:47.830Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"a5c4225a-dbca-4ccf-9a5e-b60e2acd05d5","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:33:47.838Z"}
+{"level":"info","message":{"durationMs":38,"method":"GET","requestId":"34701d7b-9eb3-4d8a-80c3-40b70d4e2657","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T09:33:49.785Z"}
+{"level":"info","message":{"durationMs":15,"method":"GET","requestId":"6bdde402-a2eb-428a-b364-a327754bfb95","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:33:49.791Z"}
+{"level":"info","message":{"durationMs":30,"method":"GET","requestId":"6d0e2675-c057-45e1-b3dc-02c4cb8eba6b","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T09:33:49.827Z"}
+{"level":"info","message":{"durationMs":17,"method":"GET","requestId":"0b881eb2-b4f6-4c41-be66-2dd004faf3c6","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:33:49.829Z"}
+{"level":"info","message":{"durationMs":25,"method":"GET","requestId":"3fabcfa8-be80-47e9-bdf9-76f5dfdeb4f7","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T09:33:50.225Z"}
+{"level":"info","message":{"durationMs":17,"method":"GET","requestId":"8ad323f4-2239-483d-80d9-2e44dd4bfec2","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:33:50.230Z"}
+{"level":"info","message":{"durationMs":23,"method":"GET","requestId":"9f1cd65c-a83e-4940-a913-8965d421796e","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T09:33:50.257Z"}
+{"level":"info","message":{"durationMs":16,"method":"GET","requestId":"0f8bdf8d-b03e-4a3b-b2fb-a8f3fda1ebe4","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:33:50.260Z"}
+{"level":"info","message":{"durationMs":18,"method":"GET","requestId":"00172bb8-53b3-4f85-a641-9ce6805161a2","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:33:57.429Z"}
+{"level":"info","message":{"durationMs":20,"method":"GET","requestId":"e7b1a73b-e5cf-46b8-98d6-0e002ba047ba","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:33:57.453Z"}
+{"level":"info","message":{"durationMs":5,"method":"GET","requestId":"a573c6a4-f72e-43e2-bee2-2974e82c39c2","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:33:57.709Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"87c956ec-90a6-4240-a1b0-b1d692209d1d","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:33:57.719Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T09:34:00.020Z"}
+{"level":"info","message":"[Monitor] Checking 2 devices and 0 services","timestamp":"2026-06-22T09:34:00.029Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"0aba7266-c99e-479d-8e75-cbbcec392580","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:34:04.424Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"c1dc566e-e6b8-4541-a246-616e0cbb162b","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:34:04.439Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"26a11097-6d6d-471e-9997-adb7530d77b9","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:34:04.735Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"a9d914b7-931e-40b1-b903-4b9b291b86bc","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:34:04.745Z"}
+{"device":"Main Switch","ip":"10.0.0.15","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:34:07.650Z"}
+{"device":"Main Switch","ip":"10.0.0.10","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:34:07.782Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T09:34:07.782Z"}
+{"level":"info","message":{"durationMs":5,"method":"GET","requestId":"797b466c-ca43-4cc1-95b3-ee21deaa69c5","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:34:16.110Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"01c4f7a0-a3d1-42ce-9fa6-e1946a91299e","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:34:16.124Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"b77705d2-2596-4745-b760-5b67862190eb","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:34:16.432Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"e6643e55-8b55-453f-9bf9-2f16e1587fef","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:34:16.441Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"d91f3bea-61f2-4f33-8aa9-4d4e66b92054","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:34:18.554Z"}
+{"level":"info","message":{"durationMs":14,"method":"GET","requestId":"4e1c4ede-1fe1-4847-9eee-8009394df225","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:34:18.573Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"357a2567-274b-44f5-b293-0ff7967dc6e1","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:34:18.844Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"10fe1870-761a-4434-819e-afed455f4ca6","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:34:18.855Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T09:36:00.027Z"}
+{"level":"info","message":"[Monitor] Checking 2 devices and 0 services","timestamp":"2026-06-22T09:36:00.034Z"}
+{"device":"Main Switch","ip":"10.0.0.15","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:36:07.471Z"}
+{"device":"Main Switch","ip":"10.0.0.10","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:36:07.571Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T09:36:07.572Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T09:38:00.042Z"}
+{"level":"info","message":"[Monitor] Checking 2 devices and 0 services","timestamp":"2026-06-22T09:38:00.050Z"}
+{"device":"Main Switch","ip":"10.0.0.15","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:38:09.929Z"}
+{"device":"Main Switch","ip":"10.0.0.10","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:38:10.359Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T09:38:10.360Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T09:40:00.030Z"}
+{"level":"info","message":"[Monitor] Checking 2 devices and 0 services","timestamp":"2026-06-22T09:40:00.037Z"}
+{"device":"Main Switch","ip":"10.0.0.15","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:40:07.636Z"}
+{"device":"Main Switch","ip":"10.0.0.10","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:40:07.647Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T09:40:07.648Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T09:42:00.015Z"}
+{"level":"info","message":"[Monitor] Checking 2 devices and 0 services","timestamp":"2026-06-22T09:42:00.022Z"}
+{"device":"Main Switch","ip":"10.0.0.10","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:42:07.091Z"}
+{"device":"Main Switch","ip":"10.0.0.15","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:42:07.103Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T09:42:07.103Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T09:44:00.024Z"}
+{"level":"info","message":"[Monitor] Checking 2 devices and 0 services","timestamp":"2026-06-22T09:44:00.035Z"}
+{"device":"Main Switch","ip":"10.0.0.10","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:44:08.683Z"}
+{"device":"Main Switch","ip":"10.0.0.15","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:44:09.046Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T09:44:09.047Z"}
+{"level":"info","message":"Graceful shutdown started","signal":"SIGTERM","timestamp":"2026-06-22T09:44:30.201Z"}
+{"level":"info","message":"[Scheduler] Monitoring scheduler stopped","timestamp":"2026-06-22T09:44:30.207Z"}
+{"level":"info","message":"Server closed successfully","timestamp":"2026-06-22T09:44:30.214Z"}
+{"level":"info","message":"Startup: Mayongi Enterprise Backend on port 12000","timestamp":"2026-06-22T09:47:05.945Z"}
+{"level":"info","message":"Default admin checked/created successfully","timestamp":"2026-06-22T09:47:12.846Z"}
+{"description":"Runs on schedule defined by MONITOR_CRON_EXPRESSION","expression":"*/2 * * * *","level":"info","message":"[Scheduler] Monitoring scheduler started","timestamp":"2026-06-22T09:47:12.881Z"}
+{"level":"info","message":"Database connected and bootstrap completed","timestamp":"2026-06-22T09:47:12.882Z"}
+{"level":"info","message":"HTTP server ready","timestamp":"2026-06-22T09:47:12.882Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T09:48:00.042Z"}
+{"level":"info","message":"[Monitor] Checking 2 devices and 0 services","timestamp":"2026-06-22T09:48:00.199Z"}
+{"device":"Main Switch","ip":"10.0.0.10","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:48:11.445Z"}
+{"device":"Main Switch","ip":"10.0.0.15","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:48:13.717Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T09:48:13.718Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T09:50:00.041Z"}
+{"level":"info","message":"[Monitor] Checking 2 devices and 0 services","timestamp":"2026-06-22T09:50:00.053Z"}
+{"device":"Main Switch","ip":"10.0.0.10","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:50:08.788Z"}
+{"device":"Main Switch","ip":"10.0.0.15","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:50:09.529Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T09:50:09.530Z"}
+{"errors":[],"level":"warn","message":"Invalid token","requestId":"9d53820a-8998-478a-89b1-93008633f673","timestamp":"2026-06-22T09:50:30.023Z"}
+{"level":"info","message":{"durationMs":18,"method":"GET","requestId":"9d53820a-8998-478a-89b1-93008633f673","statusCode":401,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:50:30.030Z"}
+{"errors":[],"level":"warn","message":"Invalid token","requestId":"9470f025-5968-4ba2-8c6a-0d2dd2211ebb","timestamp":"2026-06-22T09:50:30.041Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"9470f025-5968-4ba2-8c6a-0d2dd2211ebb","statusCode":401,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:50:30.044Z"}
+{"errors":[],"level":"warn","message":"Invalid token","requestId":"77115eb3-3121-4335-b387-b32bda9305da","timestamp":"2026-06-22T09:50:30.050Z"}
+{"level":"info","message":{"durationMs":5,"method":"GET","requestId":"77115eb3-3121-4335-b387-b32bda9305da","statusCode":401,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T09:50:30.052Z"}
+{"errors":[],"level":"warn","message":"Invalid token","requestId":"d4820b45-1870-4064-b846-48203a8e3db9","timestamp":"2026-06-22T09:50:30.061Z"}
+{"level":"info","message":{"durationMs":5,"method":"GET","requestId":"d4820b45-1870-4064-b846-48203a8e3db9","statusCode":401,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T09:50:30.063Z"}
+{"level":"info","message":{"durationMs":1497,"method":"POST","requestId":"2f11e9a3-6b32-4357-81a2-2127b8a57c19","statusCode":200,"url":"/public/auth/refresh"},"timestamp":"2026-06-22T09:50:35.926Z"}
+{"level":"info","message":{"durationMs":130,"method":"GET","requestId":"60ae3391-67be-4548-9a97-060e90918ee7","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T09:50:36.069Z"}
+{"level":"info","message":{"durationMs":1761,"method":"POST","requestId":"d8745771-01e9-44b4-920e-88115dce07e4","statusCode":200,"url":"/public/auth/refresh"},"timestamp":"2026-06-22T09:50:36.181Z"}
+{"level":"info","message":{"durationMs":19,"method":"GET","requestId":"b337e733-9c34-4f7d-bb26-de98bfb33ffe","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T09:50:36.245Z"}
+{"level":"info","message":{"durationMs":5633,"method":"POST","requestId":"2a0912d7-58c0-4de8-b081-68de2308b6e9","statusCode":200,"url":"/public/auth/refresh"},"timestamp":"2026-06-22T09:50:40.046Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"a95c1ed1-c555-46f8-9802-1a2a7bd6173a","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:50:40.073Z"}
+{"level":"info","message":{"durationMs":5789,"method":"POST","requestId":"e2ab2d6c-0fc9-4e6a-b5b9-837f40252427","statusCode":200,"url":"/public/auth/refresh"},"timestamp":"2026-06-22T09:50:40.212Z"}
+{"level":"info","message":{"durationMs":13,"method":"GET","requestId":"a6cab2d7-671b-4c4c-ba42-16a6dfb19422","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:50:40.232Z"}
+{"level":"info","message":{"durationMs":17,"method":"GET","requestId":"1825de79-ab5c-4313-ab75-f25caf9b0bb3","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:50:47.543Z"}
+{"level":"info","message":{"durationMs":44,"method":"GET","requestId":"67f814f9-9b9a-43ed-8371-a3dd9f6f4dda","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T09:50:47.557Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"9f524f8e-692d-4db9-9cf7-fe1ddf818f30","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:50:47.560Z"}
+{"level":"info","message":{"durationMs":37,"method":"GET","requestId":"56d61ad8-1af3-4a5f-9214-c9aa3f149430","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T09:50:47.599Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T09:52:00.036Z"}
+{"level":"info","message":"[Monitor] Checking 2 devices and 0 services","timestamp":"2026-06-22T09:52:00.042Z"}
+{"device":"Main Switch","ip":"10.0.0.10","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:52:09.870Z"}
+{"device":"Main Switch","ip":"10.0.0.15","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:52:10.312Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T09:52:10.312Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T09:54:00.040Z"}
+{"level":"info","message":"[Monitor] Checking 2 devices and 0 services","timestamp":"2026-06-22T09:54:00.049Z"}
+{"device":"Main Switch","ip":"10.0.0.10","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:54:09.830Z"}
+{"device":"Main Switch","ip":"10.0.0.15","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:54:10.765Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T09:54:10.765Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"b68af3af-df83-47c2-8778-936b676fcf1b","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:55:17.152Z"}
+{"level":"info","message":{"durationMs":18,"method":"GET","requestId":"571af6d9-c2cd-4415-91f6-521a24eac905","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:55:17.176Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"f1da9c40-d404-448b-84f3-4b0377ca04cf","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:55:17.453Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"97cf3ea7-f365-4cfa-bd8d-ab4324113a50","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:55:17.466Z"}
+{"level":"info","message":{"durationMs":14,"method":"GET","requestId":"4c9bf7c3-6d97-4469-b436-c246d070d546","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:55:21.156Z"}
+{"level":"info","message":{"durationMs":22,"method":"GET","requestId":"0cda976e-153a-4e8a-af03-90487dca4fa5","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:55:21.183Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"2e91c17c-9b6f-4524-9a40-f0b65ec631c2","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:55:21.455Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"63d346e8-1c8d-4a85-b1ed-4dfc2d11c9e2","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:55:21.466Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"68dec6b5-0836-43a0-859a-3d76259a944e","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:55:22.930Z"}
+{"level":"info","message":{"durationMs":17,"method":"GET","requestId":"7a25ff43-9c97-419e-a8b6-af46fb65867d","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:55:22.956Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"7c61212a-1d6c-482b-9251-de339e8748a2","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:55:23.222Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"afdd6ee1-8820-4d10-8167-7e6d4f5791e2","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:55:23.234Z"}
+{"level":"info","message":{"durationMs":765,"method":"POST","requestId":"e9b425d9-90d5-45ea-9b4d-dc8a48fab34c","statusCode":201,"url":"/api/sites"},"timestamp":"2026-06-22T09:55:50.388Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"fffd7d99-4dcd-446b-acfb-9bcf489ec0a0","statusCode":200,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:55:50.411Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T09:56:00.017Z"}
+{"level":"info","message":"[Monitor] Checking 2 devices and 0 services","timestamp":"2026-06-22T09:56:00.024Z"}
+{"level":"info","message":{"durationMs":14,"method":"GET","requestId":"bc99be86-47f7-4b06-a776-5fc190d15183","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:56:01.589Z"}
+{"level":"info","message":{"durationMs":31,"method":"GET","requestId":"26b2bf4c-1afb-46e9-aa36-6249415a01f5","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:56:01.623Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"df8d3e26-e18b-4a17-b02e-096403d7982f","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:56:01.894Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"5661a470-ab80-40fc-ac08-504ec89e3fac","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:56:01.905Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"8882cdb9-bfef-45aa-a94c-ba5049ec2ce8","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:56:05.413Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"e199ff80-f237-4bc4-908a-691df75ba317","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:56:05.426Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"47a0ca4e-a908-4e4d-acd7-3fd70c011458","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:56:05.730Z"}
+{"level":"info","message":{"durationMs":16,"method":"GET","requestId":"1ec2ee7a-146b-4661-8ca1-2280cd0e32fb","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:56:05.750Z"}
+{"device":"Main Switch","ip":"10.0.0.10","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:56:11.085Z"}
+{"device":"Main Switch","ip":"10.0.0.15","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:56:11.377Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T09:56:11.377Z"}
+{"errors":[],"level":"warn","message":"A device with this IP address already exists","requestId":"068e281f-bee2-4471-ac3f-9a2d927a49a5","timestamp":"2026-06-22T09:57:42.963Z"}
+{"level":"info","message":{"durationMs":11,"method":"POST","requestId":"068e281f-bee2-4471-ac3f-9a2d927a49a5","statusCode":409,"url":"/api/devices"},"timestamp":"2026-06-22T09:57:42.965Z"}
+{"level":"info","message":{"durationMs":68,"method":"POST","requestId":"51ae9e37-f710-4adf-b055-08d54de9c7e8","statusCode":201,"url":"/api/devices"},"timestamp":"2026-06-22T09:57:47.655Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"aa55eb4b-90e8-41b5-b7ae-44f73998d8af","statusCode":200,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:57:51.728Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"1c5d97f4-7a47-4fbb-b431-fa91c9111212","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:57:51.743Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"08194e70-c177-44dc-a098-5a0e2f1ec587","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:57:52.028Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"a308a08c-1544-4b6a-b1e8-251f7cc1d852","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:57:52.041Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T09:58:00.017Z"}
+{"level":"info","message":"[Monitor] Checking 3 devices and 0 services","timestamp":"2026-06-22T09:58:00.021Z"}
+{"device":"Main Switch","ip":"10.0.0.10","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:58:07.453Z"}
+{"device":"Main Switch","ip":"10.0.0.15","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:58:07.464Z"}
+{"device":"Main server","ip":"10.0.0.12","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T09:58:07.465Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T09:58:07.465Z"}
+{"level":"info","message":{"durationMs":50,"method":"GET","requestId":"ee9095d8-5bc1-431f-b218-cbd8938d33f3","statusCode":200,"url":"/api/users/summary"},"timestamp":"2026-06-22T09:58:26.736Z"}
+{"level":"info","message":{"durationMs":57,"method":"GET","requestId":"6ef876b3-d185-4ec8-af28-5b40d6834449","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-22T09:58:26.801Z"}
+{"level":"info","message":{"durationMs":188,"method":"GET","requestId":"26760511-a505-4963-9a1d-b82396daaf99","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-22T09:58:26.908Z"}
+{"level":"info","message":{"durationMs":23,"method":"GET","requestId":"4d3be935-39f5-4d04-b4db-5f2b3359a1f1","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-22T09:58:26.933Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"2af3d850-9d0a-4187-94c8-ba449e47ffe9","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-22T09:58:26.957Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"b92885fb-7f93-4f0d-99ea-ed1522b4d780","statusCode":304,"url":"/api/users?page=1&size=100"},"timestamp":"2026-06-22T09:58:26.970Z"}
+{"level":"info","message":{"durationMs":36,"method":"GET","requestId":"174856f6-567e-492e-9093-ff949554ccf6","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-22T09:58:26.990Z"}
+{"level":"info","message":{"durationMs":40,"method":"GET","requestId":"33efa218-3232-4a11-be2f-8d3c9ea939fb","statusCode":304,"url":"/api/users/summary"},"timestamp":"2026-06-22T09:58:27.035Z"}
+{"level":"info","message":{"durationMs":18,"method":"GET","requestId":"09b7f711-f0df-4751-82ed-a421acdd05df","statusCode":200,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-22T09:58:32.140Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"427e0537-c5e9-4bd4-95e2-3f9b1e55a5fc","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-22T09:58:32.151Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"51a3c431-99f3-457d-abd4-48563eba92db","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-22T09:58:32.325Z"}
+{"level":"info","message":{"durationMs":14,"method":"GET","requestId":"97f45966-473d-470a-9bf9-205d626f5284","statusCode":304,"url":"/api/monitoring-logs?page=1&size=200"},"timestamp":"2026-06-22T09:58:32.345Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"46d66d44-3be5-4422-ab1c-02f8bd43d434","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-22T09:58:39.393Z"}
+{"level":"info","message":{"durationMs":6,"method":"GET","requestId":"8f077e1f-1ed7-4e6e-a98b-26eb6215658e","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-22T09:58:39.402Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"0525ba7d-f736-44fa-9431-dd426d790bb5","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-22T09:58:39.412Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"2efebdd7-67e8-44c4-a505-5148493b3cbb","statusCode":304,"url":"/api/alerts?page=1&size=100"},"timestamp":"2026-06-22T09:58:39.427Z"}
+{"level":"info","message":{"durationMs":17,"method":"GET","requestId":"e61fac43-2dcc-4fe6-a654-ef5871b256f0","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:58:46.085Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"8ae27990-c7a8-4fd7-b4b0-22dfe979863d","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:58:46.101Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"56a135e5-040b-4808-9e78-5cc9ab7121ba","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:58:46.395Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"2c5ccb51-9709-4946-a351-c0a811b3876d","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:58:46.409Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"883786bf-1110-4c4d-a184-e9a9f6f7b86e","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:58:48.873Z"}
+{"level":"info","message":{"durationMs":15,"method":"GET","requestId":"8215ad51-3a0b-4258-9d16-1185cf198bbb","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:58:48.892Z"}
+{"level":"info","message":{"durationMs":22,"method":"GET","requestId":"ab9a9243-c72f-4516-b6f1-5e179500927b","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:58:49.175Z"}
+{"level":"info","message":{"durationMs":19,"method":"GET","requestId":"4dbcd90c-8cc6-4893-bf63-b5e288e1dbc1","statusCode":304,"url":"/api/sites?page=1&size=100"},"timestamp":"2026-06-22T09:58:49.204Z"}
+{"level":"info","message":{"durationMs":12,"method":"GET","requestId":"3dcf12a2-44e5-43df-8833-375897504f56","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:58:51.706Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"5f9e9334-d342-467f-b482-2f58f5a064e5","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:58:51.720Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"02f93ffc-4e5a-404f-9c1e-eca671e93564","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:58:53.049Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"cd3044c7-22ce-4eb6-ae48-94e3009f076d","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:58:53.058Z"}
+{"level":"info","message":{"durationMs":11,"method":"GET","requestId":"c67a8b0e-c04e-4b96-892d-4656523f2166","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:58:53.471Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"f39881da-0042-4aa2-b9a9-9b7465fd0f1f","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:58:53.482Z"}
+{"level":"info","message":{"durationMs":9,"method":"GET","requestId":"3ed85093-d781-4ff4-ae7c-3341baab3ad3","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:58:53.781Z"}
+{"level":"info","message":{"durationMs":16,"method":"GET","requestId":"7879630d-2081-438a-8754-599dbf00555e","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:58:53.803Z"}
+{"level":"info","message":{"durationMs":14,"method":"GET","requestId":"845c58a6-b13e-4888-b286-f84aab3fe433","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:58:55.462Z"}
+{"level":"info","message":{"durationMs":31,"method":"GET","requestId":"ffd28b11-2f40-4432-ae0d-2532df34ac9e","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:58:55.509Z"}
+{"level":"info","message":{"durationMs":223,"method":"GET","requestId":"091c853b-e4cf-4731-911d-0a2aee703c77","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T09:58:55.687Z"}
+{"level":"info","message":{"durationMs":38,"method":"GET","requestId":"8d9597e4-6d23-4762-bb00-34b5b450b6ec","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T09:58:55.732Z"}
+{"level":"info","message":{"durationMs":19,"method":"GET","requestId":"e06d6c4b-317b-4bd9-867a-f9b9e470a760","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:58:55.997Z"}
+{"level":"info","message":{"durationMs":35,"method":"GET","requestId":"d7360e75-acec-428a-8f31-6ccf266229af","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T09:58:56.003Z"}
+{"level":"info","message":{"durationMs":18,"method":"GET","requestId":"3e264cc0-fca7-46a5-91e7-cb70f425abdb","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:58:56.023Z"}
+{"level":"info","message":{"durationMs":24,"method":"GET","requestId":"54ef71e1-ec23-4992-bafd-8cd4743be783","statusCode":200,"url":"/api/dashboard/summary"},"timestamp":"2026-06-22T09:58:56.034Z"}
+{"level":"info","message":{"durationMs":15,"method":"GET","requestId":"5385bf31-1018-429b-af36-4cca725a9338","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:59:18.765Z"}
+{"level":"info","message":{"durationMs":27,"method":"GET","requestId":"da6c8ecf-4f2e-4d94-8c2f-1456730e85b4","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:59:18.796Z"}
+{"level":"info","message":{"durationMs":13,"method":"GET","requestId":"82d23c97-1a82-4c60-832b-55b5d0eae26d","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:59:19.043Z"}
+{"level":"info","message":{"durationMs":8,"method":"GET","requestId":"e393d5ed-f11a-478e-9175-b05acdc8376a","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:59:19.054Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"8502ae0f-d8e4-415b-8d03-03b95220149d","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:59:19.792Z"}
+{"level":"info","message":{"durationMs":21,"method":"GET","requestId":"a55752f6-cdcb-48be-b2dd-ad1ef83afef4","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:59:19.826Z"}
+{"level":"info","message":{"durationMs":7,"method":"GET","requestId":"cdd03240-0d8b-4099-9b12-13f8308ebee4","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:59:20.109Z"}
+{"level":"info","message":{"durationMs":10,"method":"GET","requestId":"a1b540ed-9983-41d9-a021-d8b1695a9473","statusCode":304,"url":"/api/devices?page=1&size=100"},"timestamp":"2026-06-22T09:59:20.124Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T10:00:00.042Z"}
+{"level":"info","message":"[Monitor] Checking 3 devices and 0 services","timestamp":"2026-06-22T10:00:00.058Z"}
+{"device":"Main Switch","ip":"10.0.0.10","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T10:00:07.941Z"}
+{"device":"Main server","ip":"10.0.0.12","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T10:00:08.041Z"}
+{"device":"Main Switch","ip":"10.0.0.15","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T10:00:08.041Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T10:00:08.042Z"}
+{"level":"info","message":"[Monitor] Starting monitoring cycle","timestamp":"2026-06-22T10:02:00.018Z"}
+{"level":"info","message":"[Monitor] Checking 3 devices and 0 services","timestamp":"2026-06-22T10:02:00.028Z"}
+{"device":"Main Switch","ip":"10.0.0.10","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T10:02:13.913Z"}
+{"device":"Main server","ip":"10.0.0.12","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T10:02:14.160Z"}
+{"device":"Main Switch","ip":"10.0.0.15","level":"info","message":"[Monitor] Device checked","responseTime":null,"status":"OFFLINE","timestamp":"2026-06-22T10:02:14.160Z"}
+{"level":"info","message":"[Monitor] Cycle completed","timestamp":"2026-06-22T10:02:14.160Z"}
