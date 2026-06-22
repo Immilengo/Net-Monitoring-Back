@@ -4,12 +4,14 @@ import { prisma } from '@infra/database/prisma';
 import { redisClient } from '@infra/cache/redis';
 import { logger } from '@utils/logger';
 import { bootstrapAdmin } from '@modules/auth/service/bootstrap-admin.service';
+import { seedDemoDataIfNeeded } from '@bootstrap/demo-data.bootstrap';
 import { startMonitoringScheduler, stopMonitoringScheduler } from '@modules/monitoring/scheduler/monitoring.scheduler';
 
 const connectDatabaseIfAvailable = async () => {
   try {
     await prisma.$connect();
     await bootstrapAdmin();
+    await seedDemoDataIfNeeded();
     startMonitoringScheduler();
     logger.info({ message: 'Database connected and bootstrap completed' });
   } catch (error) {

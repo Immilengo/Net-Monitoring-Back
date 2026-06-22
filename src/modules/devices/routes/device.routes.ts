@@ -20,14 +20,14 @@ deviceRoutes.post(
 
 deviceRoutes.get(
   '/',
-  rolesMiddleware(['ADMIN', 'MANAGER']),
+  rolesMiddleware(['ADMIN', 'MANAGER', 'VIEWER']),
   validationMiddleware(listDeviceSchema, 'query'),
   asyncHandler(controller.list.bind(controller))
 );
 
 deviceRoutes.get(
   '/:id',
-  rolesMiddleware(['ADMIN', 'MANAGER']),
+  rolesMiddleware(['ADMIN', 'MANAGER', 'VIEWER']),
   asyncHandler(controller.getById.bind(controller))
 );
 

@@ -15,6 +15,7 @@
     "baseUrl": "./src",
     "paths": {
       "@/*": ["*"],
+      "@bootstrap/*": ["bootstrap/*"],
       "@modules/*": ["modules/*"],
       "@config/*": ["config/*"],
       "@infra/*": ["infra/*"],
@@ -24,6 +25,6 @@
       "@errors/*": ["errors/*"]
     }
   },
-  "include": ["src", "prisma/seed.ts"],
+  "include": ["src"],
   "exclude": ["node_modules", "dist"]
 }

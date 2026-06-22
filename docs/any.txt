@@ -10,3 +10,389 @@ Gerar o client se precisaresnpx prisma generate
 Iniciar o backendnpm run dev
 
 O docker compose up -d postgres
+
+
+
+A tua API está organizada em camadas, e isso ajuda muito a entender o fluxo real do sistema:
+
+- `route` recebe a requisição
+- `middleware` valida autenticação e permissões
+- `controller` adapta HTTP para serviço
+- `service` contém a regra de negócio
+- `repository` fala com o banco
+- `mapper` transforma o modelo do banco no formato da API
+
+Isso aparece claramente em módulos como [`auth`](\/home\/inacio\/Área%20de%20Trabalho\/web\/Net-Monitor-FullStack\/net-monitor\/src\/modules\/auth\/controller\/auth.controller.ts), [`users`](\/home\/inacio\/Área%20de%20Trabalho\/web\/Net-Monitor-FullStack\/net-monitor\/src\/modules\/users\/controller\/user.controller.ts), [`dashboard`](\/home\/inacio\/Área%20de%20Trabalho\/web\/Net-Monitor-FullStack\/net-monitor\/src\/modules\/dashboard\/service\/dashboard.service.ts) e [`monitoring-logs`](\/home\/inacio\/Área%20de%20%20Trabalho\/web\/Net-Monitor-FullStack\/net-monitor\/src\/modules\/monitoring-logs\/service\/monitoring-log.service.ts).
+
+**Como funciona o monitoring, pings e logs**
+
+O coração da tua solução está em três peças:
+
+1. O scheduler
+2. O serviço de monitoramento
+3. O repositório de logs
+
+O scheduler roda em intervalos definidos por cron. Ele está em [`monitoring.scheduler.ts`](\/home\/inacio\/Área%20de%20Trabalho\/web\/Net-Monitor-FullStack\/net-monitor\/src\/modules\/monitoring\/scheduler\/monitoring.scheduler.ts) e usa `node-cron` para disparar o ciclo automaticamente. Ele também evita sobreposição de ciclos, ou seja, se uma ronda ainda estiver a correr, a próxima é ignorada. Isso é importante para não encher a rede com pings duplicados.
+
+O ciclo principal está em [`monitoring-check.service.ts`](\/home\/inacio\/Área%20de%20Trabalho\/web\/Net-Monitor-FullStack\/net-monitor\/src\/modules\/monitoring\/service\/monitoring-check.service.ts). Esse serviço faz:
+
+- busca devices ativos
+- busca service monitors habilitados
+- executa checks ICMP nos devices
+- executa checks TCP nos serviços
+- grava cada resultado em `monitoringLog`
+- atualiza o status atual do device
+- dispara alertas quando há mudança de estado
+
+O fluxo de device é este:
+
+- pega o IP do device
+- chama [`icmpCheck`](\/home\/inacio\/Área%20de%20Trabalho\/web\/Net-Monitor-FullStack\/net-monitor\/src\/modules\/monitoring\/utils\/icmp-check.ts)
+- se o host respondeu, marca `ONLINE`
+- se não respondeu, marca `OFFLINE`
+- grava um log
+- atualiza o status persistido do device
+- se houve mudança de status, chama o motor de alertas
+
+Esse arquivo `icmp-check.ts` usa o comando nativo `ping` do sistema operacional via `child_process.exec`. No Linux ele faz algo como `ping -c 3 -W 5 host`, e depois tenta extrair:
+
+- `packet loss`
+- tempo médio de resposta
+- se o host está acessível ou não
+
+Ou seja, o teu backend não está apenas “guardando logs”; ele está realmente testando rede de forma ativa.
+
+Para serviços, o fluxo é parecido, mas usando TCP:
+
+- pega IP do device
+- pega porta do serviço
+- chama [`tcpCheck`](\/home\/inacio\/Área%20de%20Trabalho\/web\/Net-Monitor-FullStack\/net-monitor\/src\/modules\/monitoring\/utils\/tcp-check.ts)
+- grava o log em `monitoringLog`
+- se o serviço caiu, abre alerta
+
+Isso permite monitorar coisas como:
+
+- HTTP/HTTPS
+- SSH
+- DNS
+- SMTP
+- outros serviços TCP
+
+Então tens dois níveis de monitoramento:
+
+- ICMP para reachability do dispositivo
+- TCP para disponibilidade de serviço em portas específicas
+
+**Como os logs são modelados**
+
+Os logs de monitoramento vivem no módulo [`monitoring-logs`](\/home\/inacio\/Área%20de%20Trabalho\/web\/Net-Monitor-FullStack\/net-monitor\/src\/modules\/monitoring-logs\/service\/monitoring-log.service.ts).
+
+Esse módulo faz:
+
+- `list`
+- `getById`
+- `getStatsByDevice`
+- `getLatestByDevice`
+- `purgeOlderThan`
+
+A query de listagem suporta filtros por:
+
+- `deviceId`
+- `siteId`
+- `status`
+- `from`
+- `to`
+- `search`
+
+O repositório está em [`monitoring-log.repository.ts`](\/home\/inacio\/Área%20de%20Trabalho\/web\/Net-Monitor-FullStack\/net-monitor\/src\/modules\/monitoring-logs\/repository\/monitoring-log.repository.ts) e faz as consultas diretamente ao Prisma.
+
+Um detalhe importante: a resposta paginada do backend usa `content`, não `items`. Isso vem do teu helper de paginação `toPageResponse`, então o frontend tem de ler `response.data.content`.
+
+Além da listagem, esse módulo também calcula estatísticas por device:
+
+- total de checks
+- online
+- offline
+- warning
+- uptime percentual
+- média de response time
+- média de packet loss
+
+Esses números são muito úteis para o dashboard e para a tela detalhada de device.
+
+**Como o dashboard se alimenta**
+
+O dashboard não inventa dados. Ele agrega dados reais do banco.
+
+Isso está em [`dashboard.service.ts`](\/home\/inacio\/Área%20de%20Trabalho\/web\/Net-Monitor-FullStack\/net-monitor\/src\/modules\/dashboard\/service\/dashboard.service.ts), que em paralelo busca:
+
+- contagem de devices por status
+- contagem de alertas por prioridade
+- distribuição de devices por tipo
+- últimos alertas
+- últimos logs
+- top devices com mais falhas nas últimas 24h
+
+A lógica pesada está no [`dashboard.repository.ts`](\/home\/inacio\/Área%20de%20Trabalho\/web\/Net-Monitor-FullStack\/net-monitor\/src\/modules\/dashboard\/repository\/dashboard.repository.ts`):
+
+- `getDeviceStatusCounts()`
+- `getAlertCounts()`
+- `getDevicesByType()`
+- `getRecentAlerts()`
+- `getRecentLogs()`
+- `getTopUnreachable()`
+
+Ou seja, os gráficos que vês no front são resultado de agregações reais no banco, não mock.
+
+**Como os alertas nascem**
+
+Quando um ping falha ou um serviço cai, o teu sistema não só grava o log, ele também dispara alertas.
+
+Isso acontece em [`alert-engine.service.ts`](\/home\/inacio\/Área%20de%20Trabalho\/web\/Net-Monitor-FullStack\/net-monitor\/src\/modules\/monitoring\/service\/alert-engine.service.ts):
+
+- device offline gera alerta `CRITICAL`
+- device volta online resolve alertas críticos abertos
+- serviço down gera alerta `WARNING`
+- evita duplicar alerta se já existir um aberto para o mesmo caso
+
+Esse desenho é bom porque separa:
+- coleta de telemetria
+- armazenamento de telemetria
+- reação a incidentes
+
+**Como a autenticação entra na história**
+
+Antes de qualquer rota protegida, o backend passa por:
+
+- [`authMiddleware`](\/home\/inacio\/Área%20de%20Trabalho\/web\/Net-Monitor-FullStack\/net-monitor\/src\/middlewares\/auth.middleware.ts)
+- [`rolesMiddleware`](\/home\/inacio\/Área%20de%20Trabalho\/web\/Net-Monitor-FullStack\/net-monitor\/src\/middlewares\/roles.middleware.ts)
+
+O `authMiddleware` lê `Authorization: Bearer <token>`, valida o JWT com `JWT_SECRET`, e injeta o payload em `req.user`.
+
+O `rolesMiddleware` verifica se a role do token bate com as roles permitidas naquela rota.
+
+No teu caso, isso sustenta o RBAC do sistema:
+
+- `ADMIN`
+- `MANAGER`
+- `VIEWER`
+
+**Por que Node.js é uma boa tecnologia para esse backend**
+
+Para este tipo de plataforma, Node.js encaixa muito bem por vários motivos:
+
+- **I/O assíncrono**: a API faz muitas operações de rede e banco. Node lida bem com isso sem bloquear a thread principal.
+- **Bom para tempo real e polling**: dashboard, monitoring e logs pedem atualizações frequentes.
+- **Execução de comandos de sistema**: o teu monitoramento usa `ping` via `child_process.exec`, e Node faz isso de forma natural.
+- **Uma stack única no front e back**: como o frontend também é JavaScript/TypeScript, partilhas tipos, validações e mentalidade de desenvolvimento.
+- **Ecossistema forte**: `Prisma`, `zod`, `node-cron`, `express`, `jsonwebtoken`, `bcrypt`, `recharts` no front, tudo conversa bem.
+- **Rapidez de desenvolvimento**: para uma NOC/NMS como a tua, iterar rápido é uma grande vantagem.
+- **Boa modelagem para API modular**: o teu código está bem dividido em módulos, o que é uma das melhores formas de usar Node em produção.
+
+**Pontos fortes do teu design atual**
+
+O teu backend já mostra maturidade porque:
+
+- usa Prisma com relacionamentos claros
+- mantém serviços separados de controladores
+- usa validação de payload com schemas
+- faz agregação de métricas no servidor
+- evita duplicação de alertas
+- tem scheduler com prevenção de overlap
+- já pensa em RBAC com roles
+
+**Resumo curto**
+
+O teu backend funciona assim:
+
+- o scheduler dispara verificações
+- as verificações usam `ping` e TCP
+- os resultados viram logs
+- os logs alimentam o dashboard
+- falhas geram alertas
+- rotas protegidas usam JWT e roles
+- o front consome tudo isso via API
+
+Se quiseres, eu posso fazer o próximo passo e te montar uma explicação ainda mais prática, tipo:
+1. fluxo completo de um ping, do scheduler até o dashboard
+2. fluxo completo de login e autorização
+3. mapa das tabelas do banco usadas por monitoring/logs/alerts
+
+
+
+
+
+
+
+
+
+
+O teu scheduling está bem montado e tem uma arquitetura simples, mas sólida.
+
+**Onde ele nasce**
+- O backend sobe em [`net-monitor/src/server.ts`](\/home\/inacio\/Área%20de%20Trabalho\/web\/Net-Monitor-FullStack\/net-monitor\/src\/server.ts).
+- Depois da tentativa de conexão ao banco, ele chama `startMonitoringScheduler()`.
+- Isso significa que o scheduler só começa a rodar quando a API já está de pé, e tenta usar a infraestrutura disponível naquele momento.
+
+**Como o cron é configurado**
+- A expressão vem de `MONITOR_CRON_EXPRESSION` no `.env`.
+- No teu caso atual está assim: `*/2 * * * *`.
+- Isso significa “executar a cada 2 minutos”.
+- O scheduler também respeita `MONITOR_ENABLED=true`, então podes ligar/desligar monitoramento sem mexer no código.
+
+Referência: [`net-monitor/.env`](/home/inacio/Área%20de%20Trabalho/web/Net-Monitor-FullStack/net-monitor/.env)
+
+**Fluxo técnico do scheduler**
+O ficheiro principal é [`monitoring.scheduler.ts`](\/home\/inacio\/Área%20de%20Trabalho\/web\/Net-Monitor-FullStack\/net-monitor\/src\/modules\/monitoring\/scheduler\/monitoring.scheduler.ts).
+
+Ele faz estes passos:
+
+1. Lê `MONITOR_ENABLED`
+2. Lê `MONITOR_CRON_EXPRESSION`
+3. Valida a expressão com `cron.validate(expression)`
+4. Cria a task com `cron.schedule(expression, async () => { ... })`
+5. Em cada tick, executa `checkService.runCycle()`
+
+Ou seja, o cron não faz o check diretamente. Ele só agenda o disparo do ciclo.
+
+**O que acontece em cada ciclo**
+O ciclo real está em [`monitoring-check.service.ts`](\/home\/inacio\/Área%20de%20Trabalho\/web\/Net-Monitor-FullStack\/net-monitor\/src\/modules\/monitoring\/service\/monitoring-check.service.ts).
+
+A cada execução:
+
+1. O serviço busca todos os devices ativos.
+2. Busca todos os service monitors habilitados.
+3. Faz checks ICMP nos devices.
+4. Faz checks TCP nos serviços.
+5. Grava tudo em `monitoringLog`.
+6. Atualiza o status atual do device.
+7. Dispara alertas se houver mudança de estado.
+
+Então o cron é apenas o gatilho temporal; a regra de negócio está no service.
+
+**Por que ele não dispara checks concorrentes sem controle**
+Há uma proteção importante:
+
+- a variável `isRunning`
+- antes de começar um ciclo novo, o scheduler verifica se o ciclo anterior ainda está a correr
+- se estiver, ele pula esse tick
+
+Isso evita overlap, que seria um problema grave em monitoramento real. Sem isso, se um ciclo demorasse mais que 2 minutos, outro ciclo começaria por cima do anterior e poderias ter:
+- pings duplicados
+- logs duplicados
+- alertas repetidos
+- carga desnecessária na rede e no banco
+
+Esse guard está em [`monitoring.scheduler.ts`](\/home\/inacio\/Área%20de%20Trabalho\/web\/Net-Monitor-FullStack\/net-monitor\/src\/modules\/monitoring\/scheduler\/monitoring.scheduler.ts).
+
+**Como ele executa as verificações**
+No `runCycle()`:
+
+- devices e serviceMonitors são buscados em paralelo com `Promise.all`
+- depois os checks são executados com limite de concorrência de 10
+
+Isso está em [`MonitoringCheckService.runWithConcurrencyLimit`](\/home\/inacio\/Área%20de%20Trabalho\/web\/Net-Monitor-FullStack\/net-monitor\/src\/modules\/monitoring\/service\/monitoring-check.service.ts).
+
+A lógica é:
+- lança várias tasks
+- mantém no máximo 10 em execução simultânea
+- quando chega ao limite, espera uma terminar com `Promise.race`
+
+Isso é muito bom porque evita saturar:
+- CPU
+- sistema operacional
+- rede
+- banco de dados
+
+**Como o ping funciona**
+O ping ICMP está em [`icmp-check.ts`](\/home\/inacio\/Área%20de%20Trabalho\/web\/Net-Monitor-FullStack\/net-monitor\/src\/modules\/monitoring\/utils\/icmp-check.ts).
+
+Tecnicamente:
+- ele usa `child_process.exec`
+- monta o comando `ping` do sistema operacional
+- no Linux/macOS usa `ping -c 3 -W 5 host`
+- no Windows usa `ping -n 3 -w ... host`
+
+Depois ele:
+- mede tempo total com `Date.now()`
+- interpreta a saída do `ping`
+- tenta extrair packet loss
+- tenta extrair RTT médio
+- decide se o host está acessível
+
+Se falhar, o resultado volta com:
+- `reachable: false`
+- `packetLoss: 100`
+- `responseTime: null`
+
+Se funcionar:
+- `reachable: true`
+- `responseTime` com o RTT médio
+- `packetLoss` geralmente 0
+
+**Como isso vira log**
+Quando um device responde ou falha, o service grava um registro em `monitoringLog` via `MonitoringRepository.createLog()`.
+
+Então cada execução gera uma linha histórica com:
+- deviceId
+- status
+- responseTime
+- packetLoss
+- message
+- checkedAt
+
+Depois esses logs alimentam:
+- tela de logs
+- tela detalhada do device
+- dashboard
+- estatísticas por período
+
+**Como o TCP check entra**
+Para serviços, o scheduler usa `tcpCheck()`.
+
+A lógica é parecida com o ICMP, mas em vez de testar “o host responde?”, ele testa:
+- “a porta está aberta e responde?”
+
+Isso é útil para:
+- HTTP/HTTPS
+- SSH
+- DNS
+- SMTP
+- outros serviços TCP
+
+No teu código, o ciclo faz isso em paralelo aos pings dos devices.
+
+**Como o scheduler se encerra**
+Há também `stopMonitoringScheduler()`.
+
+Quando o servidor vai desligar:
+- a task do cron é parada com `schedulerTask.stop()`
+- o scheduler é limpo
+- o processo fecha de forma mais segura
+
+Isso é chamado no shutdown do servidor em [`server.ts`](\/home\/inacio\/Área%20de%20Trabalho\/web\/Net-Monitor-FullStack\/net-monitor\/src\/server.ts).
+
+**Resumo técnico do fluxo**
+1. O backend sobe.
+2. Se o banco estiver ok, o scheduler é iniciado.
+3. A cada 2 minutos, o cron dispara.
+4. Se já houver um ciclo em andamento, o novo tick é ignorado.
+5. O ciclo busca devices e serviços.
+6. Faz ICMP ping e TCP checks.
+7. Grava logs.
+8. Atualiza status.
+9. Gera alertas se necessário.
+10. O dashboard passa a consumir esses dados agregados.
+
+**Por que essa abordagem é boa**
+- separa agendamento de negócio
+- evita overlap
+- limita concorrência
+- escala melhor que checks sequenciais
+- mantém histórico detalhado
+- alimenta dashboard em tempo real ou quase real
+
+Se quiseres, no próximo passo eu posso fazer uma explicação ainda mais profunda, focada em:
+1. como o `Promise.all` + limite de concorrência funciona linha por linha
+2. como o `icmpCheck` interpreta a saída do `ping`
+3. como o scheduler se relaciona com `alerts` e `dashboard` no banco

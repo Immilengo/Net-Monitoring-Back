@@ -23,7 +23,7 @@ siteRoutes.post(
 
 siteRoutes.get(
   '/',
-  rolesMiddleware(['ADMIN', 'MANAGER']),
+  rolesMiddleware(['ADMIN', 'MANAGER', 'VIEWER']),
   asyncHandler(async (req, res) => {
     const page = await service.list(req.query);
     res.status(200).json({ success: true, message: 'Sites fetched successfully', data: page });
@@ -32,7 +32,7 @@ siteRoutes.get(
 
 siteRoutes.get(
   '/:id',
-  rolesMiddleware(['ADMIN', 'MANAGER']),
+  rolesMiddleware(['ADMIN', 'MANAGER', 'VIEWER']),
   asyncHandler(async (req, res) => {
     const site = await service.getById(req.params.id);
     res.status(200).json({ success: true, message: 'Site fetched successfully', data: site });

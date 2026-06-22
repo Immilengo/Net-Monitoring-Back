@@ -17,28 +17,28 @@ monitoringLogRoutes.use(authMiddleware);
 
 monitoringLogRoutes.get(
   '/',
-  rolesMiddleware(['ADMIN', 'MANAGER']),
+  rolesMiddleware(['ADMIN', 'MANAGER', 'VIEWER']),
   validationMiddleware(listMonitoringLogSchema, 'query'),
   asyncHandler(controller.list.bind(controller))
 );
 
 monitoringLogRoutes.get(
   '/stats',
-  rolesMiddleware(['ADMIN', 'MANAGER']),
+  rolesMiddleware(['ADMIN', 'MANAGER', 'VIEWER']),
   validationMiddleware(statsQuerySchema, 'query'),
   asyncHandler(controller.getStatsByDevice.bind(controller))
 );
 
 monitoringLogRoutes.get(
   '/device/:deviceId/latest',
-  rolesMiddleware(['ADMIN', 'MANAGER']),
+  rolesMiddleware(['ADMIN', 'MANAGER', 'VIEWER']),
   validationMiddleware(latestByDeviceSchema, 'query'),
   asyncHandler(controller.getLatestByDevice.bind(controller))
 );
 
 monitoringLogRoutes.get(
   '/:id',
-  rolesMiddleware(['ADMIN', 'MANAGER']),
+  rolesMiddleware(['ADMIN', 'MANAGER', 'VIEWER']),
   asyncHandler(controller.getById.bind(controller))
 );
 
