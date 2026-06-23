@@ -1,4 +1,4 @@
-import { DeviceType } from '@prisma/client';
+import { DeviceType, MonitoringStatus, StatusSource } from '@prisma/client';
 
 export interface CreateDeviceDto {
   name: string;
@@ -19,4 +19,6 @@ export interface UpdateDeviceDto {
   description?: string;
   siteId?: string;
   active?: boolean;
+  currentStatus?: MonitoringStatus;
+  statusSource?: StatusSource;
 }

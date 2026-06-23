@@ -1,4 +1,4 @@
-import { DeviceType, MonitoringStatus } from '@prisma/client';
+import { DeviceType, MonitoringStatus, StatusSource } from '@prisma/client';
 import { AppError } from '@errors/app-error';
 import { AuditService } from '@modules/audit/service/audit.service';
 import { toPageResponse, parsePageQuery } from '@modules/common/service/pagination.service';
@@ -35,6 +35,7 @@ export class DeviceService {
       type: input.type as DeviceType,
       description: input.description ?? null,
       currentStatus: MonitoringStatus.OFFLINE,
+      statusSource: StatusSource.AUTO,
       active: true,
       ...(input.siteId ? { site: { connect: { id: input.siteId } } } : {})
     });
@@ -94,6 +95,10 @@ export class DeviceService {
 
     if (input.siteId) await this.assertSiteExists(input.siteId);
 
+    const statusSource =
+      input.statusSource ??
+      (input.currentStatus !== undefined ? StatusSource.MANUAL : undefined);
+
     const device = await this.repository.update(id, {
       ...(input.name ? { name: input.name.trim() } : {}),
       ...(input.hostname !== undefined ? { hostname: input.hostname } : {}),
@@ -102,6 +107,8 @@ export class DeviceService {
       ...(input.type ? { type: input.type as DeviceType } : {}),
       ...(input.description !== undefined ? { description: input.description } : {}),
       ...(input.active !== undefined ? { active: input.active } : {}),
+      ...(input.currentStatus !== undefined ? { currentStatus: input.currentStatus as MonitoringStatus } : {}),
+      ...(statusSource ? { statusSource } : {}),
       ...(input.siteId !== undefined
         ? input.siteId === null
           ? { site: { disconnect: true } }

@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt';
-import { AlertLevel, DeviceType, MonitoringStatus, ServiceType } from '@prisma/client';
+import { AlertLevel, DeviceType, MonitoringStatus, ServiceType, StatusSource } from '@prisma/client';
 import { prisma } from '@infra/database/prisma';
 
 const passwordHash = async (password: string) => bcrypt.hash(password, 10);
@@ -133,6 +133,7 @@ export const seedDemoDataIfNeeded = async () => {
       name: 'Core Router',
       type: DeviceType.ROUTER,
       currentStatus: MonitoringStatus.ONLINE,
+      statusSource: StatusSource.AUTO,
       siteId: site.id,
       active: true,
       deleted: false
@@ -145,6 +146,7 @@ export const seedDemoDataIfNeeded = async () => {
       type: DeviceType.ROUTER,
       description: 'Main edge router',
       currentStatus: MonitoringStatus.ONLINE,
+      statusSource: StatusSource.AUTO,
       siteId: site.id,
       active: true
     }

@@ -51,6 +51,11 @@ enum MonitoringStatus {
   WARNING
 }
 
+enum StatusSource {
+  AUTO
+  MANUAL
+}
+
 enum AlertLevel {
   INFO
   WARNING
@@ -284,6 +289,7 @@ model Device {
   description   String?
 
   currentStatus MonitoringStatus   @default(OFFLINE)
+  statusSource  StatusSource       @default(AUTO)
 
   siteId        String?            @db.Uuid
 

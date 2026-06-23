@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt'
-import { PrismaClient, DeviceType, MonitoringStatus, AlertLevel, ServiceType } from '@prisma/client'
+import { PrismaClient, DeviceType, MonitoringStatus, AlertLevel, ServiceType, StatusSource } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
@@ -129,6 +129,7 @@ async function main() {
       name: 'Core Router',
       type: DeviceType.ROUTER,
       currentStatus: MonitoringStatus.ONLINE,
+      statusSource: StatusSource.AUTO,
       siteId: site.id,
       active: true,
       deleted: false
@@ -141,6 +142,7 @@ async function main() {
       type: DeviceType.ROUTER,
       description: 'Main edge router',
       currentStatus: MonitoringStatus.ONLINE,
+      statusSource: StatusSource.AUTO,
       siteId: site.id,
       active: true
     }

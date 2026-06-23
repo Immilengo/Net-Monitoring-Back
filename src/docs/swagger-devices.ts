@@ -6,7 +6,8 @@
  *     Gestão de dispositivos de rede monitorizados.
  *     Cada dispositivo tem um endereço IP único, um tipo (ROUTER, SWITCH, SERVER, etc.)
  *     e um status de monitoramento actualizado automaticamente pelo scheduler a cada ciclo.
- *     O status **não é editável manualmente** — é controlado exclusivamente pelo motor de monitoramento.
+ *     Também suporta modo manual para apresentações e testes: quando activo, o scheduler
+ *     continua a registar logs mas não sobrescreve o status actual do device.
  */
 
 /**
@@ -18,7 +19,7 @@
  *     description: >
  *       Regista um novo dispositivo para ser monitorizado.
  *       O endereço IP deve ser único no sistema.
- *       O dispositivo é criado com status `OFFLINE` — o scheduler actualizará o status
+ *       O dispositivo é criado com status `OFFLINE` em modo automático — o scheduler actualizará o status
  *       na próxima verificação (por defeito a cada 2 minutos).
  *       Se `siteId` for fornecido, o site deve existir e estar activo.
  *     security:
@@ -170,7 +171,8 @@
  *     description: >
  *       Actualiza parcialmente um dispositivo. Para desassociar um device de um site,
  *       enviar `"siteId": null` explicitamente.
- *       O campo `currentStatus` não pode ser alterado manualmente.
+ *       Para forçar um status manual, enviar `currentStatus` e `statusSource: MANUAL`.
+ *       Para voltar ao modo automático, enviar `statusSource: AUTO`.
  *     security:
  *       - bearerAuth: []
  *     parameters:

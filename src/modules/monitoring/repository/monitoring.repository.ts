@@ -22,13 +22,14 @@ export class MonitoringRepository {
   async findActiveDevices() {
     return prisma.device.findMany({
       where: { deleted: false, active: true },
-      select: {
-        id: true,
-        name: true,
-        ipAddress: true,
-        currentStatus: true
-      }
-    });
+        select: {
+          id: true,
+          name: true,
+          ipAddress: true,
+          currentStatus: true,
+          statusSource: true
+        }
+      });
   }
 
   async findEnabledServiceMonitors() {

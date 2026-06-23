@@ -24,9 +24,9 @@ var swaggerSpec = swaggerJsdoc({
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "Mayongi Enterprise Backend API",
+      title: "Net Monitoring Backend API",
       version: "1.0.0",
-      description: "Enterprise-ready modular monolith backend template"
+      description: "Enterprise modular monolith backend By In\xE1cio Milengo"
     },
     components: {
       securitySchemes: {
@@ -1025,14 +1025,6 @@ var AuthService = class {
     if (existing) return existing;
     return this.repository.upsertStatus(code);
   }
-  ensureActiveAndVerified(user) {
-    if (!user.emailVerified) {
-      throw new AppError("Email not verified. Please verify your account before login.", 400);
-    }
-    if (!user.status || user.status.code.toUpperCase() !== "ACTIVE") {
-      throw new AppError("Account is not active. Please contact support.", 400);
-    }
-  }
   generateOpaqueToken() {
     return randomBytes(48).toString("base64url");
   }
@@ -1053,22 +1045,21 @@ var AuthService = class {
     if (existing) throw new AppError("Email already in use", 400);
     const userRole = await this.repository.getRoleByName("USER");
     if (!userRole) throw new AppError("Default role not configured", 500);
-    const pendingStatus = await this.getOrCreateStatus("PENDING");
+    const activeStatus = await this.getOrCreateStatus("ACTIVE");
     const hashed = await bcrypt.hash(input.password, 12);
-    const emailVerificationToken = this.generateOpaqueToken();
     const user = await this.repository.createUser({
       ...input,
       password: hashed,
       roleId: userRole.id,
-      statusId: pendingStatus.id,
-      emailVerificationToken,
-      emailVerificationExpiresAt: new Date(Date.now() + EMAIL_TOKEN_TTL_MS)
+      statusId: activeStatus.id,
+      emailVerified: true,
+      emailVerificationToken: null,
+      emailVerificationExpiresAt: null
     });
-    const sent = await this.sendVerificationEmail(user.email, emailVerificationToken);
     await this.audit.log({ userId: user.id, action: "REGISTER", resource: "AUTH", resourceId: user.id });
     return {
       user: toAuthUserOutput(user),
-      message: sent ? "User registered successfully. Verification email sent." : "User registered successfully, but verification email could not be sent now. Use resend verification endpoint."
+      message: "User registered successfully."
     };
   }
   async login(input) {
@@ -1076,7 +1067,9 @@ var AuthService = class {
     if (!user) throw new AppError("Invalid credentials", 400);
     const valid = await bcrypt.compare(input.password, user.password);
     if (!valid) throw new AppError("Invalid credentials", 400);
-    this.ensureActiveAndVerified(user);
+    if (!user.status || user.status.code.toUpperCase() !== "ACTIVE") {
+      throw new AppError("Account is not active. Please contact support.", 400);
+    }
     const tokens = await this.issueTokens(user);
     await this.audit.log({ userId: user.id, action: "LOGIN", resource: "AUTH", resourceId: user.id });
     return tokens;
@@ -1093,7 +1086,9 @@ var AuthService = class {
       await this.repository.revokeRefreshToken(token.id);
       throw new AppError("Refresh token expired. Please login again.", 400);
     }
-    this.ensureActiveAndVerified(token.user);
+    if (!token.user.status || token.user.status.code.toUpperCase() !== "ACTIVE") {
+      throw new AppError("Account is not active. Please contact support.", 400);
+    }
     await this.repository.revokeRefreshToken(token.id);
     return this.issueTokens(token.user);
   }
@@ -1220,10 +1215,14 @@ var AuthController = class {
 
 // src/middlewares/validation.middleware.ts
 var validationMiddleware = (schema, source = "body") => (req, _res, next) => {
-  const result = schema.safeParse(source === "query" ? req.query : req.body);
+  const data = source === "query" ? req.query : req.body;
+  if (source === "body" && (data === void 0 || data === null)) {
+    return next(new AppError("Request body ausente ou Content-Type inv\xE1lido", 400));
+  }
+  const result = schema.safeParse(data);
   if (!result.success) {
     const messages = result.error.errors.map((e) => e.message).join(", ");
-    throw new AppError(messages, 400);
+    return next(new AppError(messages, 400));
   }
   next();
 };
@@ -1489,9 +1488,10 @@ var UserService = class {
   async create(input, actorId) {
     const existing = await this.repository.findByEmail(input.email);
     if (existing && !existing.deleted) throw new AppError("Email already registered", 409);
-    const userRole = await this.roleRepository.findByName("USER");
-    if (!userRole) throw new AppError("Default role not configured", 500);
-    const status = input.statusId ? await this.statusService.get(input.statusId) : await this.statusService.getByCode("PENDING");
+    const requestedRole = input.roleName?.trim() || "USER";
+    const userRole = await this.roleRepository.findByName(requestedRole);
+    if (!userRole) throw new AppError(`Role not found: ${requestedRole}`, 400);
+    const status = input.statusId ? await this.statusService.get(input.statusId) : await this.statusService.getByCode("ACTIVE");
     const hashed = await bcrypt2.hash(input.password, 12);
     const user = await this.repository.create({
       fullName: input.fullName,
@@ -1531,6 +1531,29 @@ var UserService = class {
     });
     const mapped = await Promise.all(items.map((item) => this.toResponse(item)));
     return toPageResponse(mapped, total, page, size);
+  }
+  async summary() {
+    const recentUsers = await prisma.user.findMany({
+      where: { deleted: false },
+      include: { status: true, roles: { include: { role: true } } },
+      orderBy: { createdAt: "desc" },
+      take: 5
+    });
+    const allUsers = await prisma.user.findMany({
+      where: { deleted: false },
+      include: { status: true, roles: { include: { role: true } } }
+    });
+    const total = allUsers.length;
+    const active = allUsers.filter((user) => (user.status?.code || "").toUpperCase() === "ACTIVE").length;
+    const inactive = await prisma.user.count({ where: { deleted: true } });
+    const verified = allUsers.filter((user) => user.emailVerified).length;
+    const admins = allUsers.filter((user) => user.roles.some((entry) => entry.role.name === "ADMIN")).length;
+    const operators = allUsers.filter((user) => user.roles.some((entry) => entry.role.name === "MANAGER")).length;
+    const viewers = allUsers.filter((user) => user.roles.some((entry) => entry.role.name === "VIEWER")).length;
+    return {
+      totals: { total, active, inactive, verified, admins, operators, viewers },
+      recentUsers: await Promise.all(recentUsers.map((user) => this.toResponse(user)))
+    };
   }
   async patch(id, input, actorId) {
     const existing = await this.repository.findById(id);
@@ -1672,6 +1695,10 @@ var UserController = class {
     });
     res.json(successResponse("Users retrieved successfully", data));
   }
+  async summary(req, res) {
+    const data = await service2.summary();
+    res.json(successResponse("Users summary retrieved successfully", data));
+  }
   async getById(req, res) {
     ensureSelfOrAdmin(req, req.params.id);
     const data = await service2.getById(req.params.id);
@@ -1752,7 +1779,8 @@ var createUserSchema = z2.object({
   email: z2.string().email(),
   password: z2.string().min(8),
   phone: z2.string().optional(),
-  statusId: z2.string().uuid().optional()
+  statusId: z2.string().uuid().optional(),
+  roleName: z2.string().min(1).optional()
 });
 var updateUserSchema = z2.object({
   fullName: z2.string().min(3).optional(),
@@ -1778,6 +1806,7 @@ var userRoutes = Router2();
 userRoutes.use(authMiddleware);
 userRoutes.post("/", rolesMiddleware(["ADMIN"]), validationMiddleware(createUserSchema), asyncHandler(controller2.create.bind(controller2)));
 userRoutes.get("/", rolesMiddleware(["ADMIN", "MANAGER"]), asyncHandler(controller2.list.bind(controller2)));
+userRoutes.get("/summary", rolesMiddleware(["ADMIN"]), asyncHandler(controller2.summary.bind(controller2)));
 userRoutes.get("/me", asyncHandler(controller2.me.bind(controller2)));
 userRoutes.get("/:id", asyncHandler(controller2.getById.bind(controller2)));
 userRoutes.patch("/:id", validationMiddleware(updateUserSchema), asyncHandler(controller2.patch.bind(controller2)));
@@ -2347,7 +2376,7 @@ siteRoutes.post(
 );
 siteRoutes.get(
   "/",
-  rolesMiddleware(["ADMIN", "MANAGER"]),
+  rolesMiddleware(["ADMIN", "MANAGER", "VIEWER"]),
   asyncHandler(async (req, res) => {
     const page = await service7.list(req.query);
     res.status(200).json({ success: true, message: "Sites fetched successfully", data: page });
@@ -2355,7 +2384,7 @@ siteRoutes.get(
 );
 siteRoutes.get(
   "/:id",
-  rolesMiddleware(["ADMIN", "MANAGER"]),
+  rolesMiddleware(["ADMIN", "MANAGER", "VIEWER"]),
   asyncHandler(async (req, res) => {
     const site = await service7.getById(req.params.id);
     res.status(200).json({ success: true, message: "Site fetched successfully", data: site });
@@ -2391,7 +2420,7 @@ siteRoutes.patch(
 import { Router as Router8 } from "express";
 
 // src/modules/devices/service/device.service.ts
-import { MonitoringStatus } from "@prisma/client";
+import { MonitoringStatus, StatusSource } from "@prisma/client";
 
 // src/modules/devices/mapper/device.mapper.ts
 var toDeviceOutput = (device) => ({
@@ -2403,6 +2432,7 @@ var toDeviceOutput = (device) => ({
   type: device.type,
   description: device.description,
   currentStatus: device.currentStatus,
+  statusSource: device.statusSource,
   active: device.active,
   deleted: device.deleted,
   site: device.site ? {
@@ -2499,6 +2529,7 @@ var DeviceService = class {
       type: input.type,
       description: input.description ?? null,
       currentStatus: MonitoringStatus.OFFLINE,
+      statusSource: StatusSource.AUTO,
       active: true,
       ...input.siteId ? { site: { connect: { id: input.siteId } } } : {}
     });
@@ -2537,6 +2568,7 @@ var DeviceService = class {
       if (conflict) throw new AppError("A device with this IP address already exists", 409);
     }
     if (input.siteId) await this.assertSiteExists(input.siteId);
+    const statusSource = input.statusSource ?? (input.currentStatus !== void 0 ? StatusSource.MANUAL : void 0);
     const device = await this.repository.update(id, {
       ...input.name ? { name: input.name.trim() } : {},
       ...input.hostname !== void 0 ? { hostname: input.hostname } : {},
@@ -2545,6 +2577,8 @@ var DeviceService = class {
       ...input.type ? { type: input.type } : {},
       ...input.description !== void 0 ? { description: input.description } : {},
       ...input.active !== void 0 ? { active: input.active } : {},
+      ...input.currentStatus !== void 0 ? { currentStatus: input.currentStatus } : {},
+      ...statusSource ? { statusSource } : {},
       ...input.siteId !== void 0 ? input.siteId === null ? { site: { disconnect: true } } : { site: { connect: { id: input.siteId } } } : {}
     });
     await this.audit.log({ userId: actorId, action: "UPDATE", resource: "DEVICE", resourceId: id });
@@ -2612,9 +2646,10 @@ var DeviceController = class {
 
 // src/modules/devices/validator/device.validator.ts
 import { z as z8 } from "zod";
-import { DeviceType as DeviceType2, MonitoringStatus as MonitoringStatus2 } from "@prisma/client";
+import { DeviceType as DeviceType2, MonitoringStatus as MonitoringStatus2, StatusSource as StatusSource2 } from "@prisma/client";
 var deviceTypeValues = Object.values(DeviceType2);
 var monitoringStatusValues = Object.values(MonitoringStatus2);
+var statusSourceValues = Object.values(StatusSource2);
 var ipv4Regex = /^(\d{1,3}\.){3}\d{1,3}$/;
 var createDeviceSchema = z8.object({
   name: z8.string().min(2, "Name must have at least 2 characters"),
@@ -2635,7 +2670,9 @@ var updateDeviceSchema = z8.object({
   type: z8.enum(deviceTypeValues).optional(),
   description: z8.string().optional(),
   siteId: z8.string().uuid().optional().nullable(),
-  active: z8.boolean().optional()
+  active: z8.boolean().optional(),
+  currentStatus: z8.enum(monitoringStatusValues).optional(),
+  statusSource: z8.enum(statusSourceValues).optional()
 }).refine((obj) => Object.keys(obj).length > 0, {
   message: "At least one field must be sent"
 });
@@ -2664,13 +2701,13 @@ deviceRoutes.post(
 );
 deviceRoutes.get(
   "/",
-  rolesMiddleware(["ADMIN", "MANAGER"]),
+  rolesMiddleware(["ADMIN", "MANAGER", "VIEWER"]),
   validationMiddleware(listDeviceSchema, "query"),
   asyncHandler(controller7.list.bind(controller7))
 );
 deviceRoutes.get(
   "/:id",
-  rolesMiddleware(["ADMIN", "MANAGER"]),
+  rolesMiddleware(["ADMIN", "MANAGER", "VIEWER"]),
   asyncHandler(controller7.getById.bind(controller7))
 );
 deviceRoutes.patch(
@@ -3258,18 +3295,18 @@ var alertRoutes = Router10();
 alertRoutes.use(authMiddleware);
 alertRoutes.get(
   "/summary",
-  rolesMiddleware(["ADMIN", "MANAGER"]),
+  rolesMiddleware(["ADMIN", "MANAGER", "VIEWER"]),
   asyncHandler(controller9.getSummary.bind(controller9))
 );
 alertRoutes.get(
   "/",
-  rolesMiddleware(["ADMIN", "MANAGER"]),
+  rolesMiddleware(["ADMIN", "MANAGER", "VIEWER"]),
   validationMiddleware(listAlertSchema, "query"),
   asyncHandler(controller9.list.bind(controller9))
 );
 alertRoutes.get(
   "/:id",
-  rolesMiddleware(["ADMIN", "MANAGER"]),
+  rolesMiddleware(["ADMIN", "MANAGER", "VIEWER"]),
   asyncHandler(controller9.getById.bind(controller9))
 );
 alertRoutes.patch(
@@ -3514,12 +3551,12 @@ var dashboardRoutes = Router11();
 dashboardRoutes.use(authMiddleware);
 dashboardRoutes.get(
   "/summary",
-  rolesMiddleware(["ADMIN", "MANAGER"]),
+  rolesMiddleware(["ADMIN", "MANAGER", "VIEWER"]),
   asyncHandler(controller10.getSummary.bind(controller10))
 );
 dashboardRoutes.get(
   "/counters",
-  rolesMiddleware(["ADMIN", "MANAGER"]),
+  rolesMiddleware(["ADMIN", "MANAGER", "VIEWER"]),
   asyncHandler(controller10.getCounters.bind(controller10))
 );
 
@@ -3797,25 +3834,25 @@ var monitoringLogRoutes = Router12();
 monitoringLogRoutes.use(authMiddleware);
 monitoringLogRoutes.get(
   "/",
-  rolesMiddleware(["ADMIN", "MANAGER"]),
+  rolesMiddleware(["ADMIN", "MANAGER", "VIEWER"]),
   validationMiddleware(listMonitoringLogSchema, "query"),
   asyncHandler(controller11.list.bind(controller11))
 );
 monitoringLogRoutes.get(
   "/stats",
-  rolesMiddleware(["ADMIN", "MANAGER"]),
+  rolesMiddleware(["ADMIN", "MANAGER", "VIEWER"]),
   validationMiddleware(statsQuerySchema, "query"),
   asyncHandler(controller11.getStatsByDevice.bind(controller11))
 );
 monitoringLogRoutes.get(
   "/device/:deviceId/latest",
-  rolesMiddleware(["ADMIN", "MANAGER"]),
+  rolesMiddleware(["ADMIN", "MANAGER", "VIEWER"]),
   validationMiddleware(latestByDeviceSchema, "query"),
   asyncHandler(controller11.getLatestByDevice.bind(controller11))
 );
 monitoringLogRoutes.get(
   "/:id",
-  rolesMiddleware(["ADMIN", "MANAGER"]),
+  rolesMiddleware(["ADMIN", "MANAGER", "VIEWER"]),
   asyncHandler(controller11.getById.bind(controller11))
 );
 monitoringLogRoutes.delete(
@@ -3927,11 +3964,184 @@ var bootstrapAdmin = async () => {
   logger.info({ message: "Default admin checked/created successfully" });
 };
 
+// src/bootstrap/demo-data.bootstrap.ts
+import bcrypt4 from "bcrypt";
+import { AlertLevel as AlertLevel3, DeviceType as DeviceType3, MonitoringStatus as MonitoringStatus5, ServiceType as ServiceType2, StatusSource as StatusSource3 } from "@prisma/client";
+var passwordHash = async (password) => bcrypt4.hash(password, 10);
+var seedDemoDataIfNeeded = async () => {
+  const activeDevices = await prisma.device.count({ where: { deleted: false } });
+  if (activeDevices > 0) {
+    return false;
+  }
+  const roles = await Promise.all([
+    prisma.role.upsert({
+      where: { name: "ADMIN" },
+      update: { description: "Administrador do sistema", deleted: false },
+      create: { name: "ADMIN", description: "Administrador do sistema" }
+    }),
+    prisma.role.upsert({
+      where: { name: "MANAGER" },
+      update: { description: "Gestor de opera\xE7\xF5es", deleted: false },
+      create: { name: "MANAGER", description: "Gestor de opera\xE7\xF5es" }
+    }),
+    prisma.role.upsert({
+      where: { name: "VIEWER" },
+      update: { description: "Visualizador com acesso restrito", deleted: false },
+      create: { name: "VIEWER", description: "Visualizador com acesso restrito" }
+    })
+  ]);
+  const statuses = await Promise.all([
+    prisma.status.upsert({
+      where: { code: "ACTIVE" },
+      update: { name: "Active", description: "Usu\xE1rio ativo", deleted: false },
+      create: { code: "ACTIVE", name: "Active", description: "Usu\xE1rio ativo" }
+    }),
+    prisma.status.upsert({
+      where: { code: "INACTIVE" },
+      update: { name: "Inactive", description: "Usu\xE1rio inativo", deleted: false },
+      create: { code: "INACTIVE", name: "Inactive", description: "Usu\xE1rio inativo" }
+    })
+  ]);
+  const adminPassword = await passwordHash("Admin123@");
+  const managerPassword = await passwordHash("Manager123@");
+  const viewerPassword = await passwordHash("Viewer123@");
+  const users = [
+    {
+      email: "admin@netwatch.com",
+      fullName: "Administrador NetWatch",
+      password: adminPassword,
+      roleNames: ["ADMIN"],
+      phone: "+244900000001"
+    },
+    {
+      email: "manager@netwatch.com",
+      fullName: "Network Manager",
+      password: managerPassword,
+      roleNames: ["MANAGER"],
+      phone: "+244900000002"
+    },
+    {
+      email: "viewer@netwatch.com",
+      fullName: "Read Only User",
+      password: viewerPassword,
+      roleNames: ["VIEWER"],
+      phone: "+244900000003"
+    }
+  ];
+  for (const seedUser of users) {
+    const user = await prisma.user.upsert({
+      where: { email: seedUser.email },
+      update: {
+        fullName: seedUser.fullName,
+        password: seedUser.password,
+        phone: seedUser.phone,
+        deleted: false,
+        emailVerified: true,
+        statusId: statuses[0].id
+      },
+      create: {
+        email: seedUser.email,
+        fullName: seedUser.fullName,
+        password: seedUser.password,
+        phone: seedUser.phone,
+        deleted: false,
+        emailVerified: true,
+        statusId: statuses[0].id
+      }
+    });
+    await prisma.userRole.deleteMany({ where: { userId: user.id } });
+    for (const roleName of seedUser.roleNames) {
+      const role = roles.find((entry) => entry.name === roleName);
+      if (!role) continue;
+      await prisma.userRole.create({
+        data: {
+          userId: user.id,
+          roleId: role.id
+        }
+      });
+    }
+  }
+  const existingSite = await prisma.site.findFirst({ where: { name: "Headquarters" } });
+  const site = existingSite ? await prisma.site.update({
+    where: { id: existingSite.id },
+    data: {
+      address: "Av. Principal 100",
+      city: "Luanda",
+      country: "Angola",
+      description: "Site principal do NOC",
+      deleted: false
+    }
+  }) : await prisma.site.create({
+    data: {
+      name: "Headquarters",
+      address: "Av. Principal 100",
+      city: "Luanda",
+      country: "Angola",
+      description: "Site principal do NOC"
+    }
+  });
+  const device = await prisma.device.upsert({
+    where: { ipAddress: "10.0.0.1" },
+    update: {
+      name: "Core Router",
+      type: DeviceType3.ROUTER,
+      currentStatus: MonitoringStatus5.ONLINE,
+      statusSource: StatusSource3.AUTO,
+      siteId: site.id,
+      active: true,
+      deleted: false
+    },
+    create: {
+      name: "Core Router",
+      hostname: "core-router",
+      ipAddress: "10.0.0.1",
+      macAddress: "AA:BB:CC:DD:EE:01",
+      type: DeviceType3.ROUTER,
+      description: "Main edge router",
+      currentStatus: MonitoringStatus5.ONLINE,
+      statusSource: StatusSource3.AUTO,
+      siteId: site.id,
+      active: true
+    }
+  });
+  await prisma.monitoringLog.deleteMany({ where: { deviceId: device.id } });
+  await prisma.alert.deleteMany({ where: { deviceId: device.id } });
+  await prisma.serviceMonitor.deleteMany({ where: { deviceId: device.id } });
+  await prisma.monitoringLog.create({
+    data: {
+      deviceId: device.id,
+      status: MonitoringStatus5.ONLINE,
+      responseTime: 12,
+      packetLoss: 0,
+      message: "Heartbeat received"
+    }
+  });
+  await prisma.alert.create({
+    data: {
+      deviceId: device.id,
+      title: "Initial check",
+      message: "Seed alert to validate dashboard flow",
+      level: AlertLevel3.INFO
+    }
+  });
+  await prisma.serviceMonitor.create({
+    data: {
+      deviceId: device.id,
+      name: "ICMP Ping",
+      type: ServiceType2.TCP,
+      port: 0,
+      enabled: true,
+      timeoutSeconds: 5
+    }
+  });
+  return true;
+};
+
 // src/modules/monitoring/scheduler/monitoring.scheduler.ts
 import cron from "node-cron";
 
 // src/modules/monitoring/service/monitoring-check.service.ts
-import { MonitoringStatus as MonitoringStatus6 } from "@prisma/client";
+import { MonitoringStatus as MonitoringStatus7, StatusSource as StatusSource4 } from "@prisma/client";
 
 // src/modules/monitoring/utils/icmp-check.ts
 import { exec } from "child_process";
@@ -4020,7 +4230,8 @@ var MonitoringRepository = class {
         id: true,
         name: true,
         ipAddress: true,
-        currentStatus: true
+        currentStatus: true,
+        statusSource: true
       }
     });
   }
@@ -4052,14 +4263,14 @@ var MonitoringRepository = class {
 };
 
 // src/modules/monitoring/service/alert-engine.service.ts
-import { MonitoringStatus as MonitoringStatus5 } from "@prisma/client";
+import { MonitoringStatus as MonitoringStatus6 } from "@prisma/client";
 var AlertEngineService = class {
   // -------------------------------------------------------------------------
   // Device mudou de status
   // -------------------------------------------------------------------------
   async handleDeviceStatusChange(device, newStatus) {
     try {
-      if (newStatus === MonitoringStatus5.OFFLINE) {
+      if (newStatus === MonitoringStatus6.OFFLINE) {
         await prisma.alert.create({
           data: {
             deviceId: device.id,
@@ -4074,7 +4285,7 @@ var AlertEngineService = class {
           ip: device.ipAddress
         });
       }
-      if (newStatus === MonitoringStatus5.ONLINE) {
+      if (newStatus === MonitoringStatus6.ONLINE) {
         await prisma.alert.updateMany({
           where: {
             deviceId: device.id,
@@ -4170,7 +4381,7 @@ var MonitoringCheckService = class {
   async checkDevice(device) {
     try {
       const result = await icmpCheck(device.ipAddress, 5);
-      const newStatus = result.reachable ? MonitoringStatus6.ONLINE : MonitoringStatus6.OFFLINE;
+      const newStatus = result.reachable ? MonitoringStatus7.ONLINE : MonitoringStatus7.OFFLINE;
       await this.repository.createLog({
         deviceId: device.id,
         status: newStatus,
@@ -4178,8 +4389,13 @@ var MonitoringCheckService = class {
         packetLoss: result.packetLoss,
         message: result.message
       });
-      await this.repository.updateDeviceStatus(device.id, newStatus);
-      if (device.currentStatus !== newStatus) {
+      const isManualOverride = device.statusSource === StatusSource4.MANUAL;
+      if (isManualOverride) {
+        await this.repository.updateDeviceStatus(device.id, device.currentStatus);
+      } else {
+        await this.repository.updateDeviceStatus(device.id, newStatus);
+      }
+      if (!isManualOverride && device.currentStatus !== newStatus) {
         await this.alertEngine.handleDeviceStatusChange(device, newStatus);
       }
       logger.info({
@@ -4187,7 +4403,8 @@ var MonitoringCheckService = class {
         device: device.name,
         ip: device.ipAddress,
         status: newStatus,
-        responseTime: result.responseTime
+        responseTime: result.responseTime,
+        mode: isManualOverride ? "manual" : "auto"
       });
     } catch (err) {
       logger.error({
@@ -4207,7 +4424,7 @@ var MonitoringCheckService = class {
         sm.port,
         sm.timeoutSeconds * 1e3
       );
-      const newStatus = result.reachable ? MonitoringStatus6.ONLINE : MonitoringStatus6.OFFLINE;
+      const newStatus = result.reachable ? MonitoringStatus7.ONLINE : MonitoringStatus7.OFFLINE;
       await this.repository.createLog({
         deviceId: sm.deviceId,
         status: newStatus,
@@ -4305,6 +4522,7 @@ var connectDatabaseIfAvailable = async () => {
   try {
     await prisma.$connect();
     await bootstrapAdmin();
+    await seedDemoDataIfNeeded();
     startMonitoringScheduler();
     logger.info({ message: "Database connected and bootstrap completed" });
   } catch (error) {

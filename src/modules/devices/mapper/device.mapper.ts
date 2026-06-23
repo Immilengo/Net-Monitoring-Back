@@ -1,4 +1,4 @@
-import { DeviceType, MonitoringStatus } from '@prisma/client';
+import { DeviceType, MonitoringStatus, StatusSource } from '@prisma/client';
 import { DeviceOutput } from '../interfaces/device.interface';
 
 type InputDevice = {
@@ -10,6 +10,7 @@ type InputDevice = {
   type: DeviceType;
   description: string | null;
   currentStatus: MonitoringStatus;
+  statusSource: StatusSource;
   active: boolean;
   deleted: boolean;
   createdAt: Date;
@@ -31,6 +32,7 @@ export const toDeviceOutput = (device: InputDevice): DeviceOutput => ({
   type: device.type,
   description: device.description,
   currentStatus: device.currentStatus,
+  statusSource: device.statusSource,
   active: device.active,
   deleted: device.deleted,
   site: device.site

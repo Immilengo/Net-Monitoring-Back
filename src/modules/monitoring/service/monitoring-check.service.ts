@@ -1,4 +1,4 @@
-import { MonitoringStatus } from '@prisma/client';
+import { MonitoringStatus, StatusSource } from '@prisma/client';
 import { logger } from '@utils/logger';
 import { icmpCheck } from '../utils/icmp-check';
 import { tcpCheck } from '../utils/tcp-check';
@@ -49,6 +49,7 @@ export class MonitoringCheckService {
     name: string;
     ipAddress: string;
     currentStatus: MonitoringStatus;
+    statusSource: StatusSource;
   }): Promise<void> {
     try {
       const result = await icmpCheck(device.ipAddress, 5);
@@ -66,11 +67,19 @@ export class MonitoringCheckService {
         message: result.message
       });
 
-      // actualizar status do device
-      await this.repository.updateDeviceStatus(device.id, newStatus);
+      const isManualOverride = device.statusSource === StatusSource.MANUAL;
+
+      // se o status estiver forçado manualmente, o scheduler não o sobrepõe
+      // mas mantém o registo "tocado" para que o device continue com updatedAt recente
+      if (isManualOverride) {
+        await this.repository.updateDeviceStatus(device.id, device.currentStatus);
+      } else {
+        // actualizar status do device
+        await this.repository.updateDeviceStatus(device.id, newStatus);
+      }
 
       // disparar lógica de alertas se status mudou
-      if (device.currentStatus !== newStatus) {
+      if (!isManualOverride && device.currentStatus !== newStatus) {
         await this.alertEngine.handleDeviceStatusChange(device, newStatus);
       }
 
@@ -79,7 +88,8 @@ export class MonitoringCheckService {
         device: device.name,
         ip: device.ipAddress,
         status: newStatus,
-        responseTime: result.responseTime
+        responseTime: result.responseTime,
+        mode: isManualOverride ? 'manual' : 'auto'
       });
     } catch (err) {
       logger.error({

@@ -1,4 +1,4 @@
-import { DeviceType, MonitoringStatus } from '@prisma/client';
+import { DeviceType, MonitoringStatus, StatusSource } from '@prisma/client';
 
 export interface DeviceSiteOutput {
   id: string;
@@ -16,6 +16,7 @@ export interface DeviceOutput {
   type: DeviceType;
   description: string | null;
   currentStatus: MonitoringStatus;
+  statusSource: StatusSource;
   active: boolean;
   deleted: boolean;
   site: DeviceSiteOutput | null;

@@ -83,6 +83,10 @@
  *       type: string
  *       enum: [ONLINE, OFFLINE, WARNING]
  *
+ *     StatusSource:
+ *       type: string
+ *       enum: [AUTO, MANUAL]
+ *
  *     AlertLevel:
  *       type: string
  *       enum: [INFO, WARNING, CRITICAL]
@@ -348,6 +352,8 @@
  *           nullable: true
  *         currentStatus:
  *           $ref: '#/components/schemas/MonitoringStatus'
+ *         statusSource:
+ *           $ref: '#/components/schemas/StatusSource'
  *         active:
  *           type: boolean
  *           example: true
@@ -413,6 +419,8 @@
  *           description: Enviar null para desassociar o device do site actual
  *         active:
  *           type: boolean
+ *         statusSource:
+ *           $ref: '#/components/schemas/StatusSource'
  *
  *     # -----------------------------------------------------------------------
  *     # SERVICE MONITOR
